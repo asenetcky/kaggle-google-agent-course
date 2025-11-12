@@ -1,0 +1,172 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.7"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "b45d5830561b6b08f68b5d056be2cf4b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "eiNL",
+      "code_hash": "a64c7edc529f0b6307fe8a9d81d16669",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Gemini API key setup complete.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "OInc",
+      "code_hash": "168425b24803b7bf6249f5851d6450d0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 ADK components imported successfully.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "lKbM",
+      "code_hash": "eae6734658deecab7a4b37fd35af8bfb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xDjd",
+      "code_hash": "6a1f007dbd20c5c997ca76dbf553b877",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Root Agent defined.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Tqep",
+      "code_hash": "eaa8efff0d32539bc5f3b9947fb3d0a4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Runner created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Kvvi",
+      "code_hash": "0b29939e92e5e943bda4e99301cb5aa2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n ### Created new session: debug_session_id\n\nUser > What is Agent Development Kit from Google? What languages is the SDK available in?\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "helpful_assistant > The Agent Development Kit (ADK) from Google is a flexible and modular framework designed to simplify the development, deployment, and orchestration of AI agents. It applies software development principles to AI agent creation, making it easier for developers to build agentic architectures that can range from simple tasks to complex workflows. While optimized for Gemini and the Google ecosystem, ADK is model-agnostic, deployment-agnostic, and compatible with other frameworks.\n\nThe SDK is currently available in the following languages:\n*   **Python**\n*   **Java**\n*   **Go**\n\nGoogle has indicated that support for more languages is coming soon.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "dQmh",
+      "code_hash": "5dc26ca35ebfa8270275d880f6559df9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n ### Continue session: debug_session_id\n\nUser > What is the weather in Hawaii?\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "helpful_assistant > The weather in Hawaii County is partly cloudy with a temperature of 60\u00b0F (16\u00b0C). The humidity is around 69%. There is a 0% chance of rain. For the next 10 days, the forecast indicates a mix of partly cloudy and mostly cloudy conditions with a chance of light rain on some days. Breezy trade winds are expected to develop, with sustained winds potentially reaching 15 to 25 miles per hour.\n\nIn Honolulu, HI, the current weather at 10 PM is 24\u00b0C (75\u00b0F) with a 0% chance of precipitation. Looking ahead, scattered showers are expected, with mostly cloudy conditions and a low around 75\u00b0F. Winds are anticipated to be breezy to windy, mainly from the east-northeast. A front is expected to move over the islands this weekend, increasing the chance for rainfall and showers, particularly over windward areas.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "BWHf",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
