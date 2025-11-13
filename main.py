@@ -16,21 +16,9 @@ app = marimo.App(width="medium")
 def _(mo):
     mo.md("""
     # Kaggle + Google Intensive Agent Course
-    """)
-    return
 
-
-@app.cell
-def _(mo):
-    mo.md("""
     ## Day One - From Prompt to Action
-    """)
-    return
 
-
-@app.cell
-def _(mo):
-    mo.md("""
     ### Part 1
     """)
     return
@@ -68,8 +56,11 @@ def _():
     return (
         Agent,
         AgentTool,
+        FunctionTool,
         Gemini,
         InMemoryRunner,
+        LoopAgent,
+        ParallelAgent,
         SequentialAgent,
         google_search,
         types,
@@ -321,6 +312,14 @@ async def _(InMemoryRunner, root_agent3, runner):
 
 
 @app.cell
+def _(mo):
+    mo.md("""
+    Executive Summary from Parallel Research Team
+    """)
+    return
+
+
+@app.cell
 def _(Agent, Gemini, google_search, retry_config):
     # tech researcher: foceses on ai and ml trends
 
@@ -338,7 +337,7 @@ def _(Agent, Gemini, google_search, retry_config):
 
 
     print("✅ tech_researcher created.")
-    return
+    return (tech_researcher,)
 
 
 @app.cell
@@ -359,7 +358,7 @@ def _(Agent, Gemini, google_search, retry_config):
 
 
     print("✅ health_researcher created.")
-    return
+    return (health_researcher,)
 
 
 @app.cell
@@ -379,6 +378,241 @@ def _(Agent, Gemini, google_search, retry_config):
     )
 
     print("✅ finance_researcher created.")
+    return (finance_researcher,)
+
+
+@app.cell
+def _(Agent, Gemini, retry_config):
+    aggregator_agent = Agent(
+        name="AggregatorAgent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        instruction="""
+        Combine these three research findings into a 
+        single executive summary:
+
+        **Technology Trends:**
+        {tech_research}
+
+        **Health Breakthroughs:**
+        {health_research}
+
+        **Finance Innovations:**
+        {finance_research}
+
+        Your summary should highlight common themes,
+        surprising connections, and the most important
+        key takeaways from all three reports. The final
+        summary should be around 200 words.
+        """,
+        output_key="executive_summary",
+    )
+
+
+    print("✅ aggregator_agent created.")
+    return (aggregator_agent,)
+
+
+@app.cell
+def _(
+    ParallelAgent,
+    SequentialAgent,
+    aggregator_agent,
+    finance_researcher,
+    health_researcher,
+    tech_researcher,
+):
+    # nest all these under a parallel agent, and then inside of a
+    # sequential one
+
+    # the ParallelAgent runs all its sub-agents simultaneously.
+
+    parallel_research_team = ParallelAgent(
+        name="ParallelResearchTeam",
+        sub_agents=[tech_researcher, health_researcher, finance_researcher],
+    )
+
+    # SequentialAgent defines high level workflow
+    # parallel team first, then the aggregator
+
+    research_root_agent = SequentialAgent(
+        name="ResearchSystem",
+        sub_agents=[parallel_research_team, aggregator_agent],
+    )
+
+    print("✅ Parallel and Sequential Agents created.")
+    return (research_root_agent,)
+
+
+@app.cell
+async def _(InMemoryRunner, research_root_agent):
+    research_runner = InMemoryRunner(agent=research_root_agent)
+    response = await research_runner.run_debug(
+        "Run the daily executive briefing on Tech, Health and Finance."
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    Loop Workflows - The Refinement Cycle
+    """)
+    return
+
+
+@app.cell
+def _(Agent, Gemini, retry_config):
+    # This agent runs ONCE at the beginning to create the first draft.
+    initial_writer_agent = Agent(
+        name="InitialWriterAgent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        instruction="""Based on the user's prompt, write the first draft of a short story (around 100-150 words).
+        Output only the story text, with no introduction or explanation.""",
+        output_key="current_story",  # Stores the first draft in the state.
+    )
+
+    print("✅ initial_writer_agent created.")
+    return (initial_writer_agent,)
+
+
+@app.cell
+def _(Agent, Gemini, retry_config):
+    # This agent's only job is to provide feedback or the approval signal. It has no tools.
+    critic_agent = Agent(
+        name="CriticAgent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        instruction="""You are a constructive story critic. Review the story provided below.
+        Story: {current_story}
+
+        Evaluate the story's plot, characters, and pacing.
+        - If the story is well-written and complete, you MUST respond with the exact phrase: "APPROVED"
+        - Otherwise, provide 2-3 specific, actionable suggestions for improvement.""",
+        output_key="critique",  # Stores the feedback in the state.
+    )
+
+    print("✅ critic_agent created.")
+    return (critic_agent,)
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    Now, we need a way for the loop to actually stop based on the
+    critic's feedback. The `LoopAgent` itself doesn't automatically
+    know that "APPROVED" means "stop."
+
+    We need an agent to give it an explicit signal to terminate the
+    loop.
+
+    We do this in two parts:
+
+    1. A simple Python function that the LoopAgent understands as an
+    "exit" signal.
+
+    1. An agent that can call that function when the right condition is
+    met.
+    """)
+    return
+
+
+@app.cell
+def _():
+    # this function is for the RefinerAgent to exit the loop
+
+
+    def exit_loop():
+        """Call this function ONLY when the critique is
+        'APPROVED', indicating tthe story is finished and no
+        more changes are needed.
+        """
+
+        return {
+            "status": "approved",
+            "message": "Story approved. Exiting refinement loop.",
+        }
+
+
+    print("✅ exit_loop function created.")
+    return (exit_loop,)
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    next wrap this up in `FunctionTool`
+    """)
+    return
+
+
+@app.cell
+def _(Agent, FunctionTool, Gemini, exit_loop, retry_config):
+    # RefinerAgent refines story based on critique or exits loop
+
+    refiner_agent = Agent(
+        name="RefinerAgent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        instruction="""You are a story refiner. You have a story draft and critique.
+
+        Story Draft: {current_story}
+        Critique: {critique}
+
+        Your task is to analyze the critique.
+        - IF the critique is EXACTLY "APPROVED", you MUST call the `exit_loop` function and nothing else.
+        - OTHERWISE, rewrite the story draft to fully incorporate the feedback from the critique.""",
+        output_key="current_story",  # It overwrites the story with the new, refined version.
+        tools=[
+            FunctionTool(exit_loop)
+        ],  # The tool is now correctly initialized with the function reference.
+    )
+
+    print("✅ refiner_agent created.")
+    return (refiner_agent,)
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    now to tie it all together and add a max number of iterations
+    """)
+    return
+
+
+@app.cell
+def _(
+    LoopAgent,
+    SequentialAgent,
+    critic_agent,
+    initial_writer_agent,
+    refiner_agent,
+):
+    # LoopAgent cotains the agents that will run repeatedly:
+    # Critic -> Refiner
+
+    story_refinement_loop = LoopAgent(
+        name="StoryRefinementLoop",
+        sub_agents=[critic_agent, refiner_agent],
+        max_iterations=5,
+    )
+
+
+    # this root agent is sequential to define overall workflow:
+    # initial write -> Refinement Loop
+
+    story_root_agent = SequentialAgent(
+        name="StoryPipeline",
+        sub_agents=[initial_writer_agent, story_refinement_loop],
+    )
+
+    print("✅ Loop and Sequential Agents created.")
+    return (story_root_agent,)
+
+
+@app.cell
+async def _(InMemoryRunner, runner, story_root_agent):
+    story_runner = InMemoryRunner(agent=story_root_agent)
+    story_response = await runner.run_debug(
+        "Write a short story about a lighthouse keeper who discovers a mysterious, glowing map"
+    )
     return
 
 
