@@ -57,7 +57,14 @@ def _():
     from google.adk.code_executors import BuiltInCodeExecutor
 
     print("✅ ADK components imported successfully.")
-    return Gemini, InMemoryRunner, LlmAgent, types
+    return (
+        AgentTool,
+        BuiltInCodeExecutor,
+        Gemini,
+        InMemoryRunner,
+        LlmAgent,
+        types,
+    )
 
 
 @app.cell
@@ -98,7 +105,7 @@ def _():
 
 
     print("✅ Helper functions defined.")
-    return
+    return (show_python_code_and_result,)
 
 
 @app.cell
@@ -314,7 +321,145 @@ async def _(InMemoryRunner, currency_agent):
 def _(mo):
     mo.md("""
     ### Improving Agent Reliability
+
+    Agent's can be pretty iffy on the math.... but we
+    can make a tool and/or some code they can use
+    to calculate the math for them, which is much
+    more reliable.
     """)
+    return
+
+
+@app.cell
+def _(BuiltInCodeExecutor, Gemini, LlmAgent, retry_config):
+    calculation_agent = LlmAgent(
+        name="CalculationAgent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        instruction="""
+        You are a specialized calculator that only responds with Python
+        code.  You are forbidden from providing any text, explanations, 
+        or conversational responses.
+
+        Your task is to take a request for a calculation and translate
+        it into a single block of python code that calculates
+        the answer.
+
+        **RULE:**
+        1. Your output MUST be ONLY a Python code block.
+        2. Do NOT write any text before or after the code block.
+        3. The Python code MUST calculate the result.
+        4. The Python code MUST print the final result to stdout.
+        5. You are PROHIBITED from performing the calculation
+        yourself. Your only job is to generate the code that
+        will perform the calculation.
+
+        Failure to follow these rules will result in an error.
+        """,
+        code_executor=BuiltInCodeExecutor(),
+    )
+    return (calculation_agent,)
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    now we change the original instructions for the currency agent.
+    """)
+    return
+
+
+@app.cell
+def _(
+    AgentTool,
+    Gemini,
+    LlmAgent,
+    calculation_agent,
+    get_exchange_rate,
+    get_fee_for_payment_method,
+    retry_config,
+):
+    enhanced_currency_agent = LlmAgent(
+        name="enhanced_currency_agent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        # Updated instruction
+        instruction="""
+            You are a smart currency conversion assistant. 
+            You must strictly follow these steps and use the available 
+            tools.
+
+          For any currency conversion request:
+
+       1. Get Transaction Fee: Use the get_fee_for_payment_method() tool 
+       to determine the transaction fee.
+       2. Get Exchange Rate: Use the get_exchange_rate() tool to get the 
+       currency conversion rate.
+       3. Error Check: After each tool call, you must check the "status"
+       field in the response. If the status is "error", you must stop 
+       and clearly explain the issue to the user.
+       4. Calculate Final Amount (CRITICAL): You are strictly prohibited 
+       from performing any arithmetic calculations yourself.
+       You must use the calculation_agent tool to generate Python code 
+       that calculates the final converted amount. 
+       This code will use the fee information from step 1 and 
+       the exchange rate from step 2.
+       5. Provide Detailed Breakdown: In your summary, you must:
+           * State the final converted amount.
+           * Explain how the result was calculated, including:
+               * The fee percentage and the fee amount in the 
+               original currency.
+               * The amount remaining after deducting the fee.
+               * The exchange rate applied.
+        """,
+        tools=[
+            get_fee_for_payment_method,
+            get_exchange_rate,
+            AgentTool(agent=calculation_agent),  # Using another agent as a tool!
+        ],
+    )
+
+    print("✅ Enhanced currency agent created")
+    print("🎯 New capability: Delegates calculations to specialist agent")
+    print("🔧 Tool types used:")
+    print("  • Function Tools (fees, rates)")
+    print("  • Agent Tool (calculation specialist)")
+    return (enhanced_currency_agent,)
+
+
+@app.cell
+def _(InMemoryRunner, enhanced_currency_agent):
+    enhanced_runner = InMemoryRunner(agent=enhanced_currency_agent)
+    return (enhanced_runner,)
+
+
+@app.cell
+async def _(enhanced_runner):
+    enhanced_response = await enhanced_runner.run_debug(
+        "Convert 1,250 USD to INRusing a Bank Transfer. Show me the precise calculation."
+    )
+    return (enhanced_response,)
+
+
+@app.cell
+def _(enhanced_response, show_python_code_and_result):
+    show_python_code_and_result(enhanced_response)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    agent tools vs sub-agents:
+
+    - agent tools: Agent A uses Agent B as a _tool_
+    - sub-agent: Agent A transfers control to Agent B
+    completely, so it's  hand-off to something like a
+    specialist.
+    """)
+    return
+
+
+@app.cell
+def _():
     return
 
 
