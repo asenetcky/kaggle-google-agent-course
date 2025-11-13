@@ -311,7 +311,10 @@ async def _(InMemoryRunner, currency_agent):
 
 
 @app.cell
-def _():
+def _(mo):
+    mo.md("""
+    ### Improving Agent Reliability
+    """)
     return
 
 
