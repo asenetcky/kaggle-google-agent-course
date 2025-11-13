@@ -1,0 +1,379 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.7"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "8db1d67fe0c1763222fff6ed183ee2b5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"kaggle-google-intensive-agent-course\">Kaggle + Google Intensive Agent Course</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "64e25dd2e7499552e9d988f21a8a22b6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"day-one-from-prompt-to-action\">Day One - From Prompt to Action</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "a163aed87607616dbca76ec37cef7bdd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"part-1\">Part 1</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "b45d5830561b6b08f68b5d056be2cf4b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "a64c7edc529f0b6307fe8a9d81d16669",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "c7f55bc4b964a4923528d36fe72565a3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 ADK components imported successfully.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Xref",
+      "code_hash": "eae6734658deecab7a4b37fd35af8bfb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "d4a18252539b23f06b8755be1805c2b5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Root Agent defined.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "71d5eb88f57f7c6f2615ce5a950d017e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Runner created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "5ea4c7986090645e9ff18a0e582efd9a",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "0cd13f14639869a1e49e31d75be001f6",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "9bc7d04955cb2b60f7ae2924ebf0d8ef",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"part-2-multi-agents\">Part 2 - Multi Agents</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "09e11fa9ffc71d85e4a369b24f0d04ae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Creating a Research and a Summarizer Agent:</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "02c392f4318e58a995602e397ee78ea2",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "4abb74a49f60d5d46fcc4c643757a61a",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "4262767447dd9c2686bfdf32022f4969",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "844493b3ac6935b3295c4d6d4994173c",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "8008bb643dec10363ab7968dbbd00796",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"part-3\">Part 3</h3>\n<span class=\"paragraph\">Sequential Workflows - The Assembly Line</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "b78cee7370b91473fea1b819a63a9129",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 outline_agent created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "b7cff4647aa02d258f8cb246d6b36149",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 writer_agent created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "40da3e2eb3fe8751ad4f8edf51182265",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 editor_agent created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "e26fab4b00a89087f70a70537eb0bb48",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 SequentialAgent created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "dd9113eb3b3e41d4919e630b4f2e0e0d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n ### Created new session: debug_session_id\n\nUser > Wite a blog post about the benefits of multi-agent systems for software developers.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "helpful_assistant > A blog post about the benefits of multi-agent systems for software developers:\n\n## Supercharge Your Development: The Unbeatable Benefits of Multi-Agent Systems for Software Developers\n\nThe world of software development is in constant evolution, with new tools and methodologies emerging to tackle increasingly complex challenges. One of the most exciting advancements is the rise of **multi-agent systems (MAS)**, a paradigm shift that's revolutionizing how we build software. Forget the idea of a single, monolithic AI; MAS is about harnessing the power of a team of specialized AI agents working collaboratively to achieve goals far beyond the capabilities of any individual agent.\n\nSo, what does this mean for you, the software developer? It means a significant boost in efficiency, productivity, and overall developer experience. Let's dive into the key benefits:\n\n### 1. Enhanced Efficiency and Productivity Through Automation\n\nRepetitive and low-value tasks are a significant drain on developer time. Multi-agent systems excel at automating these mundane yet crucial aspects of the software development lifecycle. From code generation and bug detection to testing and documentation, specialized agents can handle these tasks with speed and accuracy, freeing up developers to focus on more creative and complex problem-solving. This automation accelerates development cycles and reduces the time spent on tedious tasks, leading to higher overall productivity.\n\n### 2. Improved Collaboration and Reduced Cognitive Load\n\nImagine a team of AI specialists, each with a defined role and expertise, working together seamlessly. That's the essence of MAS. These systems can foster better collaboration by distributing tasks and communication among individual agents, each bringing their specialized talent to achieve a collective goal. This collaborative approach also significantly reduces the cognitive load on individual developers. By breaking down complex problems into smaller, manageable subtasks handled by dedicated agents, developers can navigate intricate workflows with greater ease and less mental strain.\n\n### 3. Unparalleled Contextualization and Accuracy\n\nOne of the biggest challenges in AI development is providing accurate, context-aware responses. Multi-agent systems address this by integrating company-specific code, documentation, technical standards, and internal knowledge sources. This allows agents to deliver highly contextualized answers and solutions, tailored to the specific needs of a project. By incorporating industry norms and business rules, AI-generated suggestions become more precise and relevant, minimizing the risk of generic or incorrect outputs.\n\n### 4. Accelerated Legacy System Modernization\n\nModernizing legacy systems can be a daunting and costly endeavor. Multi-agent systems offer a powerful solution by automating much of this process. AI agents can analyze, interpret, and transform these older systems into modern, scalable architectures. They can map dependencies, identify bottlenecks, and suggest precise improvements, significantly reducing modernization time and costs. This also enhances quality and security during transitions, as agents can predict risks and automate data migration.\n\n### 5. Adaptability, Scalability, and Robustness\n\nThe modular nature of multi-agent systems makes them incredibly adaptable and scalable. Need to handle increased demand? Simply add more agents. Facing unpredictable environments? Agents can adapt to local conditions and reroute tasks without central approval. This distributed approach also enhances robustness and fault tolerance. If one agent fails, others can continue to function, and some can even take over the failed agent's tasks, ensuring the system's overall resilience. This makes MAS ideal for complex, dynamic, and uncertain environments.\n\n### 6. A Better Developer Experience (DevEx)\n\nUltimately, these benefits translate into a significantly improved developer experience. By automating mundane tasks, reducing cognitive load, and providing highly contextualized support, MAS empowers developers to be more creative, productive, and satisfied with their work. Developers can spend less time debugging and more time innovating, leading to a more engaging and fulfilling career.\n\n### The Future is Collaborative\n\nMulti-agent systems are not just a futuristic concept; they are actively reshaping the software development landscape today. By embracing this collaborative intelligence, developers can unlock new levels of efficiency, quality, and innovation. As AI continues to evolve, multi-agent systems will undoubtedly play an increasingly vital role in building the complex, intelligent applications of tomorrow.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "ec2f44b477b7d9203ca3d9bf3b835b81",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 tech_researcher created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "IVdK",
+      "code_hash": "753334f3e1f247db0d700f144f89d367",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 health_researcher created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "PdkV",
+      "code_hash": "dbb432f476a4207da43446908592f5fe",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 finance_researcher created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "oWHe",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
