@@ -459,7 +459,135 @@ def _(mo):
 
 
 @app.cell
+def _(mo):
+    mo.md("""
+    ### Part 2
+
+    #### Agent tool patterns and best practices
+
+    We'll do the following:
+
+    - connect to external MCP servers
+    - Implement long-running operations
+    - Build resumable workflows
+    - Understand when and how to use these patterns
+    """)
+    return
+
+
+@app.cell
 def _():
+    import uuid
+    # from google.genai import types
+
+    # from google.adk.agents import LlmAgent
+    # from google.adk.models.google_llm import Gemini
+    from google.adk.runners import Runner
+    # from google.adk.sessions import InMemorySessionService
+
+    from google.adk.tools.mcp_tool.mcp_toolset import McpToolset
+
+    # from google.adk.tools.tool_context import ToolContext
+    from google.adk.tools.mcp_tool.mcp_session_manager import (
+        StdioConnectionParams,
+    )
+    from mcp import StdioServerParameters
+
+    from google.adk.apps.app import App, ResumabilityConfig
+    from google.adk.tools.function_tool import FunctionTool
+
+    print("✅ ADK components imported successfully.")
+    return McpToolset, StdioConnectionParams, StdioServerParameters
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    ### Model Context Protocol
+
+    MCP enables agents to:
+
+    - __Access live, external data__ from databases, APIS, and
+    services without custom integration code
+    - __Leverage community-built tools__ with standardized
+    interfaces
+    - __Scale capabilities__ by connecting to multiple
+    specialized servers
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    ### How MCP Works
+
+    MCP connects your agent (the __client__) to the
+    external __MCP servers__ that provide tools:
+
+    - __MCP Server__: Provides specific tools (like image
+    generation, database access etc...)
+    - __MCP Client__: Your agent that uses those tools
+    - __All servers work the same way__ - standardized
+    interface
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    ### MCP workflow
+
+    1. Choose an MCP Server and tool
+    1. Create the MCP Toolset (configure connection)
+    1. Add it to your agent
+    1. Run and test the agent
+
+    For demo purposes we'll use [Evyerthing MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/everything)
+    - an npm packaged designed to testing MCP integrations.
+
+    We will used `getTinyImage` tool to return a simple test
+    image (16x16 pixels, Base64-encoded).
+
+
+    For prod you would use servers for Google Maps, Slack, Discord
+    etc...
+    """)
+    return
+
+
+@app.cell
+def _(McpToolset, StdioConnectionParams, StdioServerParameters):
+    # MCP integreation with Everything Server
+
+    mcp_image_server = McpToolset(
+        connection_params=StdioConnectionParams(
+            server_params=StdioServerParameters(
+                command="npx",  # Run MCP server via npx
+                arg=[
+                    "-y",  # Argument for npx to auto-confirm install
+                    "@modelcontextprotocol/server-everything",
+                ],
+                tool_filter=["getTinyImage"],
+            ),
+            timeout=30,
+        )
+    )
+
+    print("✅ MCP Tool created")
+    return (mcp_image_server,)
+
+
+@app.cell
+def _(Gemini, LlmAgent, mcp_image_server, retry_config):
+    # Create image agent with MCP integration
+    image_agent = LlmAgent(
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        name="image_agent",
+        instruction="Use the MCP Tool to generate images for user queries",
+        tools=[mcp_image_server],
+    )
     return
 
 
