@@ -2,7 +2,7 @@
 
 
 ```bash
-uvx edit --sandbox prompt-to-action.py
+uvx edit --sandbox day01.py
 ```
 
 ## ADK + CLI + WebGUI
