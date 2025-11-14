@@ -918,6 +918,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "google-adk" },
     { name = "marimo" },
+    { name = "mcp" },
     { name = "python-dotenv" },
 ]
 
@@ -930,6 +931,7 @@ dev = [
 requires-dist = [
     { name = "google-adk", specifier = ">=1.18.0" },
     { name = "marimo", specifier = ">=0.17.7" },
+    { name = "mcp", specifier = ">=1.21.0" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
 ]
 

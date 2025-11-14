@@ -2,6 +2,8 @@
 # requires-python = ">=3.14"
 # dependencies = [
 #     "google-adk==1.18.0",
+#     "ipython==9.7.0",
+#     "mcp==1.21.1",
 #     "protobuf==6.33.0",
 #     "python-dotenv==1.2.1",
 # ]
@@ -9,20 +11,29 @@
 
 import marimo
 
-__generated_with = "0.17.7"
+__generated_with = "0.17.8"
 app = marimo.App(width="medium")
+
+with app.setup:
+    # Initialization code that runs before all other cells
+
+    import marimo as mo
+    import os
+    from dotenv import load_dotenv
+
+    from google.genai import types
+    from google.adk.agents import LlmAgent
+    from google.adk.models.google_llm import Gemini
+    from google.adk.runners import InMemoryRunner
+    from google.adk.sessions import InMemorySessionService
+    from google.adk.tools import google_search, AgentTool, ToolContext
+    from google.adk.code_executors import BuiltInCodeExecutor
+
+    print("✅ ADK components imported successfully.")
 
 
 @app.cell
 def _():
-    import marimo as mo
-    import os
-    from dotenv import load_dotenv
-    return load_dotenv, mo, os
-
-
-@app.cell
-def _(mo):
     mo.md("""
     # Kaggle + Google Intensive Agent Course
 
@@ -34,7 +45,7 @@ def _(mo):
 
 
 @app.cell
-def _(load_dotenv, os):
+def _():
     load_dotenv()
 
     try:
@@ -47,28 +58,6 @@ def _(load_dotenv, os):
 
 @app.cell
 def _():
-    from google.genai import types
-
-    from google.adk.agents import LlmAgent
-    from google.adk.models.google_llm import Gemini
-    from google.adk.runners import InMemoryRunner
-    from google.adk.sessions import InMemorySessionService
-    from google.adk.tools import google_search, AgentTool, ToolContext
-    from google.adk.code_executors import BuiltInCodeExecutor
-
-    print("✅ ADK components imported successfully.")
-    return (
-        AgentTool,
-        BuiltInCodeExecutor,
-        Gemini,
-        InMemoryRunner,
-        LlmAgent,
-        types,
-    )
-
-
-@app.cell
-def _(mo):
     mo.md("""
     ### Helper functions
     Prints generated python code and results from the
@@ -109,7 +98,7 @@ def _():
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     ### Configure Retry Options
     LLMs can be sensitive to transient errors like rate
@@ -120,7 +109,7 @@ def _(mo):
 
 
 @app.cell
-def _(types):
+def _():
     retry_config = types.HttpRetryOptions(
         attempts=5,  # Maximum retry attempts
         exp_base=7,  # Delay multiplier
@@ -131,7 +120,7 @@ def _(types):
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     Generic tools provided in the ADK are great, but
     sometimes you need custom business logic.
@@ -193,7 +182,7 @@ def _():
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     second tool - grabbing the exchange rate:
     """)
@@ -252,7 +241,7 @@ def _():
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     now for creating our curreny agent!
     """)
@@ -260,13 +249,7 @@ def _(mo):
 
 
 @app.cell
-def _(
-    Gemini,
-    LlmAgent,
-    get_exchange_rate,
-    get_fee_for_payment_method,
-    retry_config,
-):
+def _(get_exchange_rate, get_fee_for_payment_method, retry_config):
     currency_agent = LlmAgent(
         name="currency_agent",
         model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
@@ -301,7 +284,7 @@ def _(
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     Time to test our currency agent!
     """)
@@ -309,7 +292,7 @@ def _(mo):
 
 
 @app.cell
-async def _(InMemoryRunner, currency_agent):
+async def _(currency_agent):
     currency_runner = InMemoryRunner(agent=currency_agent)
     _ = await currency_runner.run_debug(
         "I want to convert 500 US dollars to Euros using my Platinum Credit Card. how much will I receive?"
@@ -318,7 +301,7 @@ async def _(InMemoryRunner, currency_agent):
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     ### Improving Agent Reliability
 
@@ -331,7 +314,7 @@ def _(mo):
 
 
 @app.cell
-def _(BuiltInCodeExecutor, Gemini, LlmAgent, retry_config):
+def _(retry_config):
     calculation_agent = LlmAgent(
         name="CalculationAgent",
         model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
@@ -361,7 +344,7 @@ def _(BuiltInCodeExecutor, Gemini, LlmAgent, retry_config):
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     now we change the original instructions for the currency agent.
     """)
@@ -370,9 +353,6 @@ def _(mo):
 
 @app.cell
 def _(
-    AgentTool,
-    Gemini,
-    LlmAgent,
     calculation_agent,
     get_exchange_rate,
     get_fee_for_payment_method,
@@ -426,7 +406,7 @@ def _(
 
 
 @app.cell
-def _(InMemoryRunner, enhanced_currency_agent):
+def _(enhanced_currency_agent):
     enhanced_runner = InMemoryRunner(agent=enhanced_currency_agent)
     return (enhanced_runner,)
 
@@ -446,7 +426,7 @@ def _(enhanced_response, show_python_code_and_result):
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     agent tools vs sub-agents:
 
@@ -459,7 +439,7 @@ def _(mo):
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     ### Part 2
 
@@ -497,11 +477,19 @@ def _():
     from google.adk.tools.function_tool import FunctionTool
 
     print("✅ ADK components imported successfully.")
-    return McpToolset, StdioConnectionParams, StdioServerParameters
+    return (
+        App,
+        FunctionTool,
+        McpToolset,
+        ResumabilityConfig,
+        Runner,
+        StdioConnectionParams,
+        StdioServerParameters,
+    )
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     ### Model Context Protocol
 
@@ -518,7 +506,7 @@ def _(mo):
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     ### How MCP Works
 
@@ -535,7 +523,7 @@ def _(mo):
 
 
 @app.cell
-def _(mo):
+def _():
     mo.md("""
     ### MCP workflow
 
@@ -559,19 +547,18 @@ def _(mo):
 
 @app.cell
 def _(McpToolset, StdioConnectionParams, StdioServerParameters):
-    # MCP integreation with Everything Server
-
+    # MCP integration with Everything Server
     mcp_image_server = McpToolset(
         connection_params=StdioConnectionParams(
             server_params=StdioServerParameters(
                 command="npx",  # Run MCP server via npx
-                arg=[
+                args=[
                     "-y",  # Argument for npx to auto-confirm install
                     "@modelcontextprotocol/server-everything",
                 ],
                 tool_filter=["getTinyImage"],
             ),
-            timeout=60,
+            timeout=30,
         )
     )
 
@@ -580,7 +567,7 @@ def _(McpToolset, StdioConnectionParams, StdioServerParameters):
 
 
 @app.cell
-def _(Gemini, LlmAgent, mcp_image_server, retry_config):
+def _(mcp_image_server, retry_config):
     # Create image agent with MCP integration
     image_agent = LlmAgent(
         model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
@@ -592,7 +579,7 @@ def _(Gemini, LlmAgent, mcp_image_server, retry_config):
 
 
 @app.cell
-def _(InMemoryRunner, image_agent):
+def _(image_agent):
     mcp_runner = InMemoryRunner(agent=image_agent)
     return (mcp_runner,)
 
@@ -602,15 +589,15 @@ async def _(mcp_runner):
     image_response = await mcp_runner.run_debug(
         "Provide a sample tiny image", verbose=True
     )
-    return
+    return (image_response,)
 
 
 @app.cell
-def _(response):
+def _(image_response):
     from IPython.display import display, Image as IPImage
     import base64
 
-    for event in response:
+    for event in image_response:
         if event.content and event.content.parts:
             for part in event.content.parts:
                 if hasattr(part, "function_response") and part.function_response:
@@ -619,6 +606,208 @@ def _(response):
                     ):
                         if item.get("type") == "image":
                             display(IPImage(data=base64.b64decode(item["data"])))
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Kaggle MCP
+    """)
+    return
+
+
+@app.cell
+def _(McpToolset, StdioConnectionParams, StdioServerParameters):
+    kaggle_server = McpToolset(
+        connection_params=StdioConnectionParams(
+            server_params=StdioServerParameters(
+                command="npx",
+                args=["-y", "mcp-remote", "https://www.kaggle.com/mcp"],
+            ),
+            timeout=30,
+        )
+    )
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    github mcp
+    """)
+    return
+
+
+@app.cell
+def _(McpToolset):
+    from google.adk.tools.mcp_tool.mcp_session_manager import (
+        StreamableHTTPServerParams,
+    )
+
+    GITHUB_TOKEN = "THIS_ISNT_REAL_NOTHING_IS_REAL"
+
+    github_server = McpToolset(
+        connection_params=StreamableHTTPServerParams(
+            url="https://api.githubcopilot.com/mcp/",
+            headers={
+                "Authorization": f"Bearer {GITHUB_TOKEN}",
+                "X-MCP-Toolsets": "all",
+                "X-MCP-Readonly": "true",
+            },
+        ),
+    )
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    long running operations/ human-in-the-loop
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    creating a shipping  tool with approval logic
+    """)
+    return
+
+
+@app.cell
+def _():
+    LARGE_ORDER_THRESHOLD = 5
+
+
+    def place_shipping_order(
+        num_containers: int, destination: str, tool_context: ToolContext
+    ) -> dict:
+        """Places a shipping order. Requires approval if ordering more than 5 containers (LARGE_ORDER_THRESHOLD).
+
+        Args:
+            num_containers: Number of containers to ship
+            destination: Shipping destination
+
+        Returns:
+            Dictionary with order status
+        """
+
+        # -----------------------------------------------------------------------------------------------
+        # -----------------------------------------------------------------------------------------------
+        # SCENARIO 1: Small orders (≤5 containers) auto-approve
+        if num_containers <= LARGE_ORDER_THRESHOLD:
+            return {
+                "status": "approved",
+                "order_id": f"ORD-{num_containers}-AUTO",
+                "num_containers": num_containers,
+                "destination": destination,
+                "message": f"Order auto-approved: {num_containers} containers to {destination}",
+            }
+
+        # -----------------------------------------------------------------------------------------------
+        # -----------------------------------------------------------------------------------------------
+        # SCENARIO 2: This is the first time this tool is called. Large orders need human approval - PAUSE here.
+        if not tool_context.tool_confirmation:
+            tool_context.request_confirmation(
+                hint=f"⚠️ Large order: {num_containers} containers to {destination}. Do you want to approve?",
+                payload={
+                    "num_containers": num_containers,
+                    "destination": destination,
+                },
+            )
+            return {  # This is sent to the Agent
+                "status": "pending",
+                "message": f"Order for {num_containers} containers requires approval",
+            }
+
+        # -----------------------------------------------------------------------------------------------
+        # -----------------------------------------------------------------------------------------------
+        # SCENARIO 3: The tool is called AGAIN and is now resuming. Handle approval response - RESUME here.
+        if tool_context.tool_confirmation.confirmed:
+            return {
+                "status": "approved",
+                "order_id": f"ORD-{num_containers}-HUMAN",
+                "num_containers": num_containers,
+                "destination": destination,
+                "message": f"Order approved: {num_containers} containers to {destination}",
+            }
+        else:
+            return {
+                "status": "rejected",
+                "message": f"Order rejected: {num_containers} containers to {destination}",
+            }
+
+
+    print("✅ Long-running functions created!")
+    return (place_shipping_order,)
+
+
+@app.cell
+def _(FunctionTool, place_shipping_order, retry_config):
+    # Create shipping agent with pausable tool
+    shipping_agent = LlmAgent(
+        name="shipping_agent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        instruction="""You are a shipping coordinator assistant.
+  
+      When users request to ship containers:
+       1. Use the place_shipping_order tool with the number of containers and destination
+       2. If the order status is 'pending', inform the user that approval is required
+       3. After receiving the final result, provide a clear summary including:
+          - Order status (approved/rejected)
+          - Order ID (if available)
+          - Number of containers and destination
+       4. Keep responses concise but informative
+      """,
+        tools=[FunctionTool(func=place_shipping_order)],
+    )
+
+    print("✅ Shipping Agent created!")
+    return (shipping_agent,)
+
+
+@app.cell
+def _():
+    mo.md("""
+    wrap the stateless llmagent in an app with resumability enabled to add a persistence layer and restore state.
+    """)
+    return
+
+
+@app.cell
+def _(App, ResumabilityConfig, shipping_agent):
+    # Wrap the agent in a resumable app - THIS IS THE KEY FOR LONG-RUNNING OPERATIONS!
+    shipping_app = App(
+        name="shipping_coordinator",
+        root_agent=shipping_agent,
+        resumability_config=ResumabilityConfig(is_resumable=True),
+    )
+
+    print("✅ Resumable app created!")
+    return (shipping_app,)
+
+
+@app.cell
+def _(Runner, shipping_app):
+    session_service = InMemorySessionService()
+
+    # Create runner with the resumable app
+    shipping_runner = Runner(
+        app=shipping_app,  # Pass the app instead of the agent
+        session_service=session_service,
+    )
+
+    print("✅ Runner created!")
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    building the workflow
+    """)
     return
 
 
