@@ -177,9 +177,28 @@ def _(image_response):
     return
 
 
-@app.cell
-def _():
-    return
+app._unparsable_cell(
+    r"""
+    def generate_image(
+        prompt: str, num_images: int, tool_context: ToolContext
+    ) -> dict:
+        \"\"\"Creates a generate image request. Requires
+        approval if more than 1 image is requested.
+
+        Args:
+            prompt: User prompt for image content
+            num_images: Number of images to generate
+
+        Returns:
+            Dictionary with image status
+        \"\"\"
+        # ^ placeholder stuff for now
+
+        if num_images > 1:
+        
+    """,
+    name="_"
+)
 
 
 if __name__ == "__main__":
