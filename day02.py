@@ -571,7 +571,7 @@ def _(McpToolset, StdioConnectionParams, StdioServerParameters):
                 ],
                 tool_filter=["getTinyImage"],
             ),
-            timeout=30,
+            timeout=60,
         )
     )
 
@@ -588,6 +588,42 @@ def _(Gemini, LlmAgent, mcp_image_server, retry_config):
         instruction="Use the MCP Tool to generate images for user queries",
         tools=[mcp_image_server],
     )
+    return (image_agent,)
+
+
+@app.cell
+def _(InMemoryRunner, image_agent):
+    mcp_runner = InMemoryRunner(agent=image_agent)
+    return (mcp_runner,)
+
+
+@app.cell
+async def _(mcp_runner):
+    image_response = await mcp_runner.run_debug(
+        "Provide a sample tiny image", verbose=True
+    )
+    return
+
+
+@app.cell
+def _(response):
+    from IPython.display import display, Image as IPImage
+    import base64
+
+    for event in response:
+        if event.content and event.content.parts:
+            for part in event.content.parts:
+                if hasattr(part, "function_response") and part.function_response:
+                    for item in part.function_response.response.get(
+                        "content", []
+                    ):
+                        if item.get("type") == "image":
+                            display(IPImage(data=base64.b64decode(item["data"])))
+    return
+
+
+@app.cell
+def _():
     return
 
 
