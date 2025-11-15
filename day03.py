@@ -167,5 +167,105 @@ print("✅ Upgraded to persistent sessions!")
 print(f"   - Database: my_agent_data.db")
 print(f"   - Sessions will survive restarts!")
 
+
+# verify persistence
+await run_session(
+    runner,
+    ["Hi, I am asenetcky! What is your purpose?", "Hello! What is my name?"],
+    "test-db-session-01"
+)
+
+# restart kernal
+
+await run_session(
+    runner,
+    ["What is the capital of India?", "Hello! What is my name?"],
+    "test-db-session-01",
+)
+
+# verify session isolation
+await run_session(
+    runner, ["Hello! What is my name?"], "test-db-session-02"
+)  # Note, we are using new session name
+
+# lets take a look a the DB shall we?
+
+import sqlite3
+
+def check_data_in_db():
+    with sqlite3.connect("my_agent_data.db") as connection:
+        cursor = connection.cursor()
+        result = cursor.execute(
+            "select app_name, session_id, author, content from events"
+        )
+        print([_[0] for _ in result.description])
+        for each in result.fetchall():
+            print(each)
+
+check_data_in_db()
+
+
+# pretty cool but that all adds up fast. which leads us to...
+# Conext Compaction
+
+# basic idea:
+
+# 1. create an app
+# 2. pass app to chatbot_agent
+# 3. create config to do context compaction.
+# this defines how often to compact and how many
+# previous conversaitons to retain
+
+# re-define our app with Events Compaction enabled
+
+research_app_compacting = App(
+    name="research_app_compacting",
+    root_agent=chatbot_agent,
+    #this is new
+    events_compaction_config=EventsCompactionConfig(
+        compaction_interval=3, # Trigger compaction ever 3 invocations
+        overlap_size=1, # keep 1 previous turn for context
+    ),
+)
+
+db_url = "sqlite:///my_agent_data.db"  # Local SQLite file
+session_service = DatabaseSessionService(db_url=db_url)
+
+research_runner_compacting = Runner(
+    app=research_app_compacting, session_service=session_service
+)
+
+print("✅ Research App upgraded with Events Compaction!")
+
+# demo
+# Turn 1
+await run_session(
+    research_runner_compacting,
+    "What is the latest news about AI in healthcare?",
+    "compaction_demo",
+)
+
+# Turn 2
+await run_session(
+    research_runner_compacting,
+    "Are there any new developments in drug discovery?",
+    "compaction_demo",
+)
+
+# Turn 3 - Compaction should trigger after this turn!
+await run_session(
+    research_runner_compacting,
+    "Tell me more about the second development you found.",
+    "compaction_demo",
+)
+
+# Turn 4
+await run_session(
+    research_runner_compacting,
+    "Who are the main companies involved in that?",
+    "compaction_demo",
+)
+
+
 ### Part 2 Agent Memory (Long Term)
 
