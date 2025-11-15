@@ -145,9 +145,27 @@ await run_session(
 #|DatabaseSessionService 	|Self-managed apps 	|✅ Survives restarts 	|Small to medium apps|
 #|Agent Engine Sessions 	|Production on GCP 	|✅ Fully managed 	|Enterprise scale|
 
+# let's use DatabaseSessionService with SQLite.
 
+# step 1: create the same agent (notice we it's LlmAgent)
+chatbot_agent = LlmAgent(
+    model=Gemini(model=MODEL_NAME, retry_options=retry_config),
+    name="text_chat_bot",
+    description="A text chatbot with persistent memory",
+)
 
+# step 2: switch to DatabaseSessionService
+# SQLite database created automatically
 
+db_url = "sqlite:///my_agent_data.db" # local sqlite file
+session_service = DatabaseSessionService(db_url=db_url)
+
+# step 3: create new runner w/ persistant storage
+runner = Runner(agent=chatbot_agent, app_name=APP_NAME, session_service=session_service)
+
+print("✅ Upgraded to persistent sessions!")
+print(f"   - Database: my_agent_data.db")
+print(f"   - Sessions will survive restarts!")
 
 ### Part 2 Agent Memory (Long Term)
 
