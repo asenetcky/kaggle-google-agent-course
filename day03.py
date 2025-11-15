@@ -29,11 +29,11 @@ retry_config = types.HttpRetryOptions(
 
 
 # Day 3
-## Agent Sessions
+## Agent Sessions (Short Term)
 ### Part 1
 
+### helper functions
 # define helper functions that will be reused throughout the notebook
-# Define helper functions that will be reused throughout the notebook
 async def run_session(
     runner_instance: Runner,
     user_queries: list[str] | str = None,
@@ -82,5 +82,72 @@ async def run_session(
     else:
         print("No queries!")
 
-### Part 2
+### building a stateful agent
+APP_NAME = "default"
+USER_ID = "default"
+SESSION = "deault"
+
+MODEL_NAME = "gemini-2.5-flash-lite"
+
+# step 1: create the LLM Agent
+root_agent = Agent(
+    model=Gemini(
+        model= MODEL_NAME,
+        retry_options=retry_config
+    ),
+    name="text_chat_bot",
+    description="A text chatbot"
+)
+
+
+# step 2: set up session management
+# InMemorySessionService stores conversions in RAM
+
+session_service = InMemorySessionService()
+
+
+# step 3: Create the Runner
+runner = Runner(agent=root_agent, app_name=APP_NAME, session_service=session_service)
+
+print("✅ Stateful agent initialized!")
+print(f"   - Application: {APP_NAME}")
+print(f"   - User: {USER_ID}")
+print(f"   - Using: {session_service.__class__.__name__}")
+
+# testing our stateful agent
+# run a conversation with two queries in the same session
+# notice: both queries are part of the SAME session, so context is maintained
+
+await run_session(
+    runner,
+    [
+        "Hi, I am asenetcky! What is the capital of United States?",
+        "Hello! What is my name?" # This time, the agent should remember...
+    ],
+    "stateful-agentic-session",
+)
+
+# testing agent forgetfulness
+# restart the kernel rereun everything except run_session
+# and run the following:
+
+# Run this cell after restarting the kernel. All this history will be gone...
+await run_session(
+    runner,
+    ["What did I ask you about earlier?", "And remind me, what's my name?"],
+    "stateful-agentic-session",
+)  # Note, we are using same session name
+
+# Persistent Sessions with `DatabaseSessionService`
+
+#|Service 	|Use Case 	|Persistence 	|Best For|
+#|InMemorySessionService 	|Development & Testing 	|❌ Lost on restart 	|Quick prototypes|
+#|DatabaseSessionService 	|Self-managed apps 	|✅ Survives restarts 	|Small to medium apps|
+#|Agent Engine Sessions 	|Production on GCP 	|✅ Fully managed 	|Enterprise scale|
+
+
+
+
+
+### Part 2 Agent Memory (Long Term)
 
