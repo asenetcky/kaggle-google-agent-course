@@ -169,6 +169,72 @@
     },
     {
       "id": "VNrz",
+      "code_hash": "ddcaec9d553938388a0be71b917e9215",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Agent created! :)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "izTf",
+      "code_hash": "444b7a4717a98e419786bcaec09aef2d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"creating-the-runner\">Creating the Runner</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "gDXK",
+      "code_hash": "98c9ae635d108167449f969692cb5340",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Key configuration considerations:</strong></span>\n<span class=\"paragraph\">The <code>Runner</code> will need the following services\nto enable memory functionality:</span>\n<ul>\n<li><code>session_service</code>: Manages conversation threads\nand events</li>\n<li><code>memory_service</code>: Provides long-term knowledge \nstorage</li>\n</ul>\n<span class=\"paragraph\">Both work together: Sessions capture convos,\nMemory stores knowledge for retreival across\nsessions.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Gpqv",
+      "code_hash": "c2fa69dd3abcb3c3b5126ea688c365e1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Agent and Runner created with memory support! :)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "hwrJ",
       "code_hash": null,
       "outputs": [],
       "console": []

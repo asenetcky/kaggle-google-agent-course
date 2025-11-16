@@ -51,7 +51,7 @@ def _():
         initial_delay=1,
         http_status_codes=[429, 500, 503, 504],  # Retry on these HTTP errors
     )
-    return
+    return (retry_config,)
 
 
 @app.cell
@@ -168,7 +168,7 @@ def _():
 def _():
     # ADK's built-in Memory Service for dev/test
     memory_service = InMemoryMemoryService()
-    return
+    return (memory_service,)
 
 
 @app.cell
@@ -185,6 +185,71 @@ def _():
     First, create a simple agent.
     """)
     return
+
+
+@app.cell
+def _(retry_config):
+    # Constants that will be used throughout
+    APP_NAME = "MemoryDemoApp"
+    USER_ID = "demo_user"
+    mdl_gem_lite = "gemini-2.5-flash-lite"
+
+    # Agent
+
+    user_agent = LlmAgent(
+        model=Gemini(model=mdl_gem_lite, retry_options=retry_config),
+        name="MemoryDemoAgent",
+        instruction="Answer user questions in simple words.",
+    )
+    print("Agent created! :)")
+    return APP_NAME, USER_ID, user_agent
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Creating the Runner
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Key configuration considerations:**
+
+    The `Runner` will need the following services
+    to enable memory functionality:
+
+    - `session_service`: Manages conversation threads
+    and events
+
+    - `memory_service`: Provides long-term knowledge
+    storage
+
+    Both work together: Sessions capture convos,
+    Memory stores knowledge for retreival across
+    sessions.
+    """)
+    return
+
+
+@app.cell
+def _(memory_service, user_agent):
+    # Create Session Service
+    session_service = InMemoryMemoryService()  # Handles convos
+
+    # Runner with BOTH services
+    runner = Runner(
+        agent=user_agent,
+        app_name="MemoryDemoApp",
+        session_service=session_service,
+        memory_service=memory_service,  # now available!
+    )
+
+
+    print("Agent and Runner created with memory support! :)")
+    return (session_service,)
 
 
 @app.cell
