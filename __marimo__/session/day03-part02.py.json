@@ -18,8 +18,8 @@
       "console": []
     },
     {
-      "id": "kEkG",
-      "code_hash": "1b44af4a6787ddcb5241e9d3de7ed6d9",
+      "id": "Hbol",
+      "code_hash": "6b4218ec4e0fe3a1dc39b6439f34c4e0",
       "outputs": [
         {
           "type": "data",
@@ -31,7 +31,7 @@
       "console": []
     },
     {
-      "id": "YIUL",
+      "id": "MJUe",
       "code_hash": "2df7cc9b90c439552e532d6a2820c544",
       "outputs": [
         {
@@ -44,8 +44,8 @@
       "console": []
     },
     {
-      "id": "fTqK",
-      "code_hash": "96848e02f83e5a8fa4718c0f3ca16539",
+      "id": "vblA",
+      "code_hash": "6d9fbffb3a1bdbc1eb2e07ae62005bfd",
       "outputs": [
         {
           "type": "data",
@@ -57,8 +57,8 @@
       "console": []
     },
     {
-      "id": "Hhfy",
-      "code_hash": "c1d3f53ed4365a3de1f4692235594b0c",
+      "id": "bkHC",
+      "code_hash": "4c8dcccae2db1af02a7091e40b5721d2",
       "outputs": [
         {
           "type": "data",
@@ -77,8 +77,8 @@
       ]
     },
     {
-      "id": "bwfv",
-      "code_hash": "ba96bc5b6522a096414bf0e0f29bf52f",
+      "id": "lEQa",
+      "code_hash": "6407db62f305f167363b00858280735a",
       "outputs": [
         {
           "type": "data",
@@ -90,8 +90,8 @@
       "console": []
     },
     {
-      "id": "XXVA",
-      "code_hash": "c6376a99884711e0a2b41a66ed3df4fe",
+      "id": "PKri",
+      "code_hash": "589a1e5b6fc4571d62eef3cb4b763127",
       "outputs": [
         {
           "type": "data",
@@ -103,8 +103,8 @@
       "console": []
     },
     {
-      "id": "xZmT",
-      "code_hash": "5589c36ab73351c88e8df28fb63640a3",
+      "id": "Xref",
+      "code_hash": "b4ec46df8e95fe0274b7841aab101d12",
       "outputs": [
         {
           "type": "data",
@@ -116,20 +116,20 @@
       "console": []
     },
     {
-      "id": "dHlA",
-      "code_hash": "7d3ed59cae63d458c81944086d0afd3a",
+      "id": "SFPL",
+      "code_hash": "4ed17e189979a19c6ffba61516bbf255",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"initailize-memory\">Initailize Memory</h3>\n<span class=\"paragraph\">ADK has multiple <code>MemoryService</code> implmentations\nthrough the <code>BaseMemoryService</code> interface:</span>\n<ul>\n<li><code>InMemoryMemoryService</code> - Built-in for \n    prototyping and testing (keyword matching, \n    no persistence)</li>\n<li><code>VertexAiMemoryBankService</code> - Managed cloud\n    service with LLM-powered consolidation\n    and semantic search</li>\n<li><strong>Custom Implementations</strong> - You can build\n    your own using databases (managed services\n    are recommended)</li>\n</ul></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"initailize-memory\">Initailize Memory</h3>\n<span class=\"paragraph\">ADK has multiple <code>MemoryService</code> implmentations\nthrough the <code>BaseMemoryService</code> interface:</span>\n<ul>\n<li><code>InMemoryMemoryService</code> - Built-in for\n    prototyping and testing (keyword matching,\n    no persistence)</li>\n<li><code>VertexAiMemoryBankService</code> - Managed cloud\n    service with LLM-powered consolidation\n    and semantic search</li>\n<li><strong>Custom Implementations</strong> - You can build\n    your own using databases (managed services\n    are recommended)</li>\n</ul></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "iQDB",
+      "id": "BYtC",
       "code_hash": "ab7ff7fb85e7033b25c3d67cf5985f2f",
       "outputs": [
         {
@@ -142,8 +142,8 @@
       "console": []
     },
     {
-      "id": "HDin",
-      "code_hash": "c9dc5b1ecc49f208390653d1761aba21",
+      "id": "RGSE",
+      "code_hash": "fae809a891a9d8a887fe627fb5e598c0",
       "outputs": [
         {
           "type": "data",
@@ -155,8 +155,8 @@
       "console": []
     },
     {
-      "id": "udTz",
-      "code_hash": "ad9c0b0abd0576e455784d49abeb9fc3",
+      "id": "Kclp",
+      "code_hash": "13f8bbedb62d1e36bef413e55451f902",
       "outputs": [
         {
           "type": "data",
@@ -168,8 +168,8 @@
       "console": []
     },
     {
-      "id": "VNrz",
-      "code_hash": "ddcaec9d553938388a0be71b917e9215",
+      "id": "emfo",
+      "code_hash": "23e8d34202417b332c74011b8b0cc231",
       "outputs": [
         {
           "type": "data",
@@ -188,8 +188,8 @@
       ]
     },
     {
-      "id": "izTf",
-      "code_hash": "444b7a4717a98e419786bcaec09aef2d",
+      "id": "Hstk",
+      "code_hash": "9e0b7075e54a2b64732c1ecf03d05dfb",
       "outputs": [
         {
           "type": "data",
@@ -201,20 +201,20 @@
       "console": []
     },
     {
-      "id": "gDXK",
-      "code_hash": "98c9ae635d108167449f969692cb5340",
+      "id": "nWHF",
+      "code_hash": "2151df96ace46343a99b86c459a2116d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Key configuration considerations:</strong></span>\n<span class=\"paragraph\">The <code>Runner</code> will need the following services\nto enable memory functionality:</span>\n<ul>\n<li><code>session_service</code>: Manages conversation threads\nand events</li>\n<li><code>memory_service</code>: Provides long-term knowledge \nstorage</li>\n</ul>\n<span class=\"paragraph\">Both work together: Sessions capture convos,\nMemory stores knowledge for retreival across\nsessions.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Key configuration considerations:</strong></span>\n<span class=\"paragraph\">The <code>Runner</code> will need the following services\nto enable memory functionality:</span>\n<ul>\n<li><code>session_service</code>: Manages conversation threads\nand events</li>\n<li><code>memory_service</code>: Provides long-term knowledge\nstorage</li>\n</ul>\n<span class=\"paragraph\">Both work together: Sessions capture convos,\nMemory stores knowledge for retreival across\nsessions.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "Gpqv",
+      "id": "iLit",
       "code_hash": "c2fa69dd3abcb3c3b5126ea688c365e1",
       "outputs": [
         {
@@ -234,7 +234,131 @@
       ]
     },
     {
-      "id": "hwrJ",
+      "id": "ZHCJ",
+      "code_hash": "f4272001066db7cf4f5ad57ca22dabf6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-callout-output data-html='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;&lt;strong&gt;Important&lt;/strong&gt;&lt;/span&gt;&#92;n&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Configuration vs Usage:&lt;/span&gt;&#92;n&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Adding &lt;code&gt;memory_service&lt;/code&gt; to the &lt;code&gt;Runner&lt;/code&gt;&#92;nmakes memory &lt;em&gt;available&lt;/em&gt; but not automatically&#92;nuse it.&lt;/span&gt;&#92;n&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;It must be explicitly:&lt;/span&gt;&#92;n&lt;ol&gt;&#92;n&lt;li&gt;&lt;strong&gt;Ingest data&lt;/strong&gt; using &#92;n&lt;code&gt;add_session_to_memory()&lt;/code&gt;&lt;/li&gt;&#92;n&lt;li&gt;&lt;strong&gt;Enable retrieval&lt;/strong&gt; by giving your&#92;nagent memory tools&#92;n(&lt;code&gt;load_memory&lt;/code&gt; or &lt;code&gt;preload_memory&lt;/code&gt;)&lt;/li&gt;&#92;n&lt;/ol&gt;&lt;/span&gt;&quot;' data-kind='&quot;warn&quot;'></marimo-callout-output>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "1c41da90e080409a3855630046e3f759",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"memoryservice-implementation-options\"><code>MemoryService</code> Implementation Options</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "5efe6e0fcd7daadd3a7de88fe64f7173",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">This notebook: <code>InMemoryMemoryService</code></span>\n<ul>\n<li>Stores raw convo events <em>w/o</em> consolidation</li>\n<li>Keyword-based search (simple word matching)</li>\n<li>In-memory storage (resets on restart)</li>\n<li>Ideal for learning/local dev</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Production: <code>VertexAiMeoryBankService</code></span>\n<ul>\n<li>LLM-powered extraction of <em>key facts</em></li>\n<li>Semantic search (meaning-based retrieval)</li>\n<li>Persistent cloud storage</li>\n<li>Integrates external knowledge sources</li>\n</ul>\n</li>\n<li>NOTE: There is nice API consistency/ DX - both\nimplementations use <em>identical</em> methods\n(<code>add_session_to_memory()</code>, <code>search_memory()</code>).\nSo this single workflow will apply to all\nmemory services.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "178b4ceee14013e78a25a78154f17fb3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"ingest-session-data-into-memory\">Ingest Session Data into Memory</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "7c2c0d4367c7a75367961c1faf95b14b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">Why should you transfer Session data to Memory?</span>\n</blockquote></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "9591beed3033be92abb99b30bd6afeea",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Now that memory is initialized, it's time\nto start populating with <em>knowledge</em>.</li>\n<li><code>MemoryService</code> starts empty.</li>\n<li>All convos stored in <em>Sessions</em></li>\n<li>Sessions contain <em>raw events</em></li>\n<li>raw events are: messages, tool calls and\nmetadata</li>\n<li>To make available to memory explicitly\ntransfer information with\n<code>add_session_to_memory()</code></li>\n<li>Prod will perform intelligent consolidation</li>\n<li>Let's get some data to store...</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "da0fbef0e36e776a22e7e1e3563c8c7c",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "'InMemoryMemoryService' object has no attribute 'get_session'",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: conversation-01\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_bkHC_.py&quot;</span>, line <span class=\"m\">11</span>, in <span class=\"n\">run_session</span>\n<span class=\"w\">    </span><span class=\"n\">session</span> <span class=\"o\">=</span> <span class=\"k\">await</span> <span class=\"n\">session_service</span><span class=\"o\">.</span><span class=\"n\">create_session</span><span class=\"p\">(</span>\n<span class=\"w\">                    </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">AttributeError</span>: <span class=\"n\">&#39;InMemoryMemoryService&#39; object has no attribute &#39;create_session&#39;</span>\n\n<span class=\"gt\">During handling of the above exception, another exception occurred:</span>\n\n<span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/alex/.cache/uv/archive-v0/nSf1Qf6IV586ZfT_frBVB/lib/python3.14/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">117</span>, in <span class=\"n\">execute_cell_async</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"k\">await</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">last_expr</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n<span class=\"w\">           </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_ulZA_.py&quot;</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"k\">await</span> <span class=\"n\">run_session</span><span class=\"p\">(</span>\n<span class=\"w\">    </span><span class=\"o\">...&lt;</span><span class=\"mi\">4</span> <span class=\"n\">lines</span><span class=\"o\">&gt;...</span>\n<span class=\"w\">    </span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_bkHC_.py&quot;</span>, line <span class=\"m\">15</span>, in <span class=\"n\">run_session</span>\n<span class=\"w\">    </span><span class=\"n\">session</span> <span class=\"o\">=</span> <span class=\"k\">await</span> <span class=\"n\">session_service</span><span class=\"o\">.</span><span class=\"n\">get_session</span><span class=\"p\">(</span>\n<span class=\"w\">                    </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">AttributeError</span>: <span class=\"n\">&#39;InMemoryMemoryService&#39; object has no attribute &#39;get_session&#39;</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "28e1988f8aa489702aab694025526e7d",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "'InMemoryMemoryService' object has no attribute 'get_session'",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/alex/.cache/uv/archive-v0/nSf1Qf6IV586ZfT_frBVB/lib/python3.14/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">112</span>, in <span class=\"n\">execute_cell_async</span>\n<span class=\"w\">    </span><span class=\"k\">await</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_ecfG_.py&quot;</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">session</span> <span class=\"o\">=</span> <span class=\"k\">await</span> <span class=\"n\">session_service</span><span class=\"o\">.</span><span class=\"n\">get_session</span><span class=\"p\">(</span>\n<span class=\"w\">                    </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">AttributeError</span>: <span class=\"n\">&#39;InMemoryMemoryService&#39; object has no attribute &#39;get_session&#39;</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "Rmhn",
       "code_hash": null,
       "outputs": [],
       "console": []

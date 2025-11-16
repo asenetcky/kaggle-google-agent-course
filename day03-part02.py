@@ -108,7 +108,7 @@ def _(APP_NAME, USER_ID, session_service):
 
 
     print("✅ Helper functions defined.")
-    return
+    return (run_session,)
 
 
 @app.cell
@@ -249,7 +249,147 @@ def _(memory_service, user_agent):
 
 
     print("Agent and Runner created with memory support! :)")
-    return (session_service,)
+    return runner, session_service
+
+
+@app.cell
+def _():
+    mo.callout(
+        kind="warn",
+        value=mo.md(
+            """
+            **Important**
+
+            Configuration vs Usage:
+
+            Adding `memory_service` to the `Runner`
+            makes memory *available* but not automatically
+            use it.
+
+            It must be explicitly:
+
+            1. **Ingest data** using 
+            `add_session_to_memory()`
+
+            1. **Enable retrieval** by giving your
+            agent memory tools
+            (`load_memory` or `preload_memory`)
+
+            """
+        ),
+    )
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### `MemoryService` Implementation Options
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    - This notebook: `InMemoryMemoryService`
+
+        - Stores raw convo events *w/o* consolidation
+
+        - Keyword-based search (simple word matching)
+
+        - In-memory storage (resets on restart)
+
+        - Ideal for learning/local dev
+
+    - Production: `VertexAiMeoryBankService`
+
+        - LLM-powered extraction of *key facts*
+
+        - Semantic search (meaning-based retrieval)
+
+        - Persistent cloud storage
+
+        - Integrates external knowledge sources
+
+    - NOTE: There is nice API consistency/ DX - both
+    implementations use *identical* methods
+    (`add_session_to_memory()`, `search_memory()`).
+    So this single workflow will apply to all
+    memory services.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ## Ingest Session Data into Memory
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    > Why should you transfer Session data to Memory?
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    - Now that memory is initialized, it's time
+    to start populating with *knowledge*.
+
+    - `MemoryService` starts empty.
+
+    - All convos stored in *Sessions*
+
+    - Sessions contain *raw events*
+
+    - raw events are: messages, tool calls and
+    metadata
+
+    - To make available to memory explicitly
+    transfer information with
+    `add_session_to_memory()`
+
+    - Prod will perform intelligent consolidation
+
+    - Let's get some data to store...
+    """)
+    return
+
+
+@app.cell
+async def _(run_session, runner):
+    # example: user tells agent their fav color
+    await run_session(
+        runner,
+        "My favorite color is sea-green. Can you write a Haiku about it?",
+        "conversation-01",  # Session ID
+    )
+    return
+
+
+@app.cell
+async def _(APP_NAME, USER_ID, session_service):
+    session = await session_service.get_session(
+        app_name=APP_NAME, user_id=USER_ID, session_id="conversation-01"
+    )
+
+    # Let's see what's in the session
+    print("📝 Session contains:")
+    for event in session.events:
+        text = (
+            event.content.parts[0].text[:60]
+            if event.content and event.content.parts
+            else "(empty)"
+        )
+        print(f"  {event.content.role}: {text}...")
+    return
 
 
 @app.cell
