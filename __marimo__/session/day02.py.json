@@ -1,0 +1,649 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.8"
+  },
+  "cells": [
+    {
+      "id": "setup",
+      "code_hash": "faa272f096853ddde6111ffed3501d8a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 ADK components imported successfully.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "a597c4e987f7a77d5648339d2ba554a0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"kaggle-google-intensive-agent-course\">Kaggle + Google Intensive Agent Course</h1>\n<h2 id=\"day-two-agent-tools\">Day Two - Agent Tools</h2>\n<h3 id=\"part-1\">Part 1</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "a64c7edc529f0b6307fe8a9d81d16669",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "afbcc0f951f634aa3e08f1f02ac51be4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"helper-functions\">Helper functions</h3>\n<span class=\"paragraph\">Prints generated python code and results from the\ncode execution tool:</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "343b0f11173fd6daa1c188173710d22c",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "9b7698729b8cd05c01d8e77f556a8305",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"configure-retry-options\">Configure Retry Options</h3>\n<span class=\"paragraph\">LLMs can be sensitive to transient errors like rate\nlimits or temporary server unavailability. Retrying\noptions automatically handles some of these errors.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "c52137f61eaada1ef0986ce01952dfd9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "a56d8f8506fcce87841f0fbf66ca3c95",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Generic tools provided in the ADK are great, but\nsometimes you need custom business logic.\nAny python function can be a tool, and this\ngives you fine-tuned control over everything.</span>\n<h3 id=\"example-currency-converter-agent\">Example: Currency Converter Agent</h3>\n<span class=\"paragraph\">First tool - getting fees for payment methods:</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "8251ea1bb443b66647573c30e88b1d52",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "8c16b9c9a5d92c46ff5a9fe02c860f68",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">second tool - grabbing the exchange rate:</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "4cff213c78dfd9d3b736bd735782102b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "ea0594af30df37e934a7a37733e4e218",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">now for creating our curreny agent!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "547729e01e3293a3b34ee3bb4c3ad505",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "a5ec2d5c910f057d200d12ba2d8ff534",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Time to test our currency agent!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "240490cb23f9ac25e063dbde106f9e45",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "a1a7a61386286a994bc1aa2417b6741b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"improving-agent-reliability\">Improving Agent Reliability</h3>\n<span class=\"paragraph\">Agent's can be pretty iffy on the math.... but we\ncan make a tool and/or some code they can use\nto calculate the math for them, which is much\nmore reliable.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "e05e5291b3012588e26739c9a492cd2f",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "bcaa9f5dcda44974e561562838eb71c3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">now we change the original instructions for the currency agent.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "5203642ba0339f9517e68d6d1b3d535e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "fcffc6f1fd768ef8e27c8819a69a9f74",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "08c3f52d945c872b5ee52cdb198d40b8",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "790cb7e171a3a1fb33a77c331f6c57f5",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "58e4abce64774940772330e8c0a81bb9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">agent tools vs sub-agents:</span>\n<ul>\n<li>agent tools: Agent A uses Agent B as a <em>tool</em></li>\n<li>sub-agent: Agent A transfers control to Agent B\ncompletely, so it's  hand-off to something like a\nspecialist.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "3030d301896abdd190c2f5f0b4672bc2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"part-2\">Part 2</h3>\n<h4 id=\"agent-tool-patterns-and-best-practices\">Agent tool patterns and best practices</h4>\n<span class=\"paragraph\">We'll do the following:</span>\n<ul>\n<li>connect to external MCP servers</li>\n<li>Implement long-running operations</li>\n<li>Build resumable workflows</li>\n<li>Understand when and how to use these patterns</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "da3afd037465052d43e7e3a73aa2c492",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 ADK components imported successfully.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "bb91c887bedac4a85dd0e4a2493e57b2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"model-context-protocol\">Model Context Protocol</h3>\n<span class=\"paragraph\">MCP enables agents to:</span>\n<ul>\n<li><strong>Access live, external data</strong> from databases, APIS, and\nservices without custom integration code</li>\n<li><strong>Leverage community-built tools</strong> with standardized\ninterfaces</li>\n<li><strong>Scale capabilities</strong> by connecting to multiple\nspecialized servers</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "03b7dd734007cfdc10cdaf772a053d84",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"how-mcp-works\">How MCP Works</h3>\n<span class=\"paragraph\">MCP connects your agent (the <strong>client</strong>) to the\nexternal <strong>MCP servers</strong> that provide tools:</span>\n<ul>\n<li><strong>MCP Server</strong>: Provides specific tools (like image\ngeneration, database access etc...)</li>\n<li><strong>MCP Client</strong>: Your agent that uses those tools</li>\n<li><strong>All servers work the same way</strong> - standardized\ninterface</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "33a55e6a34e6de642bf07433fb61f1b1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"mcp-workflow\">MCP workflow</h3>\n<ol>\n<li>Choose an MCP Server and tool</li>\n<li>Create the MCP Toolset (configure connection)</li>\n<li>Add it to your agent</li>\n<li>Run and test the agent</li>\n</ol>\n<span class=\"paragraph\">For demo purposes we'll use <a href=\"https://github.com/modelcontextprotocol/servers/tree/main/src/everything\" rel=\"noopener\" target=\"_blank\">Evyerthing MCP Server</a></span>\n<ul>\n<li>an npm packaged designed to testing MCP integrations.</li>\n</ul>\n<span class=\"paragraph\">We will used <code>getTinyImage</code> tool to return a simple test\nimage (16x16 pixels, Base64-encoded).</span>\n<span class=\"paragraph\">For prod you would use servers for Google Maps, Slack, Discord\netc...</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "dbe95670dfd129b9a70b194423a89fb6",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "172097e4f98d53fb287f2630502e34a6",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "09a4b924c170dc69884e0e95da237d54",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "fe3a3bd3e2dbbf2e3af88919fdd6525f",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "312f6e5b0000f7597f8e9e80e52363c0",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "8e0ae0f26977bcd815d0d13e4a93f4e4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Kaggle MCP</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "25e61726f65205ffaf6120488af60ffa",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "4b806aa3a9155e764756c9fc2b026e29",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">github mcp</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yCnT",
+      "code_hash": "9122fc9e6b7ce894e03f706092c62c7c",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "wlCL",
+      "code_hash": "7683f0f877c91e618b35b20241542932",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">long running operations/ human-in-the-loop</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "53792f2f0952834d1989dcab02d3c85f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">creating a shipping  tool with approval logic</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "044bde9006f693c50c123e8bdbfba2b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Long-running functions created!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "rEll",
+      "code_hash": "48aec7b187bbea61135fe8086d9ef80c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Shipping Agent created!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "dGlV",
+      "code_hash": "f94c53d0704601ea7c3a3c9226b0b476",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">wrap the stateless llmagent in an app with resumability enabled to add a persistence layer and restore state.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SdmI",
+      "code_hash": "cf038d5d4bc31531e1d81ba3cc5892eb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "/tmp/marimo_266675/__marimo__cell_SdmI_.py:5: UserWarning: [EXPERIMENTAL] ResumabilityConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n  resumability_config=ResumabilityConfig(is_resumable=True),\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Resumable app created!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "lgWD",
+      "code_hash": "ff9b77a345db3b10ec1eddefac282922",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Runner created!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "yOPj",
+      "code_hash": "0aff08ce27ce47c88b92165544e1433f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">building the workflow</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fwwy",
+      "code_hash": "54fdc5bd156197893b31a650d02ee6b1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "unWk",
+      "code_hash": "3db69f1cd8c9286e4275e13cf84499a1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "WXjV",
+      "code_hash": "ea97c3ddc1c387ad8bc88cf608f1028e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Helper functions defined\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "DVdk",
+      "code_hash": "79a300233637891305cf9c9d131ab33c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Workflow function ready\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Uarr",
+      "code_hash": "f30e599b156c4c7950bfb6fc5b174ae5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n============================================================\nUser > Ship 3 containers to Singapore\n\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Agent > The order has been approved. 3 containers will be shipped to Singapore. The order ID is ORD-3-AUTO.\n============================================================\n\n\n============================================================\nUser > Ship 10 containers to Rotterdam\n\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n/home/alex/.cache/uv/archive-v0/bQopnE5F_aX4aGkW_fffJ/lib/python3.14/site-packages/google/adk/tools/tool_context.py:92: UserWarning: [EXPERIMENTAL] ToolConfirmation: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n  ToolConfirmation(\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u23f8\ufe0f  Pausing for approval...\n\ud83e\udd14 Human Decision: APPROVE \u2705\n\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "/home/alex/.cache/uv/archive-v0/bQopnE5F_aX4aGkW_fffJ/lib/python3.14/site-packages/google/adk/agents/invocation_context.py:298: UserWarning: [EXPERIMENTAL] BaseAgentState: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n  self.agent_states[event.author] = BaseAgentState()\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "============================================================\n\n\n============================================================\nUser > Ship 8 containers to Los Angeles\n\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u23f8\ufe0f  Pausing for approval...\n\ud83e\udd14 Human Decision: REJECT \u274c\n\nAgent > Shipping order for 8 containers to Los Angeles has been rejected.\n============================================================\n\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.8"
+  },
+  "cells": [
+    {
+      "id": "setup",
+      "code_hash": "e84d37beab33a071c40508f1a4876dae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kEkG",
+      "code_hash": "1b44af4a6787ddcb5241e9d3de7ed6d9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"environment-setup\">Environment setup:</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YIUL",
+      "code_hash": "2df7cc9b90c439552e532d6a2820c544",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fTqK",
+      "code_hash": "96848e02f83e5a8fa4718c0f3ca16539",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"helper-functions\">Helper Functions:</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hhfy",
+      "code_hash": "c1d3f53ed4365a3de1f4692235594b0c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Helper functions defined.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "bwfv",
+      "code_hash": "ba96bc5b6522a096414bf0e0f29bf52f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"memory-workflow\">Memory Workflow</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "XXVA",
+      "code_hash": "c6376a99884711e0a2b41a66ed3df4fe",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Three-step integration process:</strong></span>\n<ol>\n<li><strong>Initialize:</strong> Create a <code>MemoryService</code> and\n    provide it to your agent via the <code>Runner</code></li>\n<li><strong>Ingest:</strong> Transfer <em>session</em> data to <em>memory</em>\n    using <code>add_session_to_memory()</code></li>\n<li><strong>Retrieve:</strong> Search stored memories using\n    <code>search_memory()</code></li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xZmT",
+      "code_hash": "5589c36ab73351c88e8df28fb63640a3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"initialize-memoryservice\">Initialize <code>MemoryService</code></h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dHlA",
+      "code_hash": "7d3ed59cae63d458c81944086d0afd3a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"initailize-memory\">Initailize Memory</h3>\n<span class=\"paragraph\">ADK has multiple <code>MemoryService</code> implmentations\nthrough the <code>BaseMemoryService</code> interface:</span>\n<ul>\n<li><code>InMemoryMemoryService</code> - Built-in for \n    prototyping and testing (keyword matching, \n    no persistence)</li>\n<li><code>VertexAiMemoryBankService</code> - Managed cloud\n    service with LLM-powered consolidation\n    and semantic search</li>\n<li><strong>Custom Implementations</strong> - You can build\n    your own using databases (managed services\n    are recommended)</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iQDB",
+      "code_hash": "ab7ff7fb85e7033b25c3d67cf5985f2f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HDin",
+      "code_hash": "c9dc5b1ecc49f208390653d1761aba21",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"adding-memory-to-agent\">Adding Memory to Agent</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "udTz",
+      "code_hash": "ad9c0b0abd0576e455784d49abeb9fc3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">First, create a simple agent.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "VNrz",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}

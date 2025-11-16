@@ -1,0 +1,70 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.8"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "b843c1f843add9d5757874cf9c77b7f1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"exercise-build-an-image-generation-agent-with-cost-approval\">\ud83c\udfaf Exercise: Build an Image Generation Agent with Cost Approval</h2>\n<span class=\"paragraph\"><strong>The scenario:</strong></span>\n<span class=\"paragraph\">Build an agent that generates images using the\nMCP server, but requires approval for \"bulk\"\nimage generation:</span>\n<ul>\n<li>Single image request (1 image): Auto-approve,\n    generate immediately</li>\n<li>Bulk request (&gt;1 image): Pause and ask for\n    approval before generating multiple images</li>\n<li>Explore different publicly available Image\n    Generation MCP Servers</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "9b2e09adad65d6a93cfcbed07df95a1e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">using pollinations.ai mcp server</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "setup",
+      "code_hash": "9390243ab7c99f24b2c3fc1f25ea1c3e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "45e77e3823a16cdfd577637ae1251fd6",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "7c2becdd530e404be786e7a22198e71b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "09a4b924c170dc69884e0e95da237d54",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "724c8807c3f047457c015da58cba6105",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "312f6e5b0000f7597f8e9e80e52363c0",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
