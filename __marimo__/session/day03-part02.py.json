@@ -975,6 +975,314 @@
     },
     {
       "id": "tDaU",
+      "code_hash": "b7beb57cbe7232230573058aac2c179f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Automatic Memory Storage with Callbacks</strong></span>\n<span class=\"paragraph\">For automatic memory storage we'll\n use <code>after_agent_callback</code>.</span>\n<span class=\"paragraph\">After every agent turn this calls\n <code>add_session_to_memory()</code>.</span>\n<span class=\"paragraph\">This is able to access the memory service through\n <code>callback_context</code>.</span>\n<span class=\"paragraph\">When a callback function is defined, ADK passes\n a special paramter call <code>callback_context</code> to it.\n The <code>callback_context</code> provides access to the\n Memory Service and other runtine components.</span>\n<span class=\"paragraph\">In our callback we'll have access the\nmemory service and current session to \nauto-save the convo data every turn.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DWct",
+      "code_hash": "e28f6449f45c33126e7220a1d484427c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-callout-output data-html='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;You do no create the context - ADK does&#92;nit for us and passes it to our callback&#92;nautomatically when the callback runs.&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;info&quot;'></marimo-callout-output>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Rdec",
+      "code_hash": "27a8ca86f7372e683893d1c3e0363584",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Callback created! :)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "IkwK",
+      "code_hash": "fb25642ba30d944f984e6ff6779d3b94",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Create an Agent: Callback and Preload Memory Tool</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "KyWM",
+      "code_hash": "315609ad9d752faf66ef9e8725515b36",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Now we're going to create an agent thay combines:</span>\n<ul>\n<li><strong>Automatic storage:</strong> <code>after_agent_callback</code>\nsaves conversations</li>\n<li><strong>Automatic retrieval:</strong> <code>preload_memory</code> loads\nmemories.</li>\n</ul>\n<span class=\"paragraph\">Together this creates a fully automated memory \nsystem with no manual intervention.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wIoE",
+      "code_hash": "deb84b1cfbb3854d289311789aada368",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Agent created with auto-memory saving!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "QfJF",
+      "code_hash": "e4e5c703cdb6a2e41ad5a5b61daa51cc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">time to test!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tKtF",
+      "code_hash": "611ab0b8ced469adc477156117c8c3ac",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Runner created.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "lpBe",
+      "code_hash": "86bb9f5b45119ec117a29c0108bbf1ae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: auto-save-test\n\nUser > I gifted a new toy to my nephew on his 1st birthday!\nModel: > That's wonderful! What kind of toy did you get him?\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "PhOP",
+      "code_hash": "7e0140f7517b9235127a2f0398ebccad",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: auto-save-test-2\n\nUser > What did I gift my nephew?\nModel: > I'm sorry, I don't have that information. I remember you gifted your nephew a new toy on his 1st birthday, but I don't know what kind of toy it was.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "HbGZ",
+      "code_hash": "2608d8d0a265b0ffdd996261a5afbc12",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">it works!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xtbH",
+      "code_hash": "8f217c351cdea81d6f6e8a7bdae36d3b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Lets break down <strong>what just happened-</strong></span>\n<ol>\n<li>\n<span class=\"paragraph\"><strong>First Conversation:</strong> Mentioned a gift to \nnephew.</span>\n<ul>\n<li>Callback auto-saved it to memory</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><strong>Second conversation (new session):</strong></span>\n<ul>\n<li><code>preload_memory</code> automatically retrieved the\nmemory</li>\n<li>Agent answered correctly.</li>\n</ul>\n</li>\n<li><strong>No manual memory calls!</strong></li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "huHK",
+      "code_hash": "14c06f3af0fe1d875237b75f12846130",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>How often should folks save session to\nmemory (by usecase)</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\">Real-time memory updates</span>\n<ul>\n<li>After every turn</li>\n<li>use <code>after_agent_callback</code></li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Batch processing (reduce API calls)</span>\n<ul>\n<li>End of conversation</li>\n<li>manual call when session ends</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Long-running conversations</span>\n<ul>\n<li>Periodic intervals</li>\n<li>Timer-based background job</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Gkor",
+      "code_hash": "6318c11f44a054a460bcf354cc1ad2ed",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"memory-consolidation\">Memory Consolidation</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "oHns",
+      "code_hash": "7b8ca69313a96def3802134414aa8583",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"limitations-of-raw-storage\">Limitations of Raw Storage</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lZMa",
+      "code_hash": "1e0223237655454d9c345f716fff11fd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>What we've stored so far:</strong></span>\n<ul>\n<li>Every user message</li>\n<li>Every agent response</li>\n<li>Every tool call</li>\n</ul>\n<span class=\"paragraph\"><strong>the problem:</strong> </span>\n<div class=\"language-actionscript3 codehilite\"><pre><span></span><code><span class=\"n\">Session</span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"mi\">50</span><span class=\"w\"> </span><span class=\"n\">messages</span><span class=\"w\"> </span><span class=\"o\">=</span><span class=\"w\"> </span><span class=\"mi\">10</span><span class=\"o\">,</span><span class=\"mi\">000</span><span class=\"w\"> </span><span class=\"n\">tokens</span>\n<span class=\"n\">Memory</span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">All</span><span class=\"w\"> </span><span class=\"mi\">50</span><span class=\"w\"> </span><span class=\"n\">messages</span><span class=\"w\"> </span><span class=\"n\">stored</span>\n<span class=\"n\">Search</span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">Returns</span><span class=\"w\"> </span><span class=\"n\">all</span><span class=\"w\"> </span><span class=\"mi\">50</span><span class=\"w\"> </span><span class=\"n\">messages</span><span class=\"w\"> </span><span class=\"o\">-&gt;</span><span class=\"w\"> </span><span class=\"n\">Agent</span>\n<span class=\"n\">must</span><span class=\"w\"> </span><span class=\"n\">porcess</span><span class=\"w\"> </span><span class=\"mi\">10</span><span class=\"o\">,</span><span class=\"mi\">000</span><span class=\"w\"> </span><span class=\"n\">tokens</span>\n</code></pre></div>\n<span class=\"paragraph\">This doe not scale. We need <em>consolidation</em>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emiZ",
+      "code_hash": "926a23c727383fb785c2866e885bc311",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"what-is-memory-consolidation\">What is Memory Consolidation?</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "edhd",
+      "code_hash": "2419b34869928a832dae31040b60b91e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Memory Consolidation</strong> is extracting\n<em>only important facts</em> while discarding\nconversational noise.</span>\n<span class=\"paragraph\">For example:</span>\n<span class=\"paragraph\"><strong>Raw Storage - Before Consolidation</strong></span>\n<span class=\"paragraph\"><div class=\"language-text codehilite\"><pre><span></span><code>User: &quot;My favorite color is BlueGreen. \nUser: I also like purple. \nUser: Actually, I prefer BlueGreen most of the \ntime.&quot;\n\nAgent: &quot;Great! I&#39;ll remember that.&quot;\nUser: &quot;Thanks!&quot;\nAgent: &quot;You&#39;re welcome!&quot;\n</code></pre></div>\nStores ALL 4 messages (redundant, verbose)</span>\n<span class=\"paragraph\"><strong>Raw Storage - After Consolidation</strong></span>\n<span class=\"paragraph\"><div class=\"language-text codehilite\"><pre><span></span><code>Extracted Memory: &quot;User&#39;s favorite color: \nBlueGreen&quot;\n</code></pre></div>\nStores 1 concise fact</span>\n<span class=\"paragraph\"><strong>Benefits:</strong> less storage, faster retrieval,\nmore accurate answers.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZXMY",
+      "code_hash": "592cd1ffa19665ad7c771aaeda5fb0df",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"how-consolidation-works-conceptually\">How Consolidation Works - Conceptually</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "GDrp",
+      "code_hash": "8f0a1aedc1dd24c9fa27fe927b4924a2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>Raw Session Events</li>\n<li>LLM analyzes conversation</li>\n<li>Extracts key facts</li>\n<li>Stores concise memories</li>\n<li>Merges with existing memories (deduplication!)</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UiNC",
+      "code_hash": "1b7c7ccfa369da7ed57c7443d5ced3ab",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Example transformation:</strong></span>\n<span class=\"paragraph\">Input: \"I am allergic to peanuts. I cannot\neat anything with nuts.\"</span>\n<span class=\"paragraph\">Output: Memory {\n    allergy: \"peanuts, tree nuts\"<br />\n    severity: \"avoid completely\"<br />\n}  </span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fctC",
       "code_hash": null,
       "outputs": [],
       "console": []

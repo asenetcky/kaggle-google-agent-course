@@ -908,6 +908,319 @@ def _():
 
 @app.cell
 def _():
+    mo.md("""
+    **Automatic Memory Storage with Callbacks**
+
+     For automatic memory storage we'll
+     use `after_agent_callback`.
+
+     After every agent turn this calls
+     `add_session_to_memory()`.
+
+     This is able to access the memory service through
+     `callback_context`.
+
+     When a callback function is defined, ADK passes
+     a special paramter call `callback_context` to it.
+     The `callback_context` provides access to the
+     Memory Service and other runtine components.
+
+    In our callback we'll have access the
+    memory service and current session to
+    auto-save the convo data every turn.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.callout(
+        mo.md(
+            """
+            You do no create the context - ADK does
+            it for us and passes it to our callback
+            automatically when the callback runs.
+            """
+        ),
+        kind="info",
+    )
+    return
+
+
+@app.cell
+def _():
+    async def auto_save_to_memory(callback_context):
+        """
+        Automatically save session to memory after
+        each agent turn
+        """
+
+        await callback_context._invocation_context.memory_service.add_session_to_memory(
+            callback_context._invocation_context.session
+        )
+
+
+    print("Callback created! :)")
+    return (auto_save_to_memory,)
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Create an Agent: Callback and Preload Memory Tool**
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Now we're going to create an agent thay combines:
+
+    - **Automatic storage:** `after_agent_callback`
+    saves conversations
+
+    - **Automatic retrieval:** `preload_memory` loads
+    memories.
+
+    Together this creates a fully automated memory
+    system with no manual intervention.
+    """)
+    return
+
+
+@app.cell
+def _(auto_save_to_memory, retry_config):
+    # agent with automatic memory saving
+
+    auto_memory_agent = LlmAgent(
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        name="AutoMemoryAgent",
+        instruction="Answer user questions.",
+        tools=[preload_memory],
+        after_agent_callback=auto_save_to_memory,
+    )
+
+    print("Agent created with auto-memory saving!")
+    return (auto_memory_agent,)
+
+
+@app.cell
+def _():
+    mo.md("""
+    time to test!
+    """)
+    return
+
+
+@app.cell
+def _(APP_NAME, auto_memory_agent, memory_service, session_service):
+    # Create a runner for auto-save agent
+    # this connects our automated agent to the session
+    # and memory services
+
+    auto_runner = Runner(
+        agent=auto_memory_agent,
+        app_name=APP_NAME,
+        session_service=session_service,
+        memory_service=memory_service,
+    )
+    print("Runner created.")
+    return (auto_runner,)
+
+
+@app.cell
+async def _(auto_runner, run_session):
+    # Test 1: Tell the agent about a gift (first conversation)
+    # The callback will automatically save this to memory when the turn completes
+    await run_session(
+        auto_runner,
+        "I gifted a new toy to my nephew on his 1st birthday!",
+        "auto-save-test",
+    )
+    return
+
+
+@app.cell
+async def _(auto_runner, run_session):
+    # Test 2: Ask about the gift in a NEW session (second conversation)
+    # The agent should retrieve the memory using preload_memory and answer correctly
+    await run_session(
+        auto_runner,
+        "What did I gift my nephew?",
+        "auto-save-test-2",  # Different session ID - proves memory works across sessions!
+    )
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    it works!
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Lets break down **what just happened-**
+
+    1. **First Conversation:** Mentioned a gift to
+    nephew.
+        - Callback auto-saved it to memory
+
+    1. **Second conversation (new session):**
+        - `preload_memory` automatically retrieved the
+        memory
+        - Agent answered correctly.
+    1. **No manual memory calls!**
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **How often should folks save session to
+    memory (by usecase)**
+
+    - Real-time memory updates
+        - After every turn
+        - use `after_agent_callback`
+    - Batch processing (reduce API calls)
+        - End of conversation
+        - manual call when session ends
+    - Long-running conversations
+        - Periodic intervals
+        - Timer-based background job
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ## Memory Consolidation
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Limitations of Raw Storage
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **What we've stored so far:**
+
+    - Every user message
+    - Every agent response
+    - Every tool call
+
+    **the problem:**
+
+    ```
+    Session: 50 messages = 10,000 tokens
+    Memory: All 50 messages stored
+    Search: Returns all 50 messages -> Agent
+    must porcess 10,000 tokens
+    ```
+
+    This doe not scale. We need *consolidation*.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### What is Memory Consolidation?
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Memory Consolidation** is extracting
+    *only important facts* while discarding
+    conversational noise.
+
+    For example:
+
+    **Raw Storage - Before Consolidation**
+
+    ```
+    User: "My favorite color is BlueGreen.
+    User: I also like purple.
+    User: Actually, I prefer BlueGreen most of the
+    time."
+
+    Agent: "Great! I'll remember that."
+    User: "Thanks!"
+    Agent: "You're welcome!"
+    ```
+    Stores ALL 4 messages (redundant, verbose)
+
+    **Raw Storage - After Consolidation**
+
+    ```
+    Extracted Memory: "User's favorite color:
+    BlueGreen"
+    ```
+    Stores 1 concise fact
+
+    **Benefits:** less storage, faster retrieval,
+    more accurate answers.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### How Consolidation Works - Conceptually
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    1. Raw Session Events
+    1. LLM analyzes conversation
+    1. Extracts key facts
+    1. Stores concise memories
+    1. Merges with existing memories (deduplication!)
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Example transformation:**
+
+    Input: "I am allergic to peanuts. I cannot
+    eat anything with nuts."
+
+
+    Output: Memory {
+        allergy: "peanuts, tree nuts"
+        severity: "avoid completely"
+    }
+    """)
+    return
+
+
+@app.cell
+def _():
     return
 
 
