@@ -673,6 +673,240 @@ async def _(preload_runner, run_session):
 
 
 @app.cell
+async def _(preload_runner, run_session):
+    await run_session(
+        preload_runner,
+        "When is it the best time to visit Acadia National park in Maine?",
+        "test-preload-session-01",
+    )
+    return
+
+
+@app.cell
+async def _(APP_NAME, USER_ID, session_service):
+    # let's take a look at that session
+    preloaded_session = await session_service.get_session(
+        app_name=APP_NAME, user_id=USER_ID, session_id="test-preload-session-01"
+    )
+
+
+    # Let's see what's in the session
+    def session_look(session):
+        for event in session.events:
+            text = (
+                event.content.parts[0].text[:60]
+                if event.content and event.content.parts
+                else "(empty)"
+            )
+            print(f"  {event.content.role}: {text}...")
+
+
+    session_look(preloaded_session)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Manual Memory Search
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Users can search memories directly in code.
+
+    This is useful for:
+
+    - Debugging memory contents
+    - Building analytics dashboards
+    - Creating custom memory management UIs
+
+    The `search_memory()` method takes a text query
+    and returns `SearchMemoryResponse` with
+    matching memories.
+
+    Let us test by searching for color preferences!
+    """)
+    return
+
+
+@app.cell
+async def _(APP_NAME, USER_ID, memory_service):
+    # search for color preferences
+
+    search_response = await memory_service.search_memory(
+        app_name=APP_NAME,
+        user_id=USER_ID,
+        query="What is the user's favorite color?",
+    )
+
+    print("🔍 Search Results:")
+    print(f"  Found {len(search_response.memories)} relevant memories")
+    print()
+
+    for memory in search_response.memories:
+        if memory.content and memory.content.parts:
+            _text = memory.content.parts[0].text[:80]
+            print(f"  [{memory.author}]: {_text}...")
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    very cool!
+    """)
+    return
+
+
+@app.cell
+def _(APP_NAME, USER_ID, memory_service):
+    async def member_berries(query):
+        search_response = await memory_service.search_memory(
+            app_name=APP_NAME,
+            user_id=USER_ID,
+            query=query,
+        )
+
+        print(f"🔍 Search Results for {query}:")
+        print(f"  Found {len(search_response.memories)} relevant memories")
+        print()
+
+        for memory in search_response.memories:
+            if memory.content and memory.content.parts:
+                _text = memory.content.parts[0].text[:80]
+                print(f"  [{memory.author}]: {_text}...")
+    return (member_berries,)
+
+
+@app.cell
+async def _(member_berries):
+    await member_berries("haiku")
+    await member_berries("preferred hue")
+    await member_berries("age")
+    await member_berries("park")
+    await member_berries("maine")
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Notice acadia didn't pop up, because it wasn't commited to memory.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### How Does Search Work?
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **InMemoryService (this notebook):**
+
+    - **Method:** Keyword matching
+        - *e.g.* "favorite color" matches
+        because those exact words exist
+        - **Limitation:** age won't match even
+        though it's relevant to the memory
+
+    **VertexAiMemoryBankService/Production**:
+    - **Method:** Semantic search via *embeddings*
+        - *e.g.* "age" will likely match birthday
+        conversations
+        - **Advantage:** Understands meaning, not
+        just keywords
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Automating Memory Storage
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Callbacks**
+    ADK has a callback system that hooks into
+    key execution moments.
+
+    - callbacks are **python functions** that are
+    attached to agents.
+
+    - ADK automatically calls them at specific
+    stages - sort of like checkpoints during
+    the execution flow.
+
+    - **Think of callbacks as event listeners in
+    the agent lifecyle**
+
+    - e.g. When agent processes a request...
+        - Agent receives input
+        - Agent calls the LLM
+        - Agent invokes tools
+        - Agent generates the response
+    - Callbacks let users insert custom logic at
+    each of the stages above *without* modifying
+    core agent code.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Available callback types and usecases:**
+
+    - Runs before OR after agent completes
+    processing a request
+
+        - `before_agent_callback`
+        - `after_agent_callback`
+
+    - Around tool invocations
+
+        - `before_tool_callback`
+        - `after_tool_callback`
+
+    - Around LLM calls
+        - `before_model_callback`
+        - `after_model_callback`
+
+    - When errors occur: `on_model_error_callback`
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Common Uses:**
+
+    - Logging and observabnility of agent actions
+    - Automatic data persistence
+    - Custom validation/filtering
+    - Performance monitoring
+
+    [ADK Callbacks Doco](https://google.github.io/adk-docs/agents/callbacks/)
+    """)
+    return
+
+
+@app.cell
 def _():
     return
 

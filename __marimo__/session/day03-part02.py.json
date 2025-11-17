@@ -326,7 +326,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "\n### Session: conversation-01\n\nUser > My favorite color is sea-green. Can you write a Haiku about it?\nModel: > Sure, I can write a haiku about sea-green!\n\nOcean's gentle hue,\nCalm and deep, a peaceful sight,\nNature's cool embrace.\n",
+          "text": "\n### Session: conversation-01\n\nUser > My favorite color is sea-green. Can you write a Haiku about it?\nModel: > Sure, here is a haiku for you:\n\nOcean's gentle hue,\nCalm and peaceful, like the sea,\nMy favorite color.\n",
           "mimetype": "text/plain"
         }
       ]
@@ -346,14 +346,14 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "\ud83d\udcdd Session contains:\n  user: My favorite color is sea-green. Can you write a Haiku about ...\n  model: Sure, I can write a haiku about sea-green!\n\nOcean's gentle h...\n",
+          "text": "\ud83d\udcdd Session contains:\n  user: My favorite color is sea-green. Can you write a Haiku about ...\n  model: Sure, here is a haiku for you:\n\nOcean's gentle hue,\nCalm and...\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
       "id": "Pvdt",
-      "code_hash": "58d0fdbefcef3707ea752951746948d2",
+      "code_hash": "fbed5d6b4a9ae72c0e17568c17b7f636",
       "outputs": [
         {
           "type": "data",
@@ -365,7 +365,7 @@
       "console": []
     },
     {
-      "id": "CLLr",
+      "id": "ZBYS",
       "code_hash": "0ce1c372ec08aede579464f4570daf6a",
       "outputs": [
         {
@@ -385,8 +385,8 @@
       ]
     },
     {
-      "id": "GTUi",
-      "code_hash": "c876ace865e325963b8c3f89f4212c02",
+      "id": "aLJB",
+      "code_hash": "2de5a02deb9c337e5b8222d82d3dd4b8",
       "outputs": [
         {
           "type": "data",
@@ -398,8 +398,8 @@
       "console": []
     },
     {
-      "id": "VQPT",
-      "code_hash": "c0e877be99ec14bac0315ada395ee279",
+      "id": "nHfw",
+      "code_hash": "5f96ff3750c5e8b057b074ac7e853c7d",
       "outputs": [
         {
           "type": "data",
@@ -411,8 +411,8 @@
       "console": []
     },
     {
-      "id": "jOLR",
-      "code_hash": "fb750011142b25ec516df4e754626d66",
+      "id": "xXTn",
+      "code_hash": "56820c95c14c273825252245da37aa0e",
       "outputs": [
         {
           "type": "data",
@@ -424,8 +424,8 @@
       "console": []
     },
     {
-      "id": "sdrA",
-      "code_hash": "d1d81d454f33971fc7c8d462905ba61e",
+      "id": "AjVT",
+      "code_hash": "90cb9ab29549fa9475e5a1e02058decb",
       "outputs": [
         {
           "type": "data",
@@ -437,8 +437,8 @@
       "console": []
     },
     {
-      "id": "Ugls",
-      "code_hash": "8be393068d3bd46cf26257d78b650fc3",
+      "id": "pHFh",
+      "code_hash": "513a4b5554d077370bc08e4626bbbaed",
       "outputs": [
         {
           "type": "data",
@@ -450,7 +450,7 @@
       "console": []
     },
     {
-      "id": "BMua",
+      "id": "NCOB",
       "code_hash": "4d2842261373c630a6963f8f68da342e",
       "outputs": [
         {
@@ -470,8 +470,8 @@
       ]
     },
     {
-      "id": "Lerp",
-      "code_hash": "d01dee118d29d03650fb0b0c7d0b0a5e",
+      "id": "aqbW",
+      "code_hash": "f8a239e163bb8588e1bcc871c982a1a3",
       "outputs": [
         {
           "type": "data",
@@ -483,7 +483,7 @@
       "console": []
     },
     {
-      "id": "MhPg",
+      "id": "TRpd",
       "code_hash": "e2a253369d1ff4490ac3077da3408038",
       "outputs": [
         {
@@ -505,18 +505,12 @@
           "name": "stderr",
           "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n",
           "mimetype": "text/plain"
-        },
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Model: > The user's favorite color is sea-green.\n",
-          "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "kkjy",
-      "code_hash": "953da2d57a3cb1945e966a6608cd989d",
+      "id": "TXez",
+      "code_hash": "62d445628dbe8cc5aafa58bde9cbc644",
       "outputs": [
         {
           "type": "data",
@@ -528,8 +522,8 @@
       "console": []
     },
     {
-      "id": "WoYx",
-      "code_hash": "45d5f4944d35ee45320f4db1f8cfbb1f",
+      "id": "dNNg",
+      "code_hash": "0104bbfd4f865130654bfd2e1e121229",
       "outputs": [
         {
           "type": "data",
@@ -541,8 +535,8 @@
       "console": []
     },
     {
-      "id": "umNU",
-      "code_hash": "b8a811aad09ef06abad628720201eace",
+      "id": "yCnT",
+      "code_hash": "637426a0fe8346339e31185e1b0a8a09",
       "outputs": [
         {
           "type": "data",
@@ -554,8 +548,8 @@
       "console": []
     },
     {
-      "id": "fgQy",
-      "code_hash": "8a4c32bbb1479641aea146db7457404c",
+      "id": "wlCL",
+      "code_hash": "fe6f9da27363a617b9a6ef1c4ec084f6",
       "outputs": [
         {
           "type": "data",
@@ -568,26 +562,14 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "\n### Session: birthday-session-01\n\nUser > My friend Unix's birthday is January 1st, 1970.\n",
-          "mimetype": "text/plain"
-        },
-        {
-          "type": "stream",
-          "name": "stderr",
-          "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n",
-          "mimetype": "text/plain"
-        },
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Model: > OK. I will remember that Unix's birthday is January 1st, 1970.\n",
+          "text": "\n### Session: birthday-session-01\n\nUser > My friend Unix's birthday is January 1st, 1970.\nModel: > I will remember that.\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "ZYwU",
-      "code_hash": "528c6787fd558d4288344cccb7747895",
+      "id": "kqZH",
+      "code_hash": "617e55ea7ff24e0f578d6eed7f3efb64",
       "outputs": [
         {
           "type": "data",
@@ -599,8 +581,8 @@
       "console": []
     },
     {
-      "id": "lacG",
-      "code_hash": "86a57d4f473f13e2b2171d3bd48047ad",
+      "id": "wAgl",
+      "code_hash": "e0caadaec947533e8ae162abe89b79f6",
       "outputs": [
         {
           "type": "data",
@@ -619,8 +601,8 @@
       ]
     },
     {
-      "id": "eFMr",
-      "code_hash": "d066487c1594f1cf55c190f8a4a737c1",
+      "id": "rEll",
+      "code_hash": "552a87bad55555218604bd31302ed88d",
       "outputs": [
         {
           "type": "data",
@@ -632,7 +614,7 @@
       "console": []
     },
     {
-      "id": "yYmB",
+      "id": "dGlV",
       "code_hash": "501d7d626036c518dbd73dee8096f5ff",
       "outputs": [
         {
@@ -646,27 +628,33 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "\n### Session: birthday-session-02\n\nUser > When is Unix's birthday?\nModel: > Unix's birthday is January 1st, 1970.\n",
+          "text": "\n### Session: birthday-session-02\n\nUser > When is Unix's birthday?\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "hsMp",
-      "code_hash": "58baa24125b338b2c126efb61f4d860c",
+      "id": "SdmI",
+      "code_hash": "c0a9f6d8d52ec4d582d2904c2b39f1a0",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">So what just happened?</span>\n<ol>\n<li>Agent recieves: \"When is Unix's birthday?\"</li>\n<li>Agent recognizes: This requires past\nconversation context.</li>\n<li>Agent calls: <code>load_memory(\"birthday\")</code></li>\n<li>Memory returns: Previous conversation\ncontaining \"January 1st, 1970\"</li>\n<li>Agent responds: \"Unix's birthday is \nJanuary 1st, 1970\"</li>\n</ol>\n<span class=\"paragraph\">The memory worked, even though it is a\ncompletely different session!</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">So what just happened?</span>\n<ol>\n<li>Agent recieves: \"When is Unix's birthday?\"</li>\n<li>Agent recognizes: This requires past\nconversation context.</li>\n<li>Agent calls: <code>load_memory(\"birthday\")</code></li>\n<li>Memory returns: Previous conversation\ncontaining \"January 1st, 1970\"</li>\n<li>Agent responds: \"Unix's birthday is\nJanuary 1st, 1970\"</li>\n</ol>\n<span class=\"paragraph\">The memory worked, even though it is a\ncompletely different session!</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "tuUR",
-      "code_hash": "8836f05d88681090b0d99cb139d2ed87",
+      "id": "lgWD",
+      "code_hash": "5198b519f1b3f60c8519d952c9d6ad93",
       "outputs": [
         {
           "type": "data",
@@ -678,8 +666,8 @@
       "console": []
     },
     {
-      "id": "FSht",
-      "code_hash": "f3868584eb4832cdf25e3638b199aa5e",
+      "id": "yOPj",
+      "code_hash": "111b1a0dd3841f459dab838c3b18dae6",
       "outputs": [
         {
           "type": "data",
@@ -691,7 +679,7 @@
       "console": []
     },
     {
-      "id": "UduU",
+      "id": "fwwy",
       "code_hash": "3b994d1c06522c70fc83eee92650d709",
       "outputs": [
         {
@@ -704,7 +692,7 @@
       "console": []
     },
     {
-      "id": "sNSm",
+      "id": "LJZf",
       "code_hash": "60873b83c2428bf159ed65be433e3761",
       "outputs": [
         {
@@ -717,21 +705,21 @@
       "console": []
     },
     {
-      "id": "ynJN",
-      "code_hash": "8e116fc0b33fa6cecdeb07c1ac7b1ca7",
+      "id": "urSm",
+      "code_hash": "e22fb2582b9577e19859b4b5aac81eb3",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">So what actually changes?</span>\n<span class=\"paragraph\">Remember that <code>load_memory</code> is reactive, and \n<code>preload_memory</code> is proactive.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">So what actually changes?</span>\n<span class=\"paragraph\">Remember that <code>load_memory</code> is reactive, and\n<code>preload_memory</code> is proactive.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "OeqT",
-      "code_hash": "cbf9563d46b2a4c3a79d042b497c83d7",
+      "id": "jxvo",
+      "code_hash": "a4e740b73f7467d7fa13bb3b2e9935c3",
       "outputs": [
         {
           "type": "data",
@@ -743,7 +731,7 @@
       "console": []
     },
     {
-      "id": "ezTo",
+      "id": "mWxS",
       "code_hash": "f7d5214c7161cdcb10595987de73198f",
       "outputs": [
         {
@@ -763,7 +751,230 @@
       ]
     },
     {
-      "id": "ZUZj",
+      "id": "CcZR",
+      "code_hash": "fcf103b1d4fc90c87d25888ace824859",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: test-preload-session-01\n\nUser > When is it the best time to visit Acadia National park in Maine?\nModel: > The best time to visit Acadia National Park in Maine is generally during the fall, from September to mid-October. During this time, the weather is mild, the fall foliage is stunning, and the park is less crowded than in the summer.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "qbJA",
+      "code_hash": "e502e986bc7f6aaf8590afdc1d1b16c1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "  user: What is my favorite color?...\n  model: Your favorite color is sea-green....\n  user: When is it the best time to visit Acadia National park in Ma...\n  model: The best time to visit Acadia National Park in Maine is gene...\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "AFSp",
+      "code_hash": "18d59e60320a8c0a57c70ca19a7ba40f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"manual-memory-search\">Manual Memory Search</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kzqj",
+      "code_hash": "fa681d9f5e0ccab15a27a8f7ec3a3d9c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Users can search memories directly in code.</span>\n<span class=\"paragraph\">This is useful for:</span>\n<ul>\n<li>Debugging memory contents</li>\n<li>Building analytics dashboards</li>\n<li>Creating custom memory management UIs</li>\n</ul>\n<span class=\"paragraph\">The <code>search_memory()</code> method takes a text query\nand returns <code>SearchMemoryResponse</code> with\nmatching memories.</span>\n<span class=\"paragraph\">Let us test by searching for color preferences!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "OHUu",
+      "code_hash": "f9068171ac44ecb3f8e1db93f827da5f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\ud83d\udd0d Search Results:\n  Found 3 relevant memories\n\n  [user]: My favorite color is sea-green. Can you write a Haiku about it?...\n  [MemoryDemoAgent]: Sure, here is a haiku for you:\n\nOcean's gentle hue,\nCalm and peaceful, like the ...\n  [user]: My friend Unix's birthday is January 1st, 1970....\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "uHfa",
+      "code_hash": "b919a2292da1ade4ff191cd10bc87628",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">very cool!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "OgfO",
+      "code_hash": "49cd32124b861188ef0d736e1de00956",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LJXj",
+      "code_hash": "2e84776372119cfd3090ac6eb3f7ef83",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\ud83d\udd0d Search Results for haiku:\n  Found 2 relevant memories\n\n  [user]: My favorite color is sea-green. Can you write a Haiku about it?...\n  [MemoryDemoAgent]: Sure, here is a haiku for you:\n\nOcean's gentle hue,\nCalm and peaceful, like the ...\n\ud83d\udd0d Search Results for preferred hue:\n  Found 1 relevant memories\n\n  [MemoryDemoAgent]: Sure, here is a haiku for you:\n\nOcean's gentle hue,\nCalm and peaceful, like the ...\n\ud83d\udd0d Search Results for age:\n  Found 0 relevant memories\n\n\ud83d\udd0d Search Results for park:\n  Found 0 relevant memories\n\n\ud83d\udd0d Search Results for maine:\n  Found 0 relevant memories\n\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "zlAr",
+      "code_hash": "781b05d41e8707bcf514c994a3fb7a1d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Notice acadia didn't pop up, because it wasn't commited to memory.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yWma",
+      "code_hash": "6bf42b4f2a4b6158c8ad33150e0c2b92",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"how-does-search-work\">How Does Search Work?</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "GQNb",
+      "code_hash": "e71cac6f3254b0010d49b9d496761bee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>InMemoryService (this notebook):</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\"><strong>Method:</strong> Keyword matching</span>\n<ul>\n<li><em>e.g.</em> \"favorite color\" matches\nbecause those exact words exist</li>\n<li><strong>Limitation:</strong> age won't match even\nthough it's relevant to the memory</li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\"><strong>VertexAiMemoryBankService/Production</strong>:</span>\n<ul>\n<li>\n<span class=\"paragraph\"><strong>Method:</strong> Semantic search via <em>embeddings</em></span>\n<ul>\n<li><em>e.g.</em> \"age\" will likely match birthday \nconversations</li>\n<li><strong>Advantage:</strong> Understands meaning, not\njust keywords</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZyQD",
+      "code_hash": "339a6eba06a9ba62b3fcb461557fda86",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"automating-memory-storage\">Automating Memory Storage</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nBqv",
+      "code_hash": "38c60c5e0b60c62af98429b5c36ed067",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Callbacks</strong>\nADK has a callback system that hooks into\nkey execution moments.</span>\n<ul>\n<li>callbacks are <strong>python functions</strong> that are\nattached to agents.</li>\n<li>ADK automatically calls them at specific\nstages - sort of like checkpoints during\nthe execution flow.</li>\n<li><strong>Think of callbacks as event listeners in\nthe agent lifecyle</strong></li>\n<li>\n<span class=\"paragraph\">e.g. When agent processes a request...</span>\n<ul>\n<li>Agent receives input</li>\n<li>Agent calls the LLM</li>\n<li>Agent invokes tools</li>\n<li>Agent generates the response</li>\n</ul>\n</li>\n<li>Callbacks let users insert custom logic at\neach of the stages above <em>without</em> modifying\ncore agent code.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "liRI",
+      "code_hash": "40780128dcc69c10e37fee3f2e35041c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Available callback types and usecases:</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\">Runs before OR after agent completes\nprocessing a request</span>\n<ul>\n<li><code>before_agent_callback</code></li>\n<li><code>after_agent_callback</code></li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Around tool invocations</span>\n<ul>\n<li><code>before_tool_callback</code></li>\n<li><code>after_tool_callback</code></li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Around LLM calls</span>\n<ul>\n<li><code>before_model_callback</code></li>\n<li><code>after_model_callback</code></li>\n</ul>\n</li>\n<li>When errors occur: <code>on_model_error_callback</code></li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lpuM",
+      "code_hash": "ec3b991ca5bbd98854c38028766bf9eb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Common Uses:</strong></span>\n<ul>\n<li>Logging and observabnility of agent actions</li>\n<li>Automatic data persistence</li>\n<li>Custom validation/filtering</li>\n<li>Performance monitoring</li>\n</ul>\n<span class=\"paragraph\"><a href=\"https://google.github.io/adk-docs/agents/callbacks/\" rel=\"noopener\" target=\"_blank\">ADK Callbacks Doco</a></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tDaU",
       "code_hash": null,
       "outputs": [],
       "console": []
