@@ -1,0 +1,177 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.8"
+  },
+  "cells": [
+    {
+      "id": "XQqN",
+      "code_hash": "74c566dfe6d186e10aeff9c930fcfca6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"day-04-part-01-agent-observability\">Day 04 Part 01 Agent Observability</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kBzv",
+      "code_hash": "659c4e5c5eb2b93382a1dd05cb578c45",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"setup\">Setup</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "e4288b012fe1a31437d3a2f960669b68",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Ojvv",
+      "code_hash": "71151d65f63871fd94959230c9dcebcf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Qfrg",
+      "code_hash": "df16e95c0e0b3157750146682e01861b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"logging-setup\">Logging Setup</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rARi",
+      "code_hash": "f1a83679652056f82b14b04a13751a8f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "logging configured! :)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "hDBo",
+      "code_hash": "7f60def9ec7451e09b9b1c8adee3a911",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"hands-on-debugging-with-adk-web-ui\">Hands-On Debugging with ADK Web UI</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sAKX",
+      "code_hash": "fb8c81563c02d4f400b2456b2341e894",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"create-a-research-paper-finder-agent\">Create a 'Research Paper Finder' Agent</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HwEo",
+      "code_hash": "e1619547770a9ad19d3cf24eecb5a3f8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Our goal:</strong> Build a research paper finder agent\nthat helps users find academic papers on any \ntopic.</span>\n<span class=\"paragraph\">First, lets intentionally create an <em>incorrect</em> \nversion of the agent to practice debugging...yay!</span>\n<span class=\"paragraph\">Okay to make it more fun we'll mix it up a bit.\nWe'll use the ADK cli to do this \nwith <code>adk create</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXTB",
+      "code_hash": "930ae1f835b95644eb0be33c57dd0057",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>adk<span class=\"w\"> </span>create<span class=\"w\"> </span>research-agent<span class=\"w\"> </span>--model<span class=\"w\"> </span>gemini-2.5-flash-lite<span class=\"w\"> </span>--api-key<span class=\"w\"> </span><span class=\"nv\">$GOOGLE_API_KEY</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SaRv",
+      "code_hash": "f86623d17f6623f9f86c2369be079bb2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>Agent<span class=\"w\"> </span>created<span class=\"w\"> </span><span class=\"k\">in</span><span class=\"w\"> </span>/home/alex/repos/kaggle-google-agent-course/research-agent:\n\n-<span class=\"w\"> </span>.env\n\n-<span class=\"w\"> </span>__init__.py\n\n-<span class=\"w\"> </span>agent.py\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qWzX",
+      "code_hash": "0b854bc626a22cda7a6dbd6d3e683810",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"agent-definition\">Agent Definition</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Tkrv",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
