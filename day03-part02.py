@@ -192,15 +192,14 @@ def _(retry_config):
     # Constants that will be used throughout
     APP_NAME = "MemoryDemoApp"
     USER_ID = "demo_user"
-    mdl_gem_lite = "gemini-2.5-flash-lite"
 
     # Agent
-
     user_agent = LlmAgent(
-        model=Gemini(model=mdl_gem_lite, retry_options=retry_config),
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
         name="MemoryDemoAgent",
         instruction="Answer user questions in simple words.",
     )
+
     print("Agent created! :)")
     return APP_NAME, USER_ID, user_agent
 
@@ -237,7 +236,7 @@ def _():
 @app.cell
 def _(memory_service, user_agent):
     # Create Session Service
-    session_service = InMemoryMemoryService()  # Handles convos
+    session_service = InMemorySessionService()  # Handles convos
 
     # Runner with BOTH services
     runner = Runner(
@@ -389,6 +388,287 @@ async def _(APP_NAME, USER_ID, session_service):
             else "(empty)"
         )
         print(f"  {event.content.role}: {text}...")
+    return (session,)
+
+
+@app.cell
+def _():
+    mo.md("""
+    confirmed above - our session contains our convo. Now lets transfer it to memory.
+    """)
+    return
+
+
+@app.cell
+async def _(memory_service, session):
+    # Key method
+    await memory_service.add_session_to_memory(session)
+    print("session added! :)")
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Enable Memory Retrieval in Our Agent
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Memory has been transferred. However, agents
+    **cannot directly access `MemoryService`**
+    they need tools to search it.  This is by
+    design - for fine grain control.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    **Memory Retrieval in ADK**
+
+    - `load_memory` (**Reactive**)
+
+        - Agent decides when to search memory
+
+        - Only retrieves when agent thinks is needed
+
+        - More efficient/saves tokens
+
+        - Risk: Agent might forget to search
+
+    - `preload_memory` (**Proactive**)
+
+        - Automatically searches before every turn
+
+        - Memory always available to agent
+
+        - Guaranteed context, but less efficient
+
+        - Searches even when not needed
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Add Load Memory Tool to Agent
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Recreate the agent, but with `load_memory` tool. Simply add to `tools` - no custom implementation needed.
+    """)
+    return
+
+
+@app.cell
+def _(retry_config):
+    memory_user_agent = LlmAgent(
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        name="MemoryDemoAgent",
+        instruction="Answer user questions in simple words. User load_memory tool if you need to recall past conversations",
+        tools=[load_memory],  # Agent now has access to memory
+    )
+
+    print("Agent with load_memory tool created :)")
+    return (memory_user_agent,)
+
+
+@app.cell
+def _(APP_NAME, memory_service, memory_user_agent, session_service):
+    # create new runner with new agent
+    memory_runner = Runner(
+        agent=memory_user_agent,
+        app_name=APP_NAME,
+        session_service=session_service,
+        memory_service=memory_service,
+    )
+    return (memory_runner,)
+
+
+@app.cell
+async def _(memory_runner, run_session):
+    await run_session(memory_runner, "What is my favorite color?", "color-test")
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    woohoo it works! :)
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Complete Manual Workflow Test
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Let's see the complete workflow in action.
+    We will:
+
+    1. Have a conversation about a birthday
+    1. Manually Save it to memory
+    1. Test retrieval in a *new session*
+
+    This demonstrates the full cycle:
+    **ingest -> store -> retrieve**
+    """)
+    return
+
+
+@app.cell
+async def _(memory_runner, run_session):
+    await run_session(
+        memory_runner,
+        "My friend Unix's birthday is January 1st, 1970.",
+        "birthday-session-01",
+    )
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Now manually save this to memory to transfer short-term to long-term memory storage
+    """)
+    return
+
+
+@app.cell
+async def _(APP_NAME, USER_ID, memory_service, session_service):
+    # manually save session
+    birthday_session = await session_service.get_session(
+        app_name=APP_NAME, user_id=USER_ID, session_id="birthday-session-01"
+    )
+
+    await memory_service.add_session_to_memory(birthday_session)
+
+    print("Birthday session saved to memory!")
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Now the crucial test - start a new session, with a new id and ask the agent to recall the birthday.
+    """)
+    return
+
+
+@app.cell
+async def _(memory_runner, run_session):
+    await run_session(
+        memory_runner,
+        "When is Unix's birthday?",
+        "birthday-session-02",  # note the different ID
+    )
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    So what just happened?
+
+    1. Agent recieves: "When is Unix's birthday?"
+    1. Agent recognizes: This requires past
+    conversation context.
+    1. Agent calls: `load_memory("birthday")`
+    1. Memory returns: Previous conversation
+    containing "January 1st, 1970"
+    1. Agent responds: "Unix's birthday is
+    January 1st, 1970"
+
+    The memory worked, even though it is a
+    completely different session!
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    ### Experimenting with `preload_memory`
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    We are going to experiment with swapping
+    `load_memory` with `preload_memory` in
+    the tool array.
+    """)
+    return
+
+
+@app.cell
+def _(retry_config):
+    preload_user_agent = LlmAgent(
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        name="MemoryDemoAgent",
+        instruction="Answer user questions in simple words. User preload_memory tool if you need to recall past conversations",
+        tools=[preload_memory],
+    )
+    return (preload_user_agent,)
+
+
+@app.cell
+def _(APP_NAME, memory_service, preload_user_agent, session_service):
+    # create the new runner
+    preload_runner = Runner(
+        agent=preload_user_agent,
+        app_name=APP_NAME,
+        session_service=session_service,
+        memory_service=memory_service,
+    )
+    return (preload_runner,)
+
+
+@app.cell
+def _():
+    mo.md("""
+    So what actually changes?
+
+    Remember that `load_memory` is reactive, and
+    `preload_memory` is proactive.
+    """)
+    return
+
+
+@app.cell
+def _():
+    mo.md("""
+    Now we are going to test it out.
+    """)
+    return
+
+
+@app.cell
+async def _(preload_runner, run_session):
+    await run_session(
+        preload_runner,
+        "What is my favorite color?",
+        "test-preload-session-01",
+    )
     return
 
 

@@ -169,7 +169,7 @@
     },
     {
       "id": "emfo",
-      "code_hash": "23e8d34202417b332c74011b8b0cc231",
+      "code_hash": "d2431c73a447c4528e9ae1f2e246cb66",
       "outputs": [
         {
           "type": "data",
@@ -215,7 +215,7 @@
     },
     {
       "id": "iLit",
-      "code_hash": "c2fa69dd3abcb3c3b5126ea688c365e1",
+      "code_hash": "3fe4285e0ee4cef306c4170921b84951",
       "outputs": [
         {
           "type": "data",
@@ -313,27 +313,21 @@
     },
     {
       "id": "ulZA",
-      "code_hash": "da0fbef0e36e776a22e7e1e3563c8c7c",
+      "code_hash": "98b57e8c63de9698b6d437f7397ea8f0",
       "outputs": [
         {
-          "type": "error",
-          "ename": "exception",
-          "evalue": "'InMemoryMemoryService' object has no attribute 'get_session'",
-          "traceback": []
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
         }
       ],
       "console": [
         {
           "type": "stream",
           "name": "stdout",
-          "text": "\n### Session: conversation-01\n",
+          "text": "\n### Session: conversation-01\n\nUser > My favorite color is sea-green. Can you write a Haiku about it?\nModel: > Sure, I can write a haiku about sea-green!\n\nOcean's gentle hue,\nCalm and deep, a peaceful sight,\nNature's cool embrace.\n",
           "mimetype": "text/plain"
-        },
-        {
-          "type": "stream",
-          "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_bkHC_.py&quot;</span>, line <span class=\"m\">11</span>, in <span class=\"n\">run_session</span>\n<span class=\"w\">    </span><span class=\"n\">session</span> <span class=\"o\">=</span> <span class=\"k\">await</span> <span class=\"n\">session_service</span><span class=\"o\">.</span><span class=\"n\">create_session</span><span class=\"p\">(</span>\n<span class=\"w\">                    </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">AttributeError</span>: <span class=\"n\">&#39;InMemoryMemoryService&#39; object has no attribute &#39;create_session&#39;</span>\n\n<span class=\"gt\">During handling of the above exception, another exception occurred:</span>\n\n<span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/alex/.cache/uv/archive-v0/nSf1Qf6IV586ZfT_frBVB/lib/python3.14/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">117</span>, in <span class=\"n\">execute_cell_async</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"k\">await</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">last_expr</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n<span class=\"w\">           </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_ulZA_.py&quot;</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"k\">await</span> <span class=\"n\">run_session</span><span class=\"p\">(</span>\n<span class=\"w\">    </span><span class=\"o\">...&lt;</span><span class=\"mi\">4</span> <span class=\"n\">lines</span><span class=\"o\">&gt;...</span>\n<span class=\"w\">    </span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_bkHC_.py&quot;</span>, line <span class=\"m\">15</span>, in <span class=\"n\">run_session</span>\n<span class=\"w\">    </span><span class=\"n\">session</span> <span class=\"o\">=</span> <span class=\"k\">await</span> <span class=\"n\">session_service</span><span class=\"o\">.</span><span class=\"n\">get_session</span><span class=\"p\">(</span>\n<span class=\"w\">                    </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">AttributeError</span>: <span class=\"n\">&#39;InMemoryMemoryService&#39; object has no attribute &#39;get_session&#39;</span>\n</pre></div>\n</span>",
-          "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
@@ -342,23 +336,434 @@
       "code_hash": "28e1988f8aa489702aab694025526e7d",
       "outputs": [
         {
-          "type": "error",
-          "ename": "exception",
-          "evalue": "'InMemoryMemoryService' object has no attribute 'get_session'",
-          "traceback": []
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
         }
       ],
       "console": [
         {
           "type": "stream",
-          "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/alex/.cache/uv/archive-v0/nSf1Qf6IV586ZfT_frBVB/lib/python3.14/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">112</span>, in <span class=\"n\">execute_cell_async</span>\n<span class=\"w\">    </span><span class=\"k\">await</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_37666/__marimo__cell_ecfG_.py&quot;</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">session</span> <span class=\"o\">=</span> <span class=\"k\">await</span> <span class=\"n\">session_service</span><span class=\"o\">.</span><span class=\"n\">get_session</span><span class=\"p\">(</span>\n<span class=\"w\">                    </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">AttributeError</span>: <span class=\"n\">&#39;InMemoryMemoryService&#39; object has no attribute &#39;get_session&#39;</span>\n</pre></div>\n</span>",
-          "mimetype": "application/vnd.marimo+traceback"
+          "name": "stdout",
+          "text": "\ud83d\udcdd Session contains:\n  user: My favorite color is sea-green. Can you write a Haiku about ...\n  model: Sure, I can write a haiku about sea-green!\n\nOcean's gentle h...\n",
+          "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "Rmhn",
+      "id": "Pvdt",
+      "code_hash": "58d0fdbefcef3707ea752951746948d2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">confirmed above - our session contains our convo. Now lets transfer it to memory.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CLLr",
+      "code_hash": "0ce1c372ec08aede579464f4570daf6a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "session added! :)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "GTUi",
+      "code_hash": "c876ace865e325963b8c3f89f4212c02",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"enable-memory-retrieval-in-our-agent\">Enable Memory Retrieval in Our Agent</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "VQPT",
+      "code_hash": "c0e877be99ec14bac0315ada395ee279",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Memory has been transferred. However, agents\n<strong>cannot directly access <code>MemoryService</code></strong>\nthey need tools to search it.  This is by\ndesign - for fine grain control.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "jOLR",
+      "code_hash": "fb750011142b25ec516df4e754626d66",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Memory Retrieval in ADK</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\"><code>load_memory</code> (<strong>Reactive</strong>)</span>\n<ul>\n<li>Agent decides when to search memory</li>\n<li>Only retrieves when agent thinks is needed</li>\n<li>More efficient/saves tokens</li>\n<li>Risk: Agent might forget to search</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\"><code>preload_memory</code> (<strong>Proactive</strong>)</span>\n<ul>\n<li>Automatically searches before every turn</li>\n<li>Memory always available to agent</li>\n<li>Guaranteed context, but less efficient</li>\n<li>Searches even when not needed</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sdrA",
+      "code_hash": "d1d81d454f33971fc7c8d462905ba61e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"add-load-memory-tool-to-agent\">Add Load Memory Tool to Agent</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Ugls",
+      "code_hash": "8be393068d3bd46cf26257d78b650fc3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Recreate the agent, but with <code>load_memory</code> tool. Simply add to <code>tools</code> - no custom implementation needed.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BMua",
+      "code_hash": "4d2842261373c630a6963f8f68da342e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Agent with load_memory tool created :)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Lerp",
+      "code_hash": "d01dee118d29d03650fb0b0c7d0b0a5e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MhPg",
+      "code_hash": "e2a253369d1ff4490ac3077da3408038",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: color-test\n\nUser > What is my favorite color?\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Model: > The user's favorite color is sea-green.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "kkjy",
+      "code_hash": "953da2d57a3cb1945e966a6608cd989d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">woohoo it works! :)</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "WoYx",
+      "code_hash": "45d5f4944d35ee45320f4db1f8cfbb1f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"complete-manual-workflow-test\">Complete Manual Workflow Test</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "umNU",
+      "code_hash": "b8a811aad09ef06abad628720201eace",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Let's see the complete workflow in action.\nWe will:</span>\n<ol>\n<li>Have a conversation about a birthday</li>\n<li>Manually Save it to memory</li>\n<li>Test retrieval in a <em>new session</em></li>\n</ol>\n<span class=\"paragraph\">This demonstrates the full cycle:\n<strong>ingest -&gt; store -&gt; retrieve</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fgQy",
+      "code_hash": "8a4c32bbb1479641aea146db7457404c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: birthday-session-01\n\nUser > My friend Unix's birthday is January 1st, 1970.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Model: > OK. I will remember that Unix's birthday is January 1st, 1970.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ZYwU",
+      "code_hash": "528c6787fd558d4288344cccb7747895",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Now manually save this to memory to transfer short-term to long-term memory storage</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lacG",
+      "code_hash": "86a57d4f473f13e2b2171d3bd48047ad",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Birthday session saved to memory!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "eFMr",
+      "code_hash": "d066487c1594f1cf55c190f8a4a737c1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Now the crucial test - start a new session, with a new id and ask the agent to recall the birthday.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yYmB",
+      "code_hash": "501d7d626036c518dbd73dee8096f5ff",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: birthday-session-02\n\nUser > When is Unix's birthday?\nModel: > Unix's birthday is January 1st, 1970.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "hsMp",
+      "code_hash": "58baa24125b338b2c126efb61f4d860c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">So what just happened?</span>\n<ol>\n<li>Agent recieves: \"When is Unix's birthday?\"</li>\n<li>Agent recognizes: This requires past\nconversation context.</li>\n<li>Agent calls: <code>load_memory(\"birthday\")</code></li>\n<li>Memory returns: Previous conversation\ncontaining \"January 1st, 1970\"</li>\n<li>Agent responds: \"Unix's birthday is \nJanuary 1st, 1970\"</li>\n</ol>\n<span class=\"paragraph\">The memory worked, even though it is a\ncompletely different session!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tuUR",
+      "code_hash": "8836f05d88681090b0d99cb139d2ed87",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"experimenting-with-preload_memory\">Experimenting with <code>preload_memory</code></h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "FSht",
+      "code_hash": "f3868584eb4832cdf25e3638b199aa5e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We are going to experiment with swapping\n<code>load_memory</code> with <code>preload_memory</code> in\nthe tool array.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UduU",
+      "code_hash": "3b994d1c06522c70fc83eee92650d709",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sNSm",
+      "code_hash": "60873b83c2428bf159ed65be433e3761",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ynJN",
+      "code_hash": "8e116fc0b33fa6cecdeb07c1ac7b1ca7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">So what actually changes?</span>\n<span class=\"paragraph\">Remember that <code>load_memory</code> is reactive, and \n<code>preload_memory</code> is proactive.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "OeqT",
+      "code_hash": "cbf9563d46b2a4c3a79d042b497c83d7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Now we are going to test it out.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ezTo",
+      "code_hash": "f7d5214c7161cdcb10595987de73198f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n### Session: test-preload-session-01\n\nUser > What is my favorite color?\nModel: > Your favorite color is sea-green.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ZUZj",
       "code_hash": null,
       "outputs": [],
       "console": []
