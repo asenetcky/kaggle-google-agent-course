@@ -71,6 +71,58 @@
     },
     {
       "id": "IbJz",
+      "code_hash": "8b6e94710eef3404117449ec9ef09aa8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Previously, our practice of implementation of\nimplementing observability in AI agents was \nprimarily <strong>reactive</strong> - it comes into play only\nafter an issue ocurred.</span>\n<span class=\"paragraph\">This notebook will complement those practices with\na <em>proactive</em> approach using <strong>Agent Evaluation</strong>.\nWe will be continuously evaluating our agent's\nperformance and catch quality degradation much\nearlier.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rOZZ",
+      "code_hash": "0ac5d03ac2609da362b3ed8563eb1d5c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"the-story\">The story</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "uGJY",
+      "code_hash": "0d1f11ec36b00be39ece06a6ecdcdee0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Pretend for a moment - we've built a home automation\nagent. Works and tests perfectly so we launch it\nin full confidence.</span>\n<span class=\"paragraph\">Then the following occurs: </span>\n<ul>\n<li><strong>Week 1:</strong> Agent turns on fireplace when asked for\n    lights</li>\n<li><strong>Week 2:</strong> Agent wont respond to commands in guest\n  room.</li>\n<li><strong>Week 3:</strong> Agent gives rude responses when devices\n  are unavailable</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wBDb",
+      "code_hash": "ae738a5a646f5880f29821479d34ed7f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\"><strong>The Problem:</strong> `Standard testing does not equal\nEvaluation</span>\n</blockquote>\n<span class=\"paragraph\">Agents are different from traditional software:</span>\n<ul>\n<li>They are <em>non-deterministic</em></li>\n<li>Users give unpredictable, ambiguous commands</li>\n<li>Small prompt changes cause dramatic behavior\n  shifts and different tool calls</li>\n</ul>\n<span class=\"paragraph\">To accommodate all these variables, agents need\n  systematic evaluation, not just the <code>happy path</code>\n  testing.</span>\n<blockquote>\n<span class=\"paragraph\">The agent's entire decision-making process -\nincluding the final response, and the path\nit took to get the response (trajectory)\nneeds to be assessed.</span>\n</blockquote></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HAWs",
       "code_hash": null,
       "outputs": [],
       "console": []
