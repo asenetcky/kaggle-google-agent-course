@@ -5,8 +5,8 @@
   },
   "cells": [
     {
-      "id": "XQqN",
-      "code_hash": "74c566dfe6d186e10aeff9c930fcfca6",
+      "id": "Hbol",
+      "code_hash": "7dd07464ca21df2fa508f2ed0fe970a8",
       "outputs": [
         {
           "type": "data",
@@ -18,8 +18,8 @@
       "console": []
     },
     {
-      "id": "kBzv",
-      "code_hash": "659c4e5c5eb2b93382a1dd05cb578c45",
+      "id": "MJUe",
+      "code_hash": "80b39f4c390b5de6155d39b869ae36e4",
       "outputs": [
         {
           "type": "data",
@@ -31,7 +31,7 @@
       "console": []
     },
     {
-      "id": "Hbol",
+      "id": "vblA",
       "code_hash": "e4288b012fe1a31437d3a2f960669b68",
       "outputs": [
         {
@@ -44,7 +44,7 @@
       "console": []
     },
     {
-      "id": "Ojvv",
+      "id": "bkHC",
       "code_hash": "71151d65f63871fd94959230c9dcebcf",
       "outputs": [
         {
@@ -57,8 +57,8 @@
       "console": []
     },
     {
-      "id": "Qfrg",
-      "code_hash": "df16e95c0e0b3157750146682e01861b",
+      "id": "lEQa",
+      "code_hash": "c3ed18621d4b336fb6c995849031bc34",
       "outputs": [
         {
           "type": "data",
@@ -70,7 +70,7 @@
       "console": []
     },
     {
-      "id": "rARi",
+      "id": "PKri",
       "code_hash": "f1a83679652056f82b14b04a13751a8f",
       "outputs": [
         {
@@ -84,14 +84,14 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "logging configured! :)\n",
+          "text": "Cleaned up logger.log\nlogging configured! :)\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "hDBo",
-      "code_hash": "7f60def9ec7451e09b9b1c8adee3a911",
+      "id": "Xref",
+      "code_hash": "ae32a665d3854d6aa4ebc72fbfc7d6cc",
       "outputs": [
         {
           "type": "data",
@@ -103,8 +103,8 @@
       "console": []
     },
     {
-      "id": "sAKX",
-      "code_hash": "fb8c81563c02d4f400b2456b2341e894",
+      "id": "SFPL",
+      "code_hash": "37377a65a83939ac2faaeb6829b04af1",
       "outputs": [
         {
           "type": "data",
@@ -116,34 +116,34 @@
       "console": []
     },
     {
-      "id": "HwEo",
-      "code_hash": "e1619547770a9ad19d3cf24eecb5a3f8",
+      "id": "BYtC",
+      "code_hash": "0255d4fcdcf53a0f513c9b0fdb66ca38",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Our goal:</strong> Build a research paper finder agent\nthat helps users find academic papers on any \ntopic.</span>\n<span class=\"paragraph\">First, lets intentionally create an <em>incorrect</em> \nversion of the agent to practice debugging...yay!</span>\n<span class=\"paragraph\">Okay to make it more fun we'll mix it up a bit.\nWe'll use the ADK cli to do this \nwith <code>adk create</code>.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Our goal:</strong> Build a research paper finder agent\nthat helps users find academic papers on any\ntopic.</span>\n<span class=\"paragraph\">First, lets intentionally create an <em>incorrect</em>\nversion of the agent to practice debugging...yay!</span>\n<span class=\"paragraph\">Okay to make it more fun we'll mix it up a bit.\nWe'll use the ADK cli to do this\nwith <code>adk create</code>.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "TXTB",
-      "code_hash": "930ae1f835b95644eb0be33c57dd0057",
+      "id": "RGSE",
+      "code_hash": "39823112679424d055b5818fedd72827",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>adk<span class=\"w\"> </span>create<span class=\"w\"> </span>research-agent<span class=\"w\"> </span>--model<span class=\"w\"> </span>gemini-2.5-flash-lite<span class=\"w\"> </span>--api-key<span class=\"w\"> </span><span class=\"nv\">$GOOGLE_API_KEY</span>\n</code></pre></div></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>adk<span class=\"w\"> </span>create<span class=\"w\"> </span>research-agent<span class=\"w\"> </span>--model<span class=\"w\"> </span>gemini-2.5-flash-lite<span class=\"w\"> </span>--api_key<span class=\"w\"> </span><span class=\"nv\">$GOOGLE_API_KEY</span>\n</code></pre></div></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "SaRv",
-      "code_hash": "f86623d17f6623f9f86c2369be079bb2",
+      "id": "Kclp",
+      "code_hash": "501f2d00e46b9d7a765ac0257def5002",
       "outputs": [
         {
           "type": "data",
@@ -155,8 +155,8 @@
       "console": []
     },
     {
-      "id": "qWzX",
-      "code_hash": "0b854bc626a22cda7a6dbd6d3e683810",
+      "id": "emfo",
+      "code_hash": "78e08f8509da0222e7c1129a57e8555b",
       "outputs": [
         {
           "type": "data",
@@ -168,7 +168,176 @@
       "console": []
     },
     {
-      "id": "Tkrv",
+      "id": "Hstk",
+      "code_hash": "8fe3a869f0a7f5ebdeca3b3cbb834524",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>We'll configure it as an LlmAgent, give it a \nname, model and instruction.</li>\n<li>The root_agent gets the user prompt and \ndelegates the search to the google_search_agent.</li>\n<li>Then, the agent uses the count_papers tool to \ncount the number of papers returned.</li>\n</ul>\n<span class=\"paragraph\">Pay attention to the root agent's instructions \nand the count_papers tool parameter!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PUah",
+      "code_hash": "f73eaebc793d4ad3fec6e44d0571d780",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">file looks like this (with the error)</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.agents</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">LlmAgent</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.models.google_llm</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">Gemini</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.tools.agent_tool</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">AgentTool</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.tools.google_search_tool</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">google_search</span>\n\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.genai</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">types</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">typing</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">List</span>\n\n<span class=\"n\">retry_config</span> <span class=\"o\">=</span> <span class=\"n\">types</span><span class=\"o\">.</span><span class=\"n\">HttpRetryOptions</span><span class=\"p\">(</span>\n    <span class=\"n\">attempts</span><span class=\"o\">=</span><span class=\"mi\">5</span><span class=\"p\">,</span>  <span class=\"c1\"># Maximum retry attempts</span>\n    <span class=\"n\">exp_base</span><span class=\"o\">=</span><span class=\"mi\">7</span><span class=\"p\">,</span>  <span class=\"c1\"># Delay multiplier</span>\n    <span class=\"n\">initial_delay</span><span class=\"o\">=</span><span class=\"mi\">1</span><span class=\"p\">,</span>\n    <span class=\"n\">http_status_codes</span><span class=\"o\">=</span><span class=\"p\">[</span><span class=\"mi\">429</span><span class=\"p\">,</span> <span class=\"mi\">500</span><span class=\"p\">,</span> <span class=\"mi\">503</span><span class=\"p\">,</span> <span class=\"mi\">504</span><span class=\"p\">],</span>  <span class=\"c1\"># Retry on these HTTP errors</span>\n<span class=\"p\">)</span>\n\n<span class=\"c1\"># ---- Intentionally pass incorrect datatype - `str` instead of `List[str]` ----</span>\n<span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">count_papers</span><span class=\"p\">(</span><span class=\"n\">papers</span><span class=\"p\">:</span> <span class=\"nb\">str</span><span class=\"p\">):</span>\n<span class=\"w\">    </span><span class=\"sd\">&quot;&quot;&quot;</span>\n<span class=\"sd\">    This function counts the number of papers in a list of strings.</span>\n<span class=\"sd\">    Args:</span>\n<span class=\"sd\">      papers: A list of strings, where each string is a research paper.</span>\n<span class=\"sd\">    Returns:</span>\n<span class=\"sd\">      The number of papers in the list.</span>\n<span class=\"sd\">    &quot;&quot;&quot;</span>\n    <span class=\"k\">return</span> <span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">papers</span><span class=\"p\">)</span>\n\n\n<span class=\"c1\"># Google Search agent</span>\n<span class=\"n\">google_search_agent</span> <span class=\"o\">=</span> <span class=\"n\">LlmAgent</span><span class=\"p\">(</span>\n    <span class=\"n\">name</span><span class=\"o\">=</span><span class=\"s2\">&quot;google_search_agent&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">model</span><span class=\"o\">=</span><span class=\"n\">Gemini</span><span class=\"p\">(</span><span class=\"n\">model</span><span class=\"o\">=</span><span class=\"s2\">&quot;gemini-2.5-flash-lite&quot;</span><span class=\"p\">,</span> <span class=\"n\">retry_options</span><span class=\"o\">=</span><span class=\"n\">retry_config</span><span class=\"p\">),</span>\n    <span class=\"n\">description</span><span class=\"o\">=</span><span class=\"s2\">&quot;Searches for information using Google search&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">instruction</span><span class=\"o\">=</span><span class=\"s2\">&quot;&quot;&quot;Use the google_search tool to find information on the given topic. Return the raw search results.</span>\n<span class=\"s2\">    If the user asks for a list of papers, then give them the list of research papers you found and not the summary.&quot;&quot;&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">tools</span><span class=\"o\">=</span><span class=\"p\">[</span><span class=\"n\">google_search</span><span class=\"p\">]</span>\n<span class=\"p\">)</span>\n\n\n<span class=\"c1\"># Root agent</span>\n<span class=\"n\">root_agent</span> <span class=\"o\">=</span> <span class=\"n\">LlmAgent</span><span class=\"p\">(</span>\n    <span class=\"n\">name</span><span class=\"o\">=</span><span class=\"s2\">&quot;research_paper_finder_agent&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">model</span><span class=\"o\">=</span><span class=\"n\">Gemini</span><span class=\"p\">(</span><span class=\"n\">model</span><span class=\"o\">=</span><span class=\"s2\">&quot;gemini-2.5-flash-lite&quot;</span><span class=\"p\">,</span> <span class=\"n\">retry_options</span><span class=\"o\">=</span><span class=\"n\">retry_config</span><span class=\"p\">),</span>\n    <span class=\"n\">instruction</span><span class=\"o\">=</span><span class=\"s2\">&quot;&quot;&quot;Your task is to find research papers and count them. </span>\n\n<span class=\"s2\">    You MUST ALWAYS follow these steps:</span>\n<span class=\"s2\">    1) Find research papers on the user provided topic using the &#39;google_search_agent&#39;. </span>\n<span class=\"s2\">    2) Then, pass the papers to &#39;count_papers&#39; tool to count the number of papers returned.</span>\n<span class=\"s2\">    3) Return both the list of research papers and the total number of papers.</span>\n<span class=\"s2\">    &quot;&quot;&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">tools</span><span class=\"o\">=</span><span class=\"p\">[</span><span class=\"n\">AgentTool</span><span class=\"p\">(</span><span class=\"n\">agent</span><span class=\"o\">=</span><span class=\"n\">google_search_agent</span><span class=\"p\">),</span> <span class=\"n\">count_papers</span><span class=\"p\">]</span>\n<span class=\"p\">)</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Ojwa",
+      "code_hash": "c30b278cea825219ef0b39a15fe4bab9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We'll start the adk web UI in the terminal. Default port is <code>8000</code> - choose whatever works for you.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "twtC",
+      "code_hash": "84fd6d54cd8bcec21c0e514da06bf5f9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>adk<span class=\"w\"> </span>web<span class=\"w\"> </span>--log_level<span class=\"w\"> </span>DEBUG<span class=\"w\"> </span>--port<span class=\"w\"> </span><span class=\"m\">8002</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYJl",
+      "code_hash": "74d9f82c4bdab07f58b1bd425ea0c0d2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"test-the-agent-in-adk-web-ui\">Test the agent in ADK web UI</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nxXB",
+      "code_hash": "3268897e0653c544c2158cc7e6647091",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Do: In the ADK web UI</strong></span>\n<ol>\n<li>Select \"research-agent\" from the dropdown in \n    the top-left.</li>\n<li>In the chat interface, type: Find latest \n    quantum computing papers</li>\n<li>Send the message and observe the response.\n    The agent should return a list of research \n    papers and their count.</li>\n</ol>\n<span class=\"paragraph\">It looks like our agent works and we got a response! \nBut wait, isn't the count of papers unusually large? \nLet's look at the logs and trace.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MZxB",
+      "code_hash": "4bd35e3bc72acc65f518168ccef880be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">...series of steps on the gui...</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pnIn",
+      "code_hash": "6062220cdeb45945f8aee1b64003ab00",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"logging-in-production\">Logging in production</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "XzED",
+      "code_hash": "26a96b209e13d37b63d420a36fb8540d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">That was all well and good... but what about\nproduction?</span>\n<span class=\"paragraph\">You probably won't have web ui access and even if you\ndid you can't manually check the logs fast enough...</span>\n<span class=\"paragraph\">We need some new observability methods like adding\n<strong>logs to our code</strong>.</span>\n<span class=\"paragraph\">The approach isn't that much different than adding\nlog statements in python functions - with agents\nthere is a common approach <strong>Plugins</strong>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QewJ",
+      "code_hash": "f83a12172bff57de3340a7f5c9ea3cc2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"how-to-add-logs-for-production-observability\">How to add logs for production observability</h3>\n<span class=\"paragraph\">A Plugin is a custom code module that runs \nautomaticallt at various stages. Plugins are\ncomposed of callbacks with provide hooks\nto interrupt an agent's flow.</span>\n<span class=\"paragraph\">Think of it like this:</span>\n<ul>\n<li>Your agent workflow: User message \u2192 Agent thinks \u2192\n  Calls tools \u2192 Returns response</li>\n<li>Plugin hooks into this: Before agent starts \u2192 After\n  tool runs \u2192 When LLM responds \u2192 etc.</li>\n<li>Plugin contains your custom code: Logging,\n  monitoring, security checks, caching, etc.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lbWn",
+      "code_hash": "e648a1223cd3561cd51f168fa7c64866",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Callbacks are the atomic components inside a Plugin.\nCallbacks that are grouped together are a plugin.</span>\n<span class=\"paragraph\">So what does a plugin look like?</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Dwaa",
+      "code_hash": "a5f5dbb9108eee554e3bb5ac59bfc8d8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-python codehilite\"><pre><span></span><code><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;----- EXAMPLE PLUGIN - DOES NOTHING ----- &quot;</span><span class=\"p\">)</span>\n\n<span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"nn\">logging</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.agents.base_agent</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">BaseAgent</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.agents.callback_context</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">CallbackContext</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.models.llm_request</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">LlmRequest</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.plugins.base_plugin</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">BasePlugin</span>\n\n\n<span class=\"c1\"># Applies to all agent and model calls</span>\n<span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">CountInvocationPlugin</span><span class=\"p\">(</span><span class=\"n\">BasePlugin</span><span class=\"p\">):</span>\n    <span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span><span class=\"n\">A</span> <span class=\"n\">custom</span> <span class=\"n\">plugin</span> <span class=\"n\">that</span> <span class=\"n\">counts</span> <span class=\"n\">agent</span> <span class=\"ow\">and</span> <span class=\"n\">tool</span> <span class=\"n\">invocations</span><span class=\"o\">.</span><span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span>\n\n    <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"fm\">__init__</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">)</span> <span class=\"o\">-&gt;</span> <span class=\"kc\">None</span><span class=\"p\">:</span>\n        <span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span><span class=\"n\">Initialize</span> <span class=\"n\">the</span> <span class=\"n\">plugin</span> <span class=\"k\">with</span> <span class=\"n\">counters</span><span class=\"o\">.</span><span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span>\n        <span class=\"nb\">super</span><span class=\"p\">()</span><span class=\"o\">.</span><span class=\"fm\">__init__</span><span class=\"p\">(</span><span class=\"n\">name</span><span class=\"o\">=</span><span class=\"s2\">&quot;count_invocation&quot;</span><span class=\"p\">)</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">agent_count</span><span class=\"p\">:</span> <span class=\"nb\">int</span> <span class=\"o\">=</span> <span class=\"mi\">0</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">tool_count</span><span class=\"p\">:</span> <span class=\"nb\">int</span> <span class=\"o\">=</span> <span class=\"mi\">0</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">llm_request_count</span><span class=\"p\">:</span> <span class=\"nb\">int</span> <span class=\"o\">=</span> <span class=\"mi\">0</span>\n\n    <span class=\"c1\"># Callback 1: Runs before an agent is called. You can add any custom logic here.</span>\n    <span class=\"k\">async</span> <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">before_agent_callback</span><span class=\"p\">(</span>\n        <span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"o\">*</span><span class=\"p\">,</span> <span class=\"n\">agent</span><span class=\"p\">:</span> <span class=\"n\">BaseAgent</span><span class=\"p\">,</span> <span class=\"n\">callback_context</span><span class=\"p\">:</span> <span class=\"n\">CallbackContext</span>\n    <span class=\"p\">)</span> <span class=\"o\">-&gt;</span> <span class=\"kc\">None</span><span class=\"p\">:</span>\n        <span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span><span class=\"n\">Count</span> <span class=\"n\">agent</span> <span class=\"n\">runs</span><span class=\"o\">.</span><span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">agent_count</span> <span class=\"o\">+=</span> <span class=\"mi\">1</span>\n        <span class=\"n\">logging</span><span class=\"o\">.</span><span class=\"n\">info</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s2\">&quot;[Plugin] Agent run count: </span><span class=\"si\">{</span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">agent_count</span><span class=\"si\">}</span><span class=\"s2\">&quot;</span><span class=\"p\">)</span>\n\n    <span class=\"c1\"># Callback 2: Runs before a model is called. You can add any custom logic here.</span>\n    <span class=\"k\">async</span> <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">before_model_callback</span><span class=\"p\">(</span>\n        <span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"o\">*</span><span class=\"p\">,</span> <span class=\"n\">callback_context</span><span class=\"p\">:</span> <span class=\"n\">CallbackContext</span><span class=\"p\">,</span> <span class=\"n\">llm_request</span><span class=\"p\">:</span> <span class=\"n\">LlmRequest</span>\n    <span class=\"p\">)</span> <span class=\"o\">-&gt;</span> <span class=\"kc\">None</span><span class=\"p\">:</span>\n        <span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span><span class=\"n\">Count</span> <span class=\"n\">LLM</span> <span class=\"n\">requests</span><span class=\"o\">.</span><span class=\"s2\">&quot;</span><span class=\"se\">\\&quot;</span><span class=\"s2\">&quot;</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">llm_request_count</span> <span class=\"o\">+=</span> <span class=\"mi\">1</span>\n        <span class=\"n\">logging</span><span class=\"o\">.</span><span class=\"n\">info</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s2\">&quot;[Plugin] LLM request count: </span><span class=\"si\">{</span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">llm_request_count</span><span class=\"si\">}</span><span class=\"s2\">&quot;</span><span class=\"p\">)</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rbDK",
+      "code_hash": "ce555c053d77f9462e61ec2fa5877f10",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Plugins are registered <em>once</em> on a runner and then it\napplies automatically to <em>every agent, tool call, and \nllm request</em>* on that runner.</span>\n<span class=\"paragraph\">Thankfully you do not need to define all the callbacks\nfor <em>standard</em> observability data in ADK. ADK provides\na built-in <strong>LoggingPlugin</strong> that automatically\ncaptures all agent activity.</span>\n<span class=\"paragraph\">Let's put it into action - using our previous demo\nagent - the Research paper finder!</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HVUv",
       "code_hash": null,
       "outputs": [],
       "console": []
