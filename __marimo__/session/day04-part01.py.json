@@ -338,6 +338,105 @@
     },
     {
       "id": "HVUv",
+      "code_hash": "0ac27fdb9312b81ebfe46c6a2a052260",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Agent created\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "yMWK",
+      "code_hash": "458aaf5786f8ae0d3c7dbb0cc71c8232",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"add-looging-plugin-to-runner\">Add Looging Plugin to Runner</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dhHB",
+      "code_hash": "9a93eaec79f13c3a824e221a56d523c7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We're going to use the <code>InMemoryRunner</code> to invoke\nthe agent. To use the <code>LoggingPlugin</code> in the \nagent above we will:</span>\n<ol>\n<li>Import the plug</li>\n<li>Add it when initializing the <code>InMemoryRunner</code></li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "OGPM",
+      "code_hash": "dbb8c2700b9d6c6105275d798e1f7380",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Runner configured\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "lhoM",
+      "code_hash": "c6cadb3f193fda1547790757cacf7cd8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\ud83d\ude80 Running agent with LoggingPlugin...\n\ud83d\udcca Watch the comprehensive logging output below:\n\n\n ### Created new session: debug_session_id\n\nUser > Find recent papers on quantum computing\n\u001b[90m[logging_plugin] \ud83d\ude80 USER MESSAGE RECEIVED\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-bf9a96ce-0198-4353-93e8-2101a5519c49\u001b[0m\n\u001b[90m[logging_plugin]    Session ID: debug_session_id\u001b[0m\n\u001b[90m[logging_plugin]    User ID: debug_user_id\u001b[0m\n\u001b[90m[logging_plugin]    App Name: InMemoryRunner\u001b[0m\n\u001b[90m[logging_plugin]    Root Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    User Content: text: 'Find recent papers on quantum computing'\u001b[0m\n\u001b[90m[logging_plugin] \ud83c\udfc3 INVOCATION STARTING\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-bf9a96ce-0198-4353-93e8-2101a5519c49\u001b[0m\n\u001b[90m[logging_plugin]    Starting Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udd16 AGENT STARTING\u001b[0m\n\u001b[90m[logging_plugin]    Agent Name: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-bf9a96ce-0198-4353-93e8-2101a5519c49\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM REQUEST\u001b[0m\n\u001b[90m[logging_plugin]    Model: gemini-2.5-flash-lite\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    System Instruction: 'Your task is to find research papers and count them. \n   \n   You must follow these steps:\n   1) Find research papers on the user provided topic using the 'google_search_agent'. \n   2) Then, pass the p...'\u001b[0m\n\u001b[90m[logging_plugin]    Available Tools: ['google_search_agent', 'count_papers']\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM RESPONSE\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: function_call: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Token Usage - Input: 240, Output: 21\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udce2 EVENT YIELDED\u001b[0m\n\u001b[90m[logging_plugin]    Event ID: 4a8cd7c8-092b-4e13-846b-75e827824657\u001b[0m\n\u001b[90m[logging_plugin]    Author: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: function_call: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Final Response: False\u001b[0m\n\u001b[90m[logging_plugin]    Function Calls: ['google_search_agent']\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udd27 TOOL STARTING\u001b[0m\n\u001b[90m[logging_plugin]    Tool Name: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Function Call ID: adk-840d00c3-5585-44d6-8441-375d54cb352e\u001b[0m\n\u001b[90m[logging_plugin]    Arguments: {'request': 'recent papers on quantum computing'}\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\ude80 USER MESSAGE RECEIVED\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-48888dc0-8fe1-4671-a020-181b7af831e5\u001b[0m\n\u001b[90m[logging_plugin]    Session ID: 96385ee5-63e9-4e74-84b8-358fe3dbaa07\u001b[0m\n\u001b[90m[logging_plugin]    User ID: debug_user_id\u001b[0m\n\u001b[90m[logging_plugin]    App Name: InMemoryRunner\u001b[0m\n\u001b[90m[logging_plugin]    Root Agent: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    User Content: text: 'recent papers on quantum computing'\u001b[0m\n\u001b[90m[logging_plugin] \ud83c\udfc3 INVOCATION STARTING\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-48888dc0-8fe1-4671-a020-181b7af831e5\u001b[0m\n\u001b[90m[logging_plugin]    Starting Agent: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udd16 AGENT STARTING\u001b[0m\n\u001b[90m[logging_plugin]    Agent Name: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-48888dc0-8fe1-4671-a020-181b7af831e5\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM REQUEST\u001b[0m\n\u001b[90m[logging_plugin]    Model: gemini-2.5-flash-lite\u001b[0m\n\u001b[90m[logging_plugin]    Agent: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    System Instruction: 'Use the google_search tool to find information on the given topic. Return the raw search results.\n\nYou are an agent. Your internal name is \"google_search_agent\". The description about you is \"Searches...'\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM RESPONSE\u001b[0m\n\u001b[90m[logging_plugin]    Agent: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: text: 'The field of quantum computing is experiencing rapid advancements, with significant research and development expected to continue through 2025 and beyond. Key trends and recent developments include a ...'\u001b[0m\n\u001b[90m[logging_plugin]    Token Usage - Input: 58, Output: 489\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udce2 EVENT YIELDED\u001b[0m\n\u001b[90m[logging_plugin]    Event ID: 1de55817-18f4-4328-9a10-6b190f716d4d\u001b[0m\n\u001b[90m[logging_plugin]    Author: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: text: 'The field of quantum computing is experiencing rapid advancements, with significant research and development expected to continue through 2025 and beyond. Key trends and recent developments include a ...'\u001b[0m\n\u001b[90m[logging_plugin]    Final Response: True\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udd16 AGENT COMPLETED\u001b[0m\n\u001b[90m[logging_plugin]    Agent Name: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-48888dc0-8fe1-4671-a020-181b7af831e5\u001b[0m\n\u001b[90m[logging_plugin] \u2705 INVOCATION COMPLETED\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-48888dc0-8fe1-4671-a020-181b7af831e5\u001b[0m\n\u001b[90m[logging_plugin]    Final Agent: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udd27 TOOL COMPLETED\u001b[0m\n\u001b[90m[logging_plugin]    Tool Name: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Function Call ID: adk-840d00c3-5585-44d6-8441-375d54cb352e\u001b[0m\n\u001b[90m[logging_plugin]    Result: The field of quantum computing is experiencing rapid advancements, with significant research and development expected to continue through 2025 and beyond. Key trends and recent developments include a strong focus on \"logical qubits\" to improve error correction and enhance qubit fidelity, with compan...}\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udce2 EVENT YIELDED\u001b[0m\n\u001b[90m[logging_plugin]    Event ID: f92ac959-34bb-48f2-b3d1-8a5e172edecf\u001b[0m\n\u001b[90m[logging_plugin]    Author: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: function_response: google_search_agent\u001b[0m\n\u001b[90m[logging_plugin]    Final Response: False\u001b[0m\n\u001b[90m[logging_plugin]    Function Responses: ['google_search_agent']\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM REQUEST\u001b[0m\n\u001b[90m[logging_plugin]    Model: gemini-2.5-flash-lite\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    System Instruction: 'Your task is to find research papers and count them. \n   \n   You must follow these steps:\n   1) Find research papers on the user provided topic using the 'google_search_agent'. \n   2) Then, pass the p...'\u001b[0m\n\u001b[90m[logging_plugin]    Available Tools: ['google_search_agent', 'count_papers']\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM RESPONSE\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: function_call: count_papers\u001b[0m\n\u001b[90m[logging_plugin]    Token Usage - Input: 731, Output: 458\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udce2 EVENT YIELDED\u001b[0m\n\u001b[90m[logging_plugin]    Event ID: ce902ecb-7dbd-4b76-80fb-873ae5e00e8f\u001b[0m\n\u001b[90m[logging_plugin]    Author: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: function_call: count_papers\u001b[0m\n\u001b[90m[logging_plugin]    Final Response: False\u001b[0m\n\u001b[90m[logging_plugin]    Function Calls: ['count_papers']\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udd27 TOOL STARTING\u001b[0m\n\u001b[90m[logging_plugin]    Tool Name: count_papers\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Function Call ID: adk-80e8cd53-8941-4658-af88-ba669a7d5398\u001b[0m\n\u001b[90m[logging_plugin]    Arguments: {'papers': ['The field of quantum computing is experiencing rapid advancements, with significant research and development expected to continue through 2025 and beyond. Key trends and recent developments include a strong focus on \"logical qubits\" to improve error correction and enhance qubit fidelity...}\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udd27 TOOL COMPLETED\u001b[0m\n\u001b[90m[logging_plugin]    Tool Name: count_papers\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Function Call ID: adk-80e8cd53-8941-4658-af88-ba669a7d5398\u001b[0m\n\u001b[90m[logging_plugin]    Result: 9\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udce2 EVENT YIELDED\u001b[0m\n\u001b[90m[logging_plugin]    Event ID: e51f0b1b-c268-48e4-814e-441de2e27c4f\u001b[0m\n\u001b[90m[logging_plugin]    Author: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: function_response: count_papers\u001b[0m\n\u001b[90m[logging_plugin]    Final Response: False\u001b[0m\n\u001b[90m[logging_plugin]    Function Responses: ['count_papers']\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM REQUEST\u001b[0m\n\u001b[90m[logging_plugin]    Model: gemini-2.5-flash-lite\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    System Instruction: 'Your task is to find research papers and count them. \n   \n   You must follow these steps:\n   1) Find research papers on the user provided topic using the 'google_search_agent'. \n   2) Then, pass the p...'\u001b[0m\n\u001b[90m[logging_plugin]    Available Tools: ['google_search_agent', 'count_papers']\u001b[0m\n\u001b[90m[logging_plugin] \ud83e\udde0 LLM RESPONSE\u001b[0m\n\u001b[90m[logging_plugin]    Agent: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: text: 'Here are the recent papers on quantum computing that I found:\\n* The field of quantum computing is experiencing rapid advancements, with significant research and development expected to continue throu...'\u001b[0m\n\u001b[90m[logging_plugin]    Token Usage - Input: 1204, Output: 472\u001b[0m\n\u001b[90m[logging_plugin] \ud83d\udce2 EVENT YIELDED\u001b[0m\n\u001b[90m[logging_plugin]    Event ID: 5207daec-858d-4e89-bbc8-bdc3079a55bb\u001b[0m\n\u001b[90m[logging_plugin]    Author: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Content: text: 'Here are the recent papers on quantum computing that I found:\\n* The field of quantum computing is experiencing rapid advancements, with significant research and development expected to continue throu...'\u001b[0m\n\u001b[90m[logging_plugin]    Final Response: True\u001b[0m\nresearch_paper_finder_agent > Here are the recent papers on quantum computing that I found:\\n* The field of quantum computing is experiencing rapid advancements, with significant research and development expected to continue through 2025 and beyond. Key trends and recent developments include a strong focus on \\\"logical qubits\\\" to improve error correction and enhance qubit fidelity, with companies like Google, IBM, and Microsoft making notable progress. Quantum hardware is scaling up, with chips exceeding 100 qubits already available and being used for evaluation.\\n* Researchers are also exploring more specialized hardware and software, aiming for practical quantum applications rather than purely universal quantum computing. Efforts are underway to network smaller quantum devices together to create more powerful systems. Furthermore, there\\'s a growing emphasis on workforce development tools and improved physical qubits.\\n* Recent papers and research highlight several areas:\\n* **Error Correction and Fault Tolerance:** Significant breakthroughs are being made in developing systems that can detect and remove errors, a critical step towards building large-scale, fault-tolerant quantum computers. Harvard researchers, for instance, have demonstrated a system using 448 atomic qubits that can correct errors below a key threshold.\\n* **Quantum Algorithms and Optimization:** New quantum algorithms are being developed to tackle complex problems that are intractable for classical computers. Google Quantum AI has introduced an algorithm called Decoded Quantum Interferometry (DQI) that shows promise for solving certain optimization problems.\\n* **Quantum Machine Learning:** Even small-scale quantum computers are showing potential to enhance machine learning performance. Research is also exploring Quantum Machine Learning for applications in healthcare, finance, and autonomous vehicles.\\n* **Materials Science:** New tools and techniques are being developed to discover materials essential for next-generation quantum computing.\\n* **Hardware Innovations:** Advancements include superconducting circuits that could replace semiconductor components, new qubit designs like the tantalum-silicon qubit that show improved coherence times, and photonic quantum circuits.\\n* The financial industry is anticipated to be an early adopter of quantum computing technologies due to their potential to revolutionize fields like drug discovery and financial modeling. Investments in quantum technology are substantial, with governments worldwide contributing billions. While significant challenges remain in areas like qubit stability and algorithm development, the progress indicates a move towards practical quantum applications that could solve some of the world\\'s most complex problems.\\n\\nThere are 9 papers in total.\n\u001b[90m[logging_plugin] \ud83e\udd16 AGENT COMPLETED\u001b[0m\n\u001b[90m[logging_plugin]    Agent Name: research_paper_finder_agent\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-bf9a96ce-0198-4353-93e8-2101a5519c49\u001b[0m\n\u001b[90m[logging_plugin] \u2705 INVOCATION COMPLETED\u001b[0m\n\u001b[90m[logging_plugin]    Invocation ID: e-bf9a96ce-0198-4353-93e8-2101a5519c49\u001b[0m\n\u001b[90m[logging_plugin]    Final Agent: research_paper_finder_agent\u001b[0m\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "UkHI",
+      "code_hash": "a0930a1169d1d63c4029fbcd60ea00d7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Question to self: No timestamps?!?</span>\n<span class=\"paragraph\">anywho...</span>\n<span class=\"paragraph\">Summary:</span>\n<span class=\"paragraph\">When to use which type of logging?</span>\n<ol>\n<li><strong>Development debugging</strong> - \nuse <code>adk web --log_level DEBUG</code></li>\n<li><strong>Common production observability</strong> -\nuse <code>LoggingPlugin()</code></li>\n<li><strong>Custom requirements</strong> - Build your\nown custom callbacks and bundle into\na plugin</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ftdf",
       "code_hash": null,
       "outputs": [],
       "console": []

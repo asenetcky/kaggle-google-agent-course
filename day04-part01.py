@@ -1,6 +1,7 @@
 # /// script
 # requires-python = ">=3.14"
 # dependencies = [
+#     "protobuf==6.33.1",
 #     "python-dotenv==1.2.1",
 # ]
 # ///
@@ -397,6 +398,135 @@ def _(mo):
 
     Let's put it into action - using our previous demo
     agent - the Research paper finder!
+    """)
+    return
+
+
+@app.cell
+def _():
+    from google.adk.agents import LlmAgent
+    from google.adk.models.google_llm import Gemini
+    from google.adk.tools.agent_tool import AgentTool
+    from google.adk.tools.google_search_tool import google_search
+
+    from google.genai import types
+    from typing import List
+
+    retry_config = types.HttpRetryOptions(
+        attempts=5,  # Maximum retry attempts
+        exp_base=7,  # Delay multiplier
+        initial_delay=1,
+        http_status_codes=[429, 500, 503, 504],  # Retry on these HTTP errors
+    )
+
+
+    def count_papers(papers: List[str]):
+        """
+        This function counts the number of papers in a list of strings.
+        Args:
+          papers: A list of strings, where each string is a research paper.
+        Returns:
+          The number of papers in the list.
+        """
+        return len(papers)
+
+
+    # Google search agent
+    google_search_agent = LlmAgent(
+        name="google_search_agent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        description="Searches for information using Google search",
+        instruction="Use the google_search tool to find information on the given topic. Return the raw search results.",
+        tools=[google_search],
+    )
+
+    # Root agent
+    research_agent_with_plugin = LlmAgent(
+        name="research_paper_finder_agent",
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        instruction="""Your task is to find research papers and count them. 
+   
+       You must follow these steps:
+       1) Find research papers on the user provided topic using the 'google_search_agent'. 
+       2) Then, pass the papers to 'count_papers' tool to count the number of papers returned.
+       3) Return both the list of research papers and the total number of papers.
+       """,
+        tools=[AgentTool(agent=google_search_agent), count_papers],
+    )
+
+    print("✅ Agent created")
+    return (research_agent_with_plugin,)
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    ### Add Looging Plugin to Runner
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    We're going to use the `InMemoryRunner` to invoke
+    the agent. To use the `LoggingPlugin` in the
+    agent above we will:
+
+    1. Import the plug
+    1. Add it when initializing the `InMemoryRunner`
+    """)
+    return
+
+
+@app.cell
+def _(research_agent_with_plugin):
+    from google.adk.runners import InMemoryRunner
+    from google.adk.plugins.logging_plugin import (
+        LoggingPlugin,
+    )  # <---- 1. Import the Plugin
+    import asyncio
+
+    runner = InMemoryRunner(
+        agent=research_agent_with_plugin,
+        plugins=[
+            LoggingPlugin()
+        ],  # <---- 2. Add the plugin. Handles standard Observability logging across ALL agents
+    )
+
+    print("✅ Runner configured")
+    return (runner,)
+
+
+@app.cell
+async def _(runner):
+    print("🚀 Running agent with LoggingPlugin...")
+    print("📊 Watch the comprehensive logging output below:\n")
+
+    response = await runner.run_debug("Find recent papers on quantum computing")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    Question to self: No timestamps?!?
+
+    anywho...
+
+    Summary:
+
+    When to use which type of logging?
+
+    1. **Development debugging** -
+    use `adk web --log_level DEBUG`
+
+    1. **Common production observability** -
+    use `LoggingPlugin()`
+
+    1. **Custom requirements** - Build your
+    own custom callbacks and bundle into
+    a plugin
     """)
     return
 
