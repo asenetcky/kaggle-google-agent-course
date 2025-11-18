@@ -1,0 +1,79 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.8"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "83a95a2137b6bad3d434c56473b0263b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"day-04-part-02-agent-evaluation\">Day 04 Part 02 - Agent Evaluation</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "80b39f4c390b5de6155d39b869ae36e4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"setup\">Setup</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "ceac424a094f037db94c816f2c822cdd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "71151d65f63871fd94959230c9dcebcf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "e4fc63932349fc6c2e9dbcc127bd9881",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"agent-evaluation\">Agent Evaluation</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "IbJz",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
