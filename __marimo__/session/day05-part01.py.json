@@ -1,0 +1,157 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.8"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "WAgf",
+      "code_hash": "de0e1cf47197304db378f486403b3cb2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"agent-to-agent-communication\">Agent to Agent Communication</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "gjwU",
+      "code_hash": "fd0924efbb2e386b03ab075239cd2606",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"agent2agent-a2a-communication-with-adk\">Agent2Agent (A2A) Communication with ADK</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LoLl",
+      "code_hash": "232485c3f71ee74eb1654c955e51fe90",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Overview of Agent2Agent (A2A)</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\">The Problem: As you build more complex AI \nsystems:</span>\n<ul>\n<li>A single agent can't do everything</li>\n<li>You need agents to collaborate</li>\n<li>Different teams build different agents</li>\n<li>Agents may use different languages/\nframeworks</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">The Solution: A2A Protocol - a standard that allows agents to:</span>\n<ul>\n<li>Communicate over networks</li>\n<li>Use each other's capabilities</li>\n<li>Work across frameworks</li>\n<li>Maintain formal contracts</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "XGuF",
+      "code_hash": "24d90f5cea4b36866f13da47dcc2b86e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Common A2A Architecture Patterns</strong></span>\n<ol>\n<li>Cross-Framework Integration: ADK agent\ncommunicating with other agent frameworks</li>\n<li>Cross-language Communication: Python agent\ncalling Java or Node.js agent</li>\n<li>Cross-Organization Boundaries: Your internal\nagent integrating with external vendor services</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SZrg",
+      "code_hash": "cf47fa0102dd42c257e64c06412a557c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"creating-a-practical-e-commerce-integration\">Creating a practical e-commerce integration</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fFMv",
+      "code_hash": "6faf8689fa16b8d88a70fc20251c0c12",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>\n<span class=\"paragraph\">Product Catalog Agent</span>\n<ul>\n<li>Exposed via A2A</li>\n<li>External vendor service that provides\nproduct information</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Customer Support Agent</span>\n<ul>\n<li>Consumer</li>\n<li>Your internal agent that helps\ncustomers by querying product data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">This Justifies A2A because:</span>\n<ul>\n<li>Product Catalog is maintained by an\nexternal vendor \n(you <em>cannot</em> modify their code)</li>\n<li>Different organizations with\nseparate systems</li>\n<li>Formal contract needed between\nservices</li>\n<li>Product catalog could be in a \ndifferent language/framework</li>\n</ul>\n</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YKKr",
+      "code_hash": "09f88774f4a16e5cbeefd066767b619d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"a2a-vs-local-sub-agents\">A2A vs Local Sub-Agents</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YQGT",
+      "code_hash": "bdfb6ce566b37b25cfc779f9fa67b71e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">Agent location</span>\n<ul>\n<li>Use A2A: External service/ different codebase</li>\n<li>Use Local: same codebase/internal</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Ownership</span>\n<ul>\n<li>Use A2A: different team/org</li>\n<li>Use Local: your team</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Network</span>\n<ul>\n<li>Use A2A: agents on diff machines</li>\n<li>Use Local: same process/machine</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Performance</span>\n<ul>\n<li>Use A2A: network latency acceptable</li>\n<li>Use Local: need low latency\n-Lang/Framework</li>\n<li>Use A2A: cross-lang/framework needed</li>\n<li>Use Local: same languages</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Contract</span>\n<ul>\n<li>Use A2A: formal api contract required</li>\n<li>Use Local: interneral interface</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Example</span>\n<ul>\n<li>Use A2A: external vendor product catalog</li>\n<li>Use Local: internal order processing steps</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HAlS",
+      "code_hash": "94bc3dbdf9e59553da357695df9f6165",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"what-well-build\">What we'll build</h3>\n<span class=\"paragraph\"><strong>How it works:</strong></span>\n<ol>\n<li>Customer asks a product question to our\nCustomer Support Agent</li>\n<li>Support Agent realizes it needs product\ninformation</li>\n<li>Support Agent calls the Product Catalog\nAgent via A2A protocol</li>\n<li>Product Catalog Agent (external vendor)\nreturns product data</li>\n<li>Support agent formulates an answer and\nresponds to the customer</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QFiG",
+      "code_hash": "877c2c62a3e0f41ff1162ea811a9ba63",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We will:</span>\n<ol>\n<li>Create the product catalog agent - build\nthe vendor's agent with product lookup</li>\n<li>Expose via A2A - Make it accessible use \n<code>to_a2a()</code></li>\n<li>start the server - run the agent as a \nbackground service</li>\n<li>create the customer support agent - build\nthe consumer agent</li>\n<li>test communication - see a2a in action with\nreal queries</li>\n<li>understand the flow - learn what happened\nbehind the scenes</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SNBe",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}

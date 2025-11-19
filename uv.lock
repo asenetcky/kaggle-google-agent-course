@@ -3,6 +3,22 @@ revision = 3
 requires-python = ">=3.14"
 
 [[package]]
+name = "a2a-sdk"
+version = "0.3.15"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-api-core" },
+    { name = "httpx" },
+    { name = "httpx-sse" },
+    { name = "protobuf" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c0/73/7351f61a38ae0b9a0f0a24cd34c39cb564335b012897b274aa790241686a/a2a_sdk-0.3.15.tar.gz", hash = "sha256:df137fc3a18bb1d72c2018417aadd5d6263ded5c915b64d8a31719c098b968a5", size = 228712, upload-time = "2025-11-19T15:43:01.387Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5f/95/8b6135cc307f81fe60c408132ea73f35e7b2533c25ad14867e7658ebe4b3/a2a_sdk-0.3.15-py3-none-any.whl", hash = "sha256:52e4f917346fbce6d809f38585184a8ddb4abe57b435a18a982340589cf9d4f5", size = 141380, upload-time = "2025-11-19T15:43:00.007Z" },
+]
+
+[[package]]
 name = "absl-py"
 version = "2.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -479,6 +495,9 @@ wheels = [
 ]
 
 [package.optional-dependencies]
+a2a = [
+    { name = "a2a-sdk" },
+]
 eval = [
     { name = "google-cloud-aiplatform", extra = ["evaluation"] },
     { name = "pandas" },
@@ -1198,7 +1217,7 @@ name = "kaggle-google-agent-course"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "google-adk", extra = ["eval"] },
+    { name = "google-adk", extra = ["a2a", "eval"] },
     { name = "marimo" },
     { name = "mcp" },
     { name = "python-dotenv" },
@@ -1211,7 +1230,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "google-adk", extras = ["eval"], specifier = ">=1.18.0" },
+    { name = "google-adk", extras = ["a2a", "eval"], specifier = ">=1.18.0" },
     { name = "marimo", specifier = ">=0.17.7" },
     { name = "mcp", specifier = ">=1.21.0" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
