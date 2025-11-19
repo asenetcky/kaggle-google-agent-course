@@ -1,0 +1,436 @@
+{
+  "eval_set_id": "home_automation_tests",
+  "name": "home_automation_tests",
+  "eval_cases": [
+    {
+      "eval_id": "basic_device_control",
+      "conversation": [
+        {
+          "invocation_id": "e-eaa33352-95c6-4c0d-851d-cf6ff8b718f3",
+          "user_content": {
+            "parts": [
+              {
+                "text": "turn on the lamp in the office"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "The lamp in the office is now on."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-cffe3287-9434-4ff4-8580-c4eb045a8723",
+                        "args": {
+                          "device_id": "lamp",
+                          "location": "office",
+                          "status": "ON"
+                        },
+                        "name": "set_device_status"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-cffe3287-9434-4ff4-8580-c4eb045a8723",
+                        "name": "set_device_status",
+                        "response": {
+                          "success": true,
+                          "message": "Successfully set the lamp in office to on."
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1763571635.496029
+        }
+      ],
+      "session_input": {
+        "app_name": "home_automation_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1763571670.7055209
+    },
+    {
+      "eval_id": "bedroom_device_control",
+      "conversation": [
+        {
+          "invocation_id": "e-5220ad6e-c742-4ea6-a603-f253a0d30944",
+          "user_content": {
+            "parts": [
+              {
+                "text": "turn on the lamp in the office"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "The lamp in the office is now on."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-8f97d5cb-af65-48b6-9885-d24c045265ae",
+                        "args": {
+                          "device_id": "lamp",
+                          "location": "office",
+                          "status": "ON"
+                        },
+                        "name": "set_device_status"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-8f97d5cb-af65-48b6-9885-d24c045265ae",
+                        "name": "set_device_status",
+                        "response": {
+                          "success": true,
+                          "message": "Successfully set the lamp in office to on."
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1763573130.584184
+        },
+        {
+          "invocation_id": "e-5f219b8c-ec1c-47e5-81b9-ce9be11470f6",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Turn on the lights in the bedroom"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "The lights in the bedroom are now on."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-383e96e6-1e49-4546-97dc-4a00216b53c2",
+                        "args": {
+                          "location": "bedroom",
+                          "device_id": "lights",
+                          "status": "ON"
+                        },
+                        "name": "set_device_status"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-383e96e6-1e49-4546-97dc-4a00216b53c2",
+                        "name": "set_device_status",
+                        "response": {
+                          "success": true,
+                          "message": "Successfully set the lights in bedroom to on."
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1763575714.617749
+        }
+      ],
+      "session_input": {
+        "app_name": "home_automation_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1763575757.3668723
+    },
+    {
+      "eval_id": "ambiguous_device_reference",
+      "conversation": [
+        {
+          "invocation_id": "e-2c2eb1a1-983a-457f-aa6d-cd5fba05d791",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Turn on the lights in the bedroom"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "OK. I've turned on the lights in the bedroom."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-1b6fb1cc-fef5-4f17-8173-4de1455e82ff",
+                        "args": {
+                          "status": "ON",
+                          "location": "bedroom",
+                          "device_id": "lights"
+                        },
+                        "name": "set_device_status"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-1b6fb1cc-fef5-4f17-8173-4de1455e82ff",
+                        "name": "set_device_status",
+                        "response": {
+                          "success": true,
+                          "message": "Successfully set the lights in bedroom to on."
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1763575824.563254
+        }
+      ],
+      "session_input": {
+        "app_name": "home_automation_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1763575860.5108178
+    },
+    {
+      "eval_id": "invalid_location_test",
+      "conversation": [
+        {
+          "invocation_id": "e-ed400fa3-79da-456c-8fe0-43cf21d21dc3",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Please turn off the TV in the garage."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "I've turned off the TV in the garage."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-23d0e6a2-c97a-42ca-9b7a-491e6b8c507a",
+                        "args": {
+                          "status": "OFF",
+                          "device_id": "TV",
+                          "location": "garage"
+                        },
+                        "name": "set_device_status"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-23d0e6a2-c97a-42ca-9b7a-491e6b8c507a",
+                        "name": "set_device_status",
+                        "response": {
+                          "success": true,
+                          "message": "Successfully set the TV in garage to off."
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1763575940.316108
+        }
+      ],
+      "session_input": {
+        "app_name": "home_automation_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1763575961.60002
+    },
+    {
+      "eval_id": "complex_multi_device_command",
+      "conversation": [
+        {
+          "invocation_id": "e-b35b9e1d-1ce1-4cd4-bd85-51604a39ace1",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Turn off all lights and turn on security system"
+              }
+            ],
+            "role": "user"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-53e016d2-e7fb-4fac-bbb2-542e4a6aec0e",
+                        "args": {
+                          "device_id": "lights",
+                          "location": "all",
+                          "status": "OFF"
+                        },
+                        "name": "set_device_status"
+                      }
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-f1f02fa8-af6b-4c31-b2e8-30cc1ae5887c",
+                        "args": {
+                          "device_id": "security system",
+                          "location": "all",
+                          "status": "ON"
+                        },
+                        "name": "set_device_status"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "home_automation_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-53e016d2-e7fb-4fac-bbb2-542e4a6aec0e",
+                        "name": "set_device_status",
+                        "response": {
+                          "success": true,
+                          "message": "Successfully set the lights in all to off."
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "adk-f1f02fa8-af6b-4c31-b2e8-30cc1ae5887c",
+                        "name": "set_device_status",
+                        "response": {
+                          "success": true,
+                          "message": "Successfully set the security system in all to on."
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1763575988.377072
+        }
+      ],
+      "session_input": {
+        "app_name": "home_automation_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1763576005.5311875
+    }
+  ],
+  "creation_timestamp": 1763571652.8931737
+}

@@ -175,6 +175,170 @@
     },
     {
       "id": "PPgJ",
+      "code_hash": "94d2e03300c45b5b40138eda60a5e4a2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"interactive-evaluation-with-adk-web-ui\">Interactive Evaluation with ADK Web UI</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aZIR",
+      "code_hash": "e1cc21dc0972ed50ed206395cfd5e7f8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>adk<span class=\"w\"> </span>web<span class=\"w\"> </span>--port<span class=\"o\">=</span><span class=\"m\">8005</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wUJg",
+      "code_hash": "ddb898fd683bcbb24a56c5d0dce773c0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"systematic-evaluation\">Systematic Evaluation</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QuRJ",
+      "code_hash": "a7b6f0a08d09d57f9d1faf82279a8b86",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Testing one conversation at a time does not scale.</span>\n<span class=\"paragraph\">Regression testing is the practice or re-running\nexisting tests to ensure that new changes haven't\nbroken previously working code.</span>\n<span class=\"paragraph\">ADK provies two methods for automatic regression\nand batch testing.</span>\n<ul>\n<li><code>pytest</code></li>\n<li>adk eval</li>\n</ul>\n<span class=\"paragraph\">We will focus on <code>adk eval</code>.</span>\n<span class=\"paragraph\">There are more or less four steps to evaluation: </span>\n<ol>\n<li>Create an evaluation configuration</li>\n<li>Create test cases</li>\n<li>Run the agent with test query</li>\n<li>Compare the results</li>\n</ol>\n<span class=\"paragraph\">We're going to use this code to create a  config: <code>test_config.json</code></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AWjL",
+      "code_hash": "a13d1fda03580ac9e83d6ce99d03a39d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Evaluation configuration created!\n\n\ud83d\udcca Evaluation Criteria:\n\u2022 tool_trajectory_avg_score: 1.0 - Requires exact tool usage match\n\u2022 response_match_score: 0.8 - Requires 80% text similarity\n\n\ud83c\udfaf What this evaluation will catch:\n\u2705 Incorrect tool usage (wrong device, location, or status)\n\u2705 Poor response quality and communication\n\u2705 Deviations from expected behavior patterns\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ByEx",
+      "code_hash": "2bab2780ee618d7cf5b664c8a568ab34",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"create-test-cases\">Create test cases</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xizY",
+      "code_hash": "ad7ed8b60a2129b9b29f20c969e36247",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Next we'll create multiple tesr cases (sessions).</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "WVMi",
+      "code_hash": "b19e45ce92ca77049c9c5065c3c5b335",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xnZY",
+      "code_hash": "1290384091d84005b21ae664fd5a9bc8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Evaluation test cases created\n\n\ud83e\uddea Test scenarios:\n\u2022 living_room_light_on: Please turn on the floor lamp in the living room\n\u2022 kitchen_on_off_sequence: Switch on the main light in the kitchen.\n\n\ud83d\udcca Expected results:\n\u2022 basic_device_control: Should pass both criteria\n\u2022 wrong_tool_usage_test: May fail tool_trajectory if agent uses wrong parameters\n\u2022 poor_response_quality_test: May fail response_match if response differs too much\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "PDbk",
+      "code_hash": "b500e1c4c8b48aa82bc2225a8e2ed431",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">next run this in the terminal:</span>\n<div class=\"language-bash codehilite\"><pre><span></span><code>adk<span class=\"w\"> </span><span class=\"nb\">eval</span><span class=\"w\"> </span>home_automation_agent<span class=\"w\"> </span>home_automation_agent/integration.evalset.json<span class=\"w\"> </span>--config_file_path<span class=\"o\">=</span>home_automation_agent/test_config.json<span class=\"w\"> </span>--print_detailed_results\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YSeE",
+      "code_hash": "33b018aaa5fbd6e67d677d02c0a9d9f7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\ud83d\udcca Understanding Evaluation Results:\n\n\ud83d\udd0d EXAMPLE ANALYSIS:\n\nTest Case: living_room_light_on\n  \u274c response_match_score: 0.45/0.80\n  \u2705 tool_trajectory_avg_score: 1.0/1.0\n\n\ud83d\udcc8 What this tells us:\n\u2022 TOOL USAGE: Perfect - Agent used correct tool with correct parameters\n\u2022 RESPONSE QUALITY: Poor - Response text too different from expected\n\u2022 ROOT CAUSE: Agent's communication style, not functionality\n\n\ud83c\udfaf ACTIONABLE INSIGHTS:\n1. Technical capability works (tool usage perfect)\n2. Communication needs improvement (response quality failed)\n3. Fix: Update agent instructions for clearer language or constrained response.\n\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "oKYe",
       "code_hash": null,
       "outputs": [],
       "console": []
