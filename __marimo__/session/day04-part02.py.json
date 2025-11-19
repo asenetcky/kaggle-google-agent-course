@@ -70,20 +70,20 @@
       "console": []
     },
     {
-      "id": "IbJz",
-      "code_hash": "8b6e94710eef3404117449ec9ef09aa8",
+      "id": "PKri",
+      "code_hash": "58d56c7dc093bd0f356e1cc455b4e765",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Previously, our practice of implementation of\nimplementing observability in AI agents was \nprimarily <strong>reactive</strong> - it comes into play only\nafter an issue ocurred.</span>\n<span class=\"paragraph\">This notebook will complement those practices with\na <em>proactive</em> approach using <strong>Agent Evaluation</strong>.\nWe will be continuously evaluating our agent's\nperformance and catch quality degradation much\nearlier.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Previously, our practice of implementation of\nimplementing observability in AI agents was\nprimarily <strong>reactive</strong> - it comes into play only\nafter an issue ocurred.</span>\n<span class=\"paragraph\">This notebook will complement those practices with\na <em>proactive</em> approach using <strong>Agent Evaluation</strong>.\nWe will be continuously evaluating our agent's\nperformance and catch quality degradation much\nearlier.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "rOZZ",
+      "id": "Xref",
       "code_hash": "0ac5d03ac2609da362b3ed8563eb1d5c",
       "outputs": [
         {
@@ -96,21 +96,21 @@
       "console": []
     },
     {
-      "id": "uGJY",
-      "code_hash": "0d1f11ec36b00be39ece06a6ecdcdee0",
+      "id": "SFPL",
+      "code_hash": "bedb360a0bcd5100700f06a3dd71d1cb",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Pretend for a moment - we've built a home automation\nagent. Works and tests perfectly so we launch it\nin full confidence.</span>\n<span class=\"paragraph\">Then the following occurs: </span>\n<ul>\n<li><strong>Week 1:</strong> Agent turns on fireplace when asked for\n    lights</li>\n<li><strong>Week 2:</strong> Agent wont respond to commands in guest\n  room.</li>\n<li><strong>Week 3:</strong> Agent gives rude responses when devices\n  are unavailable</li>\n</ul></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Pretend for a moment - we've built a home automation\nagent. Works and tests perfectly so we launch it\nin full confidence.</span>\n<span class=\"paragraph\">Then the following occurs:</span>\n<ul>\n<li><strong>Week 1:</strong> Agent turns on fireplace when asked for\n    lights</li>\n<li><strong>Week 2:</strong> Agent wont respond to commands in guest\n  room.</li>\n<li><strong>Week 3:</strong> Agent gives rude responses when devices\n  are unavailable</li>\n</ul></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "wBDb",
-      "code_hash": "ae738a5a646f5880f29821479d34ed7f",
+      "id": "BYtC",
+      "code_hash": "0062960851a612c507f4b23379174f83",
       "outputs": [
         {
           "type": "data",
@@ -122,7 +122,59 @@
       "console": []
     },
     {
-      "id": "HAWs",
+      "id": "RGSE",
+      "code_hash": "2b4a81672f9f099a6a2ff830324f978d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"creating-a-home-automation-agent\">Creating a Home Automation Agent</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AYkF",
+      "code_hash": "0cd10b2fff5eadf16af09e53410bc78b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>adk<span class=\"w\"> </span>create<span class=\"w\"> </span>home_automation_agent<span class=\"w\"> </span>--model<span class=\"w\"> </span>gemini-2.5-flash-lite<span class=\"w\"> </span>--api_key<span class=\"w\"> </span><span class=\"nv\">$GOOGLE_API_KEY</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vkJx",
+      "code_hash": "fdd0211a66b180eb8f4dba1deba7084d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-bash codehilite\"><pre><span></span><code>Agent<span class=\"w\"> </span>created<span class=\"w\"> </span><span class=\"k\">in</span><span class=\"w\"> </span>/kaggle/working/home_automation_agent:\n\n-<span class=\"w\"> </span>.env\n\n-<span class=\"w\"> </span>__init__.py\n\n-<span class=\"w\"> </span>agent.py\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "uQkv",
+      "code_hash": "c47ff7b46e4d5783e0567de30f2d0b9f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We'll be creating this file to setup the agent:\n    <code>home_automation_agent/agent.py</code></span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.agents</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">LlmAgent</span>\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.adk.models.google_llm</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">Gemini</span>\n\n<span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">google.genai</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">types</span>\n\n<span class=\"c1\"># Configure Model Retry on errors</span>\n<span class=\"n\">retry_config</span> <span class=\"o\">=</span> <span class=\"n\">types</span><span class=\"o\">.</span><span class=\"n\">HttpRetryOptions</span><span class=\"p\">(</span>\n    <span class=\"n\">attempts</span><span class=\"o\">=</span><span class=\"mi\">5</span><span class=\"p\">,</span>  <span class=\"c1\"># Maximum retry attempts</span>\n    <span class=\"n\">exp_base</span><span class=\"o\">=</span><span class=\"mi\">7</span><span class=\"p\">,</span>  <span class=\"c1\"># Delay multiplier</span>\n    <span class=\"n\">initial_delay</span><span class=\"o\">=</span><span class=\"mi\">1</span><span class=\"p\">,</span>\n    <span class=\"n\">http_status_codes</span><span class=\"o\">=</span><span class=\"p\">[</span><span class=\"mi\">429</span><span class=\"p\">,</span> <span class=\"mi\">500</span><span class=\"p\">,</span> <span class=\"mi\">503</span><span class=\"p\">,</span> <span class=\"mi\">504</span><span class=\"p\">],</span>  <span class=\"c1\"># Retry on these HTTP errors</span>\n<span class=\"p\">)</span>\n\n<span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">set_device_status</span><span class=\"p\">(</span><span class=\"n\">location</span><span class=\"p\">:</span> <span class=\"nb\">str</span><span class=\"p\">,</span> <span class=\"n\">device_id</span><span class=\"p\">:</span> <span class=\"nb\">str</span><span class=\"p\">,</span> <span class=\"n\">status</span><span class=\"p\">:</span> <span class=\"nb\">str</span><span class=\"p\">)</span> <span class=\"o\">-&gt;</span> <span class=\"nb\">dict</span><span class=\"p\">:</span>\n<span class=\"w\">    </span><span class=\"sd\">&quot;&quot;&quot;Sets the status of a smart home device.</span>\n\n<span class=\"sd\">    Args:</span>\n<span class=\"sd\">        location: The room where the device is </span>\n<span class=\"sd\">        located.</span>\n<span class=\"sd\">        device_id: The unique identifier for the </span>\n<span class=\"sd\">        device.</span>\n<span class=\"sd\">        status: The desired status, either &#39;ON&#39; or </span>\n<span class=\"sd\">        &#39;OFF&#39;.</span>\n\n<span class=\"sd\">    Returns:</span>\n<span class=\"sd\">        A dictionary confirming the action.</span>\n<span class=\"sd\">    &quot;&quot;&quot;</span>\n    <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s2\">&quot;Tool Call: Setting </span><span class=\"si\">{</span><span class=\"n\">device_id</span><span class=\"si\">}</span><span class=\"s2\"> in </span><span class=\"si\">{</span><span class=\"n\">location</span><span class=\"si\">}</span><span class=\"s2\"> to </span><span class=\"si\">{</span><span class=\"n\">status</span><span class=\"si\">}</span><span class=\"s2\">&quot;</span><span class=\"p\">)</span>\n    <span class=\"k\">return</span> <span class=\"p\">{</span>\n        <span class=\"s2\">&quot;success&quot;</span><span class=\"p\">:</span> <span class=\"kc\">True</span><span class=\"p\">,</span>\n        <span class=\"s2\">&quot;message&quot;</span><span class=\"p\">:</span> <span class=\"sa\">f</span><span class=\"s2\">&quot;Successfully set the </span><span class=\"si\">{</span><span class=\"n\">device_id</span><span class=\"si\">}</span><span class=\"s2\"> in </span><span class=\"si\">{</span><span class=\"n\">location</span><span class=\"si\">}</span><span class=\"s2\"> to </span><span class=\"si\">{</span><span class=\"n\">status</span><span class=\"o\">.</span><span class=\"n\">lower</span><span class=\"p\">()</span><span class=\"si\">}</span><span class=\"s2\">.&quot;</span>\n    <span class=\"p\">}</span>\n\n<span class=\"c1\"># This agent has DELIBERATE FLAWS that we&#39;ll discover through evaluation!</span>\n<span class=\"n\">root_agent</span> <span class=\"o\">=</span> <span class=\"n\">LlmAgent</span><span class=\"p\">(</span>\n    <span class=\"n\">model</span><span class=\"o\">=</span><span class=\"n\">Gemini</span><span class=\"p\">(</span><span class=\"n\">model</span><span class=\"o\">=</span><span class=\"s2\">&quot;gemini-2.5-flash-lite&quot;</span><span class=\"p\">,</span> <span class=\"n\">retry_options</span><span class=\"o\">=</span><span class=\"n\">retry_config</span><span class=\"p\">),</span>\n    <span class=\"n\">name</span><span class=\"o\">=</span><span class=\"s2\">&quot;home_automation_agent&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">description</span><span class=\"o\">=</span><span class=\"s2\">&quot;An agent to control smart devices in a home.&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">instruction</span><span class=\"o\">=</span><span class=\"s2\">&quot;&quot;&quot;You are a home automation assistant. You control ALL smart devices in the house.</span>\n\n<span class=\"s2\">    You have access to lights, security systems, ovens, fireplaces, and any other device the user mentions.</span>\n<span class=\"s2\">    Always try to be helpful and control whatever device the user asks for.</span>\n\n<span class=\"s2\">    When users ask about device capabilities, tell them about all the amazing features you can control.&quot;&quot;&quot;</span><span class=\"p\">,</span>\n    <span class=\"n\">tools</span><span class=\"o\">=</span><span class=\"p\">[</span><span class=\"n\">set_device_status</span><span class=\"p\">],</span>\n<span class=\"p\">)</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PPgJ",
       "code_hash": null,
       "outputs": [],
       "console": []
