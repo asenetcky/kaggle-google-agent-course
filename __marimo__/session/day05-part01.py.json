@@ -18,8 +18,8 @@
       "console": []
     },
     {
-      "id": "WAgf",
-      "code_hash": "de0e1cf47197304db378f486403b3cb2",
+      "id": "MJUe",
+      "code_hash": "ca36585f3b8304dd137ba72b205083ab",
       "outputs": [
         {
           "type": "data",
@@ -31,8 +31,8 @@
       "console": []
     },
     {
-      "id": "gjwU",
-      "code_hash": "fd0924efbb2e386b03ab075239cd2606",
+      "id": "vblA",
+      "code_hash": "3c0299814bb4a6657ea2721d07b6e624",
       "outputs": [
         {
           "type": "data",
@@ -44,21 +44,21 @@
       "console": []
     },
     {
-      "id": "LoLl",
-      "code_hash": "232485c3f71ee74eb1654c955e51fe90",
+      "id": "bkHC",
+      "code_hash": "4d5a55d2647c78209a3b3950be1ff295",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Overview of Agent2Agent (A2A)</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\">The Problem: As you build more complex AI \nsystems:</span>\n<ul>\n<li>A single agent can't do everything</li>\n<li>You need agents to collaborate</li>\n<li>Different teams build different agents</li>\n<li>Agents may use different languages/\nframeworks</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">The Solution: A2A Protocol - a standard that allows agents to:</span>\n<ul>\n<li>Communicate over networks</li>\n<li>Use each other's capabilities</li>\n<li>Work across frameworks</li>\n<li>Maintain formal contracts</li>\n</ul>\n</li>\n</ul></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Overview of Agent2Agent (A2A)</strong></span>\n<ul>\n<li>\n<span class=\"paragraph\">The Problem: As you build more complex AI\nsystems:</span>\n<ul>\n<li>A single agent can't do everything</li>\n<li>You need agents to collaborate</li>\n<li>Different teams build different agents</li>\n<li>Agents may use different languages/\nframeworks</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">The Solution: A2A Protocol - a standard that allows agents to:</span>\n<ul>\n<li>Communicate over networks</li>\n<li>Use each other's capabilities</li>\n<li>Work across frameworks</li>\n<li>Maintain formal contracts</li>\n</ul>\n</li>\n</ul></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "XGuF",
-      "code_hash": "24d90f5cea4b36866f13da47dcc2b86e",
+      "id": "lEQa",
+      "code_hash": "85d1ac607ccfddb65b8216654f6fb73a",
       "outputs": [
         {
           "type": "data",
@@ -70,8 +70,8 @@
       "console": []
     },
     {
-      "id": "SZrg",
-      "code_hash": "cf47fa0102dd42c257e64c06412a557c",
+      "id": "PKri",
+      "code_hash": "c775edb6cbb0e980516a99181647d0ef",
       "outputs": [
         {
           "type": "data",
@@ -83,21 +83,21 @@
       "console": []
     },
     {
-      "id": "fFMv",
-      "code_hash": "6faf8689fa16b8d88a70fc20251c0c12",
+      "id": "Xref",
+      "code_hash": "94b10049023447e5231d7d3a42e02ef0",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>\n<span class=\"paragraph\">Product Catalog Agent</span>\n<ul>\n<li>Exposed via A2A</li>\n<li>External vendor service that provides\nproduct information</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Customer Support Agent</span>\n<ul>\n<li>Consumer</li>\n<li>Your internal agent that helps\ncustomers by querying product data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">This Justifies A2A because:</span>\n<ul>\n<li>Product Catalog is maintained by an\nexternal vendor \n(you <em>cannot</em> modify their code)</li>\n<li>Different organizations with\nseparate systems</li>\n<li>Formal contract needed between\nservices</li>\n<li>Product catalog could be in a \ndifferent language/framework</li>\n</ul>\n</li>\n</ol></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>\n<span class=\"paragraph\">Product Catalog Agent</span>\n<ul>\n<li>Exposed via A2A</li>\n<li>External vendor service that provides\nproduct information</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Customer Support Agent</span>\n<ul>\n<li>Consumer</li>\n<li>Your internal agent that helps\ncustomers by querying product data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">This Justifies A2A because:</span>\n<ul>\n<li>Product Catalog is maintained by an\nexternal vendor\n(you <em>cannot</em> modify their code)</li>\n<li>Different organizations with\nseparate systems</li>\n<li>Formal contract needed between\nservices</li>\n<li>Product catalog could be in a\ndifferent language/framework</li>\n</ul>\n</li>\n</ol></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "YKKr",
-      "code_hash": "09f88774f4a16e5cbeefd066767b619d",
+      "id": "SFPL",
+      "code_hash": "cc9c92693072c75479b37bbea47e00b5",
       "outputs": [
         {
           "type": "data",
@@ -109,8 +109,8 @@
       "console": []
     },
     {
-      "id": "YQGT",
-      "code_hash": "bdfb6ce566b37b25cfc779f9fa67b71e",
+      "id": "BYtC",
+      "code_hash": "c2adc9ad232ec3052e79b9e932d26118",
       "outputs": [
         {
           "type": "data",
@@ -122,8 +122,8 @@
       "console": []
     },
     {
-      "id": "HAlS",
-      "code_hash": "94bc3dbdf9e59553da357695df9f6165",
+      "id": "RGSE",
+      "code_hash": "f5b4ad22892d5fadb63923074302b7c6",
       "outputs": [
         {
           "type": "data",
@@ -135,20 +135,250 @@
       "console": []
     },
     {
-      "id": "QFiG",
-      "code_hash": "877c2c62a3e0f41ff1162ea811a9ba63",
+      "id": "Kclp",
+      "code_hash": "06c2aaeaacc70c3da8f7d20761bf6a40",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We will:</span>\n<ol>\n<li>Create the product catalog agent - build\nthe vendor's agent with product lookup</li>\n<li>Expose via A2A - Make it accessible use \n<code>to_a2a()</code></li>\n<li>start the server - run the agent as a \nbackground service</li>\n<li>create the customer support agent - build\nthe consumer agent</li>\n<li>test communication - see a2a in action with\nreal queries</li>\n<li>understand the flow - learn what happened\nbehind the scenes</li>\n</ol></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We will:</span>\n<ol>\n<li>Create the product catalog agent - build\nthe vendor's agent with product lookup</li>\n<li>Expose via A2A - Make it accessible use\n<code>to_a2a()</code></li>\n<li>start the server - run the agent as a\nbackground service</li>\n<li>create the customer support agent - build\nthe consumer agent</li>\n<li>test communication - see a2a in action with\nreal queries</li>\n<li>understand the flow - learn what happened\nbehind the scenes</li>\n</ol></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "SNBe",
+      "id": "emfo",
+      "code_hash": "97344a40f7719a341093e3de2a142508",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "b8c72d210e025b486b8e5290b64a27a3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 ADK components imported successfully.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "c52137f61eaada1ef0986ce01952dfd9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qVvW",
+      "code_hash": "a561cf3d4d3cc93db1e708301df71532",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"create-the-product-catalog-agent-to-be-exposed\">Create the Product Catalog Agent (to be exposed)</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BlHP",
+      "code_hash": "997ad1288ba67dacf5c6a13d13c43181",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Why expose this agent?</span>\n<ul>\n<li>In a real system, this would be maintained\nby an external vendor or third-party provider</li>\n<li>Your interal agents (customer support, sales,\ninventory) need product data</li>\n<li>The vendor controls their own codebase - you\ncan't modify their implementation</li>\n<li>By exposing it via A2A, any authorized agent\ncan consume it using the standard protocol</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NAMx",
+      "code_hash": "6afabf6dd24a0637c3141986f245a8b1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Product Catalog Agent created successfully!\n   Model: gemini-2.5-flash-lite\n   Tool: get_product_info()\n   Ready to be exposed via A2A...\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "nqRX",
+      "code_hash": "885dbc7b1a739b497b8e4b450f177088",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"expose-the-product-catalog-agent-via-a2a\">Expose the Product Catalog Agent via A2A</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vPiC",
+      "code_hash": "cf731609819eb41e9673c1f93d315d64",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">What does <code>to_a2a()</code> do?</span>\n<ol>\n<li>wraps your agent in an A2A-compatible server (FastAPI/Starlette)</li>\n<li>\n<span class=\"paragraph\">Auto-generates an agent card that includes:</span>\n<ul>\n<li>agent name, description and version</li>\n<li>skills (tools/functions are \"skills\" in A2A)</li>\n<li>Protocol version and endpoints</li>\n<li>input/output modes</li>\n</ul>\n</li>\n<li>Serves the agent card at a standard path (<code>/.well-known/agent-card.json</code>)</li>\n<li>\n<span class=\"paragraph\">Handles all A2A protocol details</span>\n<ul>\n<li>request/response</li>\n<li>formatting</li>\n<li>task endpoints</li>\n</ul>\n</li>\n<li>it's the <strong>easiest way</strong> to expose an ADK agent\n    via A2A!</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nuqT",
+      "code_hash": "eb172ace79477670ec056627fe227868",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"key-concept-agent-cards\">Key concept: Agent Cards</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wDyv",
+      "code_hash": "d722650be504f726843d49eb23239772",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">An <strong>agent card</strong> is a JSON document that serves\nas a <em>business card</em> for your agent.</span>\n<span class=\"paragraph\">It describes:</span>\n<span class=\"paragraph\">- What the agent does(name, description, version)</span>\n<span class=\"paragraph\">- What skills/tools it has</span>\n<span class=\"paragraph\">- How to communicate with it (URL, protocol version, endpoints)</span>\n<span class=\"paragraph\">It is the <em>contract</em> that tells other agents\nhow to work with your agent.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HYzp",
+      "code_hash": "ab685ab497ceb3df1a00f7eac2935db8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Product Catalog Agent is now A2A-compatible!\n   Agent will be served at: http://localhost:8001\n   Agent card will be at: http://localhost:8001/.well-known/agent-card.json\n   Ready to start the server...\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "hevv",
+      "code_hash": "32c02cfed3deb180c0b26afd81935367",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"start-the-product-catalog-agent-server\">Start the Product Catalog Agent Server</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UZlg",
+      "code_hash": "18d60163c85f4d1da93f2fb9221bf374",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\ud83d\udcdd Product Catalog agent code saved to /tmp/product_catalog_server.py\n\ud83d\ude80 Starting Product Catalog Agent server...\n   Waiting for server to be ready...\n\n\u2705 Product Catalog Agent server is running!\n   Server URL: http://localhost:8001\n   Agent card: http://localhost:8001/.well-known/agent-card.json\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "VwHu",
+      "code_hash": "b7ce155edcdade694698e2f869c59206",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\ud83d\udccb Product Catalog Agent Card:\n{\n  \"capabilities\": {},\n  \"defaultInputModes\": [\n    \"text/plain\"\n  ],\n  \"defaultOutputModes\": [\n    \"text/plain\"\n  ],\n  \"description\": \"External vendor's product catalog agent that provides product information and availability.\",\n  \"name\": \"product_catalog_agent\",\n  \"preferredTransport\": \"JSONRPC\",\n  \"protocolVersion\": \"0.3.0\",\n  \"skills\": [\n    {\n      \"description\": \"External vendor's product catalog agent that provides product information and availability. \\n    I am a product catalog specialist from an external vendor.\\n    When asked about products, use the get_product_info tool to fetch data from the catalog.\\n    Provide clear, accurate product information including price, availability, and specs.\\n    If asked about multiple products, look up each one.\\n    Be professional and helpful.\\n    \",\n      \"id\": \"product_catalog_agent\",\n      \"name\": \"model\",\n      \"tags\": [\n        \"llm\"\n      ]\n    },\n    {\n      \"description\": \"Get product information for a given product.\",\n      \"id\": \"product_catalog_agent-get_product_info\",\n      \"name\": \"get_product_info\",\n      \"tags\": [\n        \"llm\",\n        \"tools\"\n      ]\n    }\n  ],\n  \"supportsAuthenticatedExtendedCard\": false,\n  \"url\": \"http://localhost:8001\",\n  \"version\": \"0.0.1\"\n}\n\n\u2728 Key Information:\n   Name: product_catalog_agent\n   Description: External vendor's product catalog agent that provides product information and availability.\n   URL: http://localhost:8001\n   Skills: 2 capabilities exposed\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "CfdM",
+      "code_hash": "3f3c1aa4434f6ad12bcd8ffd899e0721",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"create-the-customer-support-agent\">Create the customer support agent</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "geML",
       "code_hash": null,
       "outputs": [],
       "console": []

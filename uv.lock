@@ -1221,6 +1221,7 @@ dependencies = [
     { name = "marimo" },
     { name = "mcp" },
     { name = "python-dotenv" },
+    { name = "uvicorn" },
 ]
 
 [package.dev-dependencies]
@@ -1234,6 +1235,7 @@ requires-dist = [
     { name = "marimo", specifier = ">=0.17.7" },
     { name = "mcp", specifier = ">=1.21.0" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
+    { name = "uvicorn", specifier = ">=0.38.0" },
 ]
 
 [package.metadata.requires-dev]
