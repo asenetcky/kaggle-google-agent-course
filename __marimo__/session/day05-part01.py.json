@@ -149,7 +149,7 @@
     },
     {
       "id": "emfo",
-      "code_hash": "97344a40f7719a341093e3de2a142508",
+      "code_hash": "1929645cbdb4a6c02664a2260d336a0a",
       "outputs": [
         {
           "type": "data",
@@ -194,8 +194,8 @@
       "console": []
     },
     {
-      "id": "qVvW",
-      "code_hash": "a561cf3d4d3cc93db1e708301df71532",
+      "id": "iLit",
+      "code_hash": "f63f65998e69ac76b98a3d46497ee23b",
       "outputs": [
         {
           "type": "data",
@@ -207,8 +207,8 @@
       "console": []
     },
     {
-      "id": "BlHP",
-      "code_hash": "997ad1288ba67dacf5c6a13d13c43181",
+      "id": "ZHCJ",
+      "code_hash": "d3b4348ceac00b43da470f456a33dfe0",
       "outputs": [
         {
           "type": "data",
@@ -220,7 +220,7 @@
       "console": []
     },
     {
-      "id": "NAMx",
+      "id": "ROlb",
       "code_hash": "6afabf6dd24a0637c3141986f245a8b1",
       "outputs": [
         {
@@ -240,8 +240,8 @@
       ]
     },
     {
-      "id": "nqRX",
-      "code_hash": "885dbc7b1a739b497b8e4b450f177088",
+      "id": "qnkX",
+      "code_hash": "6e641ebd90a6ba396a7207c6fe50b3f1",
       "outputs": [
         {
           "type": "data",
@@ -253,8 +253,8 @@
       "console": []
     },
     {
-      "id": "vPiC",
-      "code_hash": "cf731609819eb41e9673c1f93d315d64",
+      "id": "TqIu",
+      "code_hash": "c543fb070326703dfa4e3dbd72c399f0",
       "outputs": [
         {
           "type": "data",
@@ -266,8 +266,8 @@
       "console": []
     },
     {
-      "id": "nuqT",
-      "code_hash": "eb172ace79477670ec056627fe227868",
+      "id": "Vxnm",
+      "code_hash": "8fb087f125c8b7fb20c74e08cdb2fafc",
       "outputs": [
         {
           "type": "data",
@@ -279,8 +279,8 @@
       "console": []
     },
     {
-      "id": "wDyv",
-      "code_hash": "d722650be504f726843d49eb23239772",
+      "id": "DnEU",
+      "code_hash": "a2b9fec37e471f36321212bf6a4532eb",
       "outputs": [
         {
           "type": "data",
@@ -292,7 +292,7 @@
       "console": []
     },
     {
-      "id": "HYzp",
+      "id": "ulZA",
       "code_hash": "ab685ab497ceb3df1a00f7eac2935db8",
       "outputs": [
         {
@@ -312,8 +312,8 @@
       ]
     },
     {
-      "id": "hevv",
-      "code_hash": "32c02cfed3deb180c0b26afd81935367",
+      "id": "ecfG",
+      "code_hash": "25ea57c949fe64afad079893045cd3d1",
       "outputs": [
         {
           "type": "data",
@@ -325,8 +325,8 @@
       "console": []
     },
     {
-      "id": "UZlg",
-      "code_hash": "18d60163c85f4d1da93f2fb9221bf374",
+      "id": "Pvdt",
+      "code_hash": "1fd89df3e6432cd78fafe90a6409b7bf",
       "outputs": [
         {
           "type": "data",
@@ -345,7 +345,7 @@
       ]
     },
     {
-      "id": "VwHu",
+      "id": "ZBYS",
       "code_hash": "b7ce155edcdade694698e2f869c59206",
       "outputs": [
         {
@@ -365,8 +365,8 @@
       ]
     },
     {
-      "id": "CfdM",
-      "code_hash": "3f3c1aa4434f6ad12bcd8ffd899e0721",
+      "id": "aLJB",
+      "code_hash": "097df3a16133e13fdd77c1bcf0f82684",
       "outputs": [
         {
           "type": "data",
@@ -378,7 +378,118 @@
       "console": []
     },
     {
-      "id": "geML",
+      "id": "nHfw",
+      "code_hash": "321850a4e93dc37b611d9d9e81aa0594",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>how ti works</strong></span>\n<ol>\n<li>We'll use <code>RemoteA2Agent</code> to create a client-side proxy for the product catalog agent</li>\n<li>the customer support agent can use the product catalog agent like any other tool</li>\n<li>adk handles all the a2a protocol communications behind the scenes</li>\n</ol>\n<span class=\"paragraph\"><strong>How remotea2aAgent works:</strong></span>\n<ul>\n<li>it's a <em>client-side proxy</em> that reads the remote agent's card</li>\n<li>translates sub-agent calls into A2A protocol requests (HTTP POST to <code>/tasks</code>)</li>\n<li>Handlees all the protocol details so we can just use it like a regular sub-agent</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "0a34016d48048ee9b0857f2077e512e6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Remote Product Catalog Agent proxy created!\n   Connected to: http://localhost:8001\n   Agent card: http://localhost:8001/.well-known/agent-card.json\n   The Customer Support Agent can now use this like a local sub-agent!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "d02fa5f1f090f2c93161a79360b9e82c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u2705 Customer Support Agent created!\n   Model: gemini-2.5-flash-lite\n   Sub-agents: 1 (remote Product Catalog Agent via A2A)\n   Ready to help customers!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "2c8371d347ca2b857357797812a51516",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"test-a2a-communication\">Test A2A Communication</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "5b9e84f1e393fcd397cfc3ba15984b67",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">We're going to ask the CSA about products and it will communicate with the PCA via A2A</span>\n<span class=\"paragraph\"><strong>Behind the Scenes:</strong></span>\n<ol>\n<li>Customer asks SA a question about product</li>\n<li>SA realizes it needs product info</li>\n<li>SA calls the <code>remote_product_catalog_agent</code> (RemoteA2aAgent)</li>\n<li>ADK sends the A2A protocol request to <code>http://localhost:8001</code></li>\n<li>PCA processes the request and responds</li>\n<li>SA recieves the responses and continues</li>\n<li>Customer gets the final answer</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "e55923b3db0ef9c2edd905e5d27fe7da",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\ud83e\uddea Testing A2A Communication...\n\n\n\ud83d\udc64 Customer: Can you tell me about the iPhone 15 Pro? Is it in stock?\n\n\ud83c\udfa7 Support Agent response:\n------------------------------------------------------------\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "2025-11-20 06:34:31,392 - INFO - google_llm.py:133 - Sending out request, model: gemini-2.5-flash-lite, backend: GoogleLLMVariant.GEMINI_API, stream: False\n2025-11-20 06:34:31,821 - INFO - _client.py:1740 - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent \"HTTP/1.1 200 OK\"\n2025-11-20 06:34:31,822 - INFO - google_llm.py:186 - Response received from the model.\n2025-11-20 06:34:31,829 - INFO - _client.py:1740 - HTTP Request: POST http://localhost:8001 \"HTTP/1.1 200 OK\"\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Missing key inputs argument! To use the Google AI API, provide (`api_key`) arguments. To use the Google Cloud API, provide (`vertexai`, `project` & `location`) arguments.\n------------------------------------------------------------\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "TRpd",
       "code_hash": null,
       "outputs": [],
       "console": []

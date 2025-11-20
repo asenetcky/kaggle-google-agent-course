@@ -2,10 +2,23 @@
 # requires-python = ">=3.14"
 # dependencies = [
 #     "a2a==0.44",
+#     "altair==6.0.0",
+#     "duckdb==1.4.2",
 #     "google-adk[a2a]==1.18.0",
+#     "marimo>=0.17.0",
+#     "polars[pyarrow]==1.35.2",
 #     "protobuf==6.33.1",
+#     "pytest==9.0.1",
 #     "python-dotenv==1.2.1",
+#     "python-lsp-ruff==2.3.0",
+#     "python-lsp-server==1.13.2",
+#     "pyzmq",
 #     "requests==2.32.5",
+#     "ruff==0.14.5",
+#     "sqlglot==28.0.0",
+#     "vegafusion==2.0.3",
+#     "vl-convert-python==1.8.0",
+#     "websockets==15.0.1",
 # ]
 # ///
 
@@ -198,6 +211,7 @@ def _():
         print(
             f"Auth Error: Please make sure 'GOOGLE_API_KEY' is in environment. Details: {e}"
         )
+    
     return (os,)
 
 
@@ -227,7 +241,21 @@ def _():
     warnings.filterwarnings("ignore")
 
     print("✅ ADK components imported successfully.")
-    return Gemini, LlmAgent, json, requests, subprocess, time, to_a2a, types
+    return (
+        AGENT_CARD_WELL_KNOWN_PATH,
+        Gemini,
+        InMemorySessionService,
+        LlmAgent,
+        RemoteA2aAgent,
+        Runner,
+        json,
+        requests,
+        subprocess,
+        time,
+        to_a2a,
+        types,
+        uuid,
+    )
 
 
 @app.cell
@@ -435,9 +463,9 @@ def _(os, requests, subprocess, time):
             "ipad air": "iPad Air, $599, In Stock (28 units), 10.9\\" display, 64GB",
             "lg ultrawide 34": "LG UltraWide 34\\" Monitor, $499, Out of Stock, Expected: Next week",
         }
-    
+
         product_lower = product_name.lower().strip()
-    
+
         if product_lower in product_catalog:
             return f"Product: {product_catalog[product_lower]}"
         else:
@@ -551,6 +579,166 @@ def _(mo):
     mo.md("""
     ## Create the customer support agent
     """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    **how ti works**
+
+    1. We'll use `RemoteA2Agent` to create a client-side proxy for the product catalog agent
+    2. the customer support agent can use the product catalog agent like any other tool
+    3. adk handles all the a2a protocol communications behind the scenes
+
+    **How remotea2aAgent works:**
+
+    - it's a *client-side proxy* that reads the remote agent's card
+    - translates sub-agent calls into A2A protocol requests (HTTP POST to `/tasks`)
+    - Handlees all the protocol details so we can just use it like a regular sub-agent
+    """)
+    return
+
+
+@app.cell
+def _(AGENT_CARD_WELL_KNOWN_PATH, RemoteA2aAgent):
+    # Create a RemoteA2aAgent that connects to our Product Catalog Agent
+    # This acts as a client-side proxy - the Customer Support Agent can use it like a local agent
+    remote_product_catalog_agent = RemoteA2aAgent(
+        name="product_catalog_agent",
+        description="Remote product catalog agent from external vendor that provides product information.",
+        # Point to the agent card URL - this is where the A2A protocol metadata lives
+        agent_card=f"http://localhost:8001{AGENT_CARD_WELL_KNOWN_PATH}",
+    )
+
+    print("✅ Remote Product Catalog Agent proxy created!")
+    print(f"   Connected to: http://localhost:8001")
+    print(f"   Agent card: http://localhost:8001{AGENT_CARD_WELL_KNOWN_PATH}")
+    print("   The Customer Support Agent can now use this like a local sub-agent!")
+    return (remote_product_catalog_agent,)
+
+
+@app.cell
+def _(Gemini, LlmAgent, remote_product_catalog_agent, retry_config):
+    # Now create the Customer Support Agent that uses the remote Product Catalog Agent
+    customer_support_agent = LlmAgent(
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
+        name="customer_support_agent",
+        description="A customer support assistant that helps customers with product inquiries and information.",
+        instruction="""
+        You are a friendly and professional customer support agent.
+
+        When customers ask about products:
+        1. Use the product_catalog_agent sub-agent to look up product information
+        2. Provide clear answers about pricing, availability, and specifications
+        3. If a product is out of stock, mention the expected availability
+        4. Be helpful and professional!
+
+        Always get product information from the product_catalog_agent before answering customer questions.
+        """,
+        sub_agents=[remote_product_catalog_agent],  # Add the remote agent as a sub-agent!
+    )
+
+    print("✅ Customer Support Agent created!")
+    print("   Model: gemini-2.5-flash-lite")
+    print("   Sub-agents: 1 (remote Product Catalog Agent via A2A)")
+    print("   Ready to help customers!")
+    return (customer_support_agent,)
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    ## Test A2A Communication
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    We're going to ask the CSA about products and it will communicate with the PCA via A2A
+
+    **Behind the Scenes:**
+
+    1. Customer asks SA a question about product
+    1. SA realizes it needs product info
+    1. SA calls the `remote_product_catalog_agent` (RemoteA2aAgent)
+    1. ADK sends the A2A protocol request to `http://localhost:8001`
+    1. PCA processes the request and responds
+    1. SA recieves the responses and continues
+    1. Customer gets the final answer
+    """)
+    return
+
+
+@app.cell
+async def _(
+    InMemorySessionService,
+    Runner,
+    customer_support_agent,
+    types,
+    uuid,
+):
+    async def test_a2a_communication(user_query: str):
+        """
+        Test the A2A communication between Customer Support Agent and Product Catalog Agent.
+
+        This function:
+        1. Creates a new session for this conversation
+        2. Sends the query to the Customer Support Agent
+        3. Support Agent communicates with Product Catalog Agent via A2A
+        4. Displays the response
+
+        Args:
+            user_query: The question to ask the Customer Support Agent
+        """
+        # Setup session management (required by ADK)
+        session_service = InMemorySessionService()
+
+        # Session identifiers
+        app_name = "support_app"
+        user_id = "demo_user"
+        # Use unique session ID for each test to avoid conflicts
+        session_id = f"demo_session_{uuid.uuid4().hex[:8]}"
+
+        # CRITICAL: Create session BEFORE running agent (synchronous, not async!)
+        # This pattern matches the deployment notebook exactly
+        session = await session_service.create_session(
+            app_name=app_name, user_id=user_id, session_id=session_id
+        )
+
+        # Create runner for the Customer Support Agent
+        # The runner manages the agent execution and session state
+        runner = Runner(
+            agent=customer_support_agent, app_name=app_name, session_service=session_service
+        )
+
+        # Create the user message
+        # This follows the same pattern as the deployment notebook
+        test_content = types.Content(parts=[types.Part(text=user_query)])
+
+        # Display query
+        print(f"\n👤 Customer: {user_query}")
+        print(f"\n🎧 Support Agent response:")
+        print("-" * 60)
+
+        # Run the agent asynchronously (handles streaming responses and A2A communication)
+        async for event in runner.run_async(
+            user_id=user_id, session_id=session_id, new_message=test_content
+        ):
+            # Print final response only (skip intermediate events)
+            if event.is_final_response() and event.content:
+                for part in event.content.parts:
+                    if hasattr(part, "text"):
+                        print(part.text)
+
+        print("-" * 60)
+
+
+    # Run the test
+    print("🧪 Testing A2A Communication...\n")
+    await test_a2a_communication("Can you tell me about the iPhone 15 Pro? Is it in stock?")
     return
 
 
